@@ -100,14 +100,9 @@ export default function Navbar() {
             height={40}
             className="h-8 w-auto"
           />
-          <div className="flex flex-col leading-tight">
-            <span className="font-montserrat font-semibold text-xl text-zinc-900 tracking-wide">
-              MAGTRANS
-            </span>
-            <span className="text-[11px] text-zinc-600 tracking-[0.18em] uppercase">
-              Systems Private Limited
-            </span>
-          </div>
+          <span className="text-[10px] md:text-[11px] text-zinc-600 tracking-[0.18em] uppercase whitespace-nowrap leading-none">
+            Systems Private Limited
+          </span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-10">
