@@ -1,13 +1,21 @@
 import { productDomains } from "./products-data";
 import { industries } from "./industries-data";
 
-export const NAV_LINKS = [
+export type NavMega = "products" | "industries";
+
+export interface NavLink {
+  href: string;
+  label: string;
+  mega?: NavMega;
+}
+
+export const NAV_LINKS: readonly NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
-  { href: "/products", label: "Products", mega: "products" as const },
-  { href: "/industries", label: "Industries", mega: "industries" as const },
+  { href: "/products", label: "Products", mega: "products" },
+  { href: "/industries", label: "Industries", mega: "industries" },
   { href: "/#contact", label: "Contact" },
-] as const;
+];
 
 export const INDUSTRIES_MEGA = industries.map((i) => ({
   label: i.title,
