@@ -96,9 +96,10 @@ export default function Navbar() {
           <Image
             src="/products/images/logo/magtranslogo.png"
             alt="MAGTRANS logo"
-            width={40}
+            width={160}
             height={40}
             className="h-8 w-auto"
+            priority
           />
           <span className="text-[10px] md:text-[11px] text-zinc-600 tracking-[0.18em] uppercase whitespace-nowrap leading-none">
             Systems Private Limited
