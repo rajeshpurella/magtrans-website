@@ -44,7 +44,7 @@ export default function IndustrialCoolingPage() {
   return (
     <main className="bg-white">
       <section className="py-20 border-b border-zinc-200 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Industrial Cooling
           </h1>
@@ -58,7 +58,7 @@ export default function IndustrialCoolingPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav
             aria-label="Industrial cooling sections"
             className="divide-y divide-zinc-200 border border-zinc-200 rounded-xl bg-white"

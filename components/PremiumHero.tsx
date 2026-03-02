@@ -6,7 +6,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { heroHeading, heroSubtitle, heroCta } from "@/lib/animations";
 
-const HERO_IMAGE = "/images/hero/magnetic-hero.png";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80";
 
 export default function PremiumHero() {
   const containerRef = useRef<HTMLElement>(null);
@@ -49,7 +50,7 @@ export default function PremiumHero() {
 
       <motion.div
         style={{ opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
         <motion.h1
           {...heroHeading}

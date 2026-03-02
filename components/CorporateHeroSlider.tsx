@@ -141,7 +141,7 @@ export default function CorporateHeroSlider() {
                 initial="enter"
                 animate="center"
                 transition={stagger.heading.transition}
-                className="mt-4 text-6xl md:text-7xl font-semibold tracking-tighter text-white drop-shadow-lg"
+                className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-white drop-shadow-lg"
               >
                 {slide.title}
               </motion.h1>

@@ -30,9 +30,9 @@ export default function AdvancedMeasurement() {
   return (
     <section
       id="advanced-measurement"
-      className="py-28 bg-light-bg scroll-mt-20"
+      className="py-28 bg-zinc-50 scroll-mt-20"
     >
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

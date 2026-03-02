@@ -49,7 +49,7 @@ export default function RootLayout({
     >
       <body className="antialiased bg-white text-zinc-900">
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-20 md:pt-24">{children}</main>
         <Footer />
       </body>
     </html>

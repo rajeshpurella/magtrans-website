@@ -66,7 +66,7 @@ export default function StatsCounterSection({
             className="text-center max-w-2xl mx-auto mb-16"
           >
             {title && (
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-900">
                 {title}
               </h2>
             )}

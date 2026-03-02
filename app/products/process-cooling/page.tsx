@@ -16,7 +16,7 @@ export default function ProcessCoolingPage() {
   return (
     <>
       <section className="bg-white pt-28 pb-16 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <Link
               href="/products"
@@ -36,7 +36,7 @@ export default function ProcessCoolingPage() {
       </section>
 
       <section className="py-20 md:py-24 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <h2 className="text-xl font-semibold tracking-tight text-zinc-900 mb-8">
               Products &amp; Systems

@@ -87,7 +87,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ease-in-out ${headerBg}`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <Link
           href="/"
           className="flex-shrink-0 flex items-center gap-3"
@@ -219,7 +219,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-white border-t border-zinc-200"
           >
-            <ul className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-2">
+            <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2">
               {NAV_LINKS.filter((l) => !l.mega).map((link) => (
                 <li key={link.label}>
                   <Link href={getLinkHref(link)} className="block py-3 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>

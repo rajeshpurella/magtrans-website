@@ -13,7 +13,7 @@ export default function ProductsPage() {
   return (
     <>
       <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
               Engineering Domains
@@ -26,7 +26,7 @@ export default function ProductsPage() {
       </section>
 
       <section className="py-24 md:py-28 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {productDomains.map((domain) => (
               <Link

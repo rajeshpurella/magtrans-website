@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
       id="why-choose-us"
       className="py-28 bg-white scroll-mt-20"
     >
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,14 +48,14 @@ export default function WhyChooseUs() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {strengths.map((item, i) => (
-            <motion.div
+            {strengths.map((item, i) => (
+          <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group bg-light-bg rounded-lg border border-primary/5 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="group bg-zinc-50 rounded-lg border border-primary/5 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div className="p-3 rounded-lg bg-accent/10 text-accent w-fit group-hover:bg-accent group-hover:text-white transition-colors">
                 <item.icon className="w-6 h-6" />

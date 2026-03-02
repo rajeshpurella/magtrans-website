@@ -25,7 +25,7 @@ export default function Industries() {
       id="industries"
       className="py-28 bg-primary scroll-mt-20"
     >
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function Industries() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {applications.map((item, i) => (
             <motion.div
               key={item.label}

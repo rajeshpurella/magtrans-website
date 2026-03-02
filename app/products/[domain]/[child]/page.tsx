@@ -52,7 +52,7 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
   return (
     <>
       <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-emerald-700 font-medium mb-3 uppercase tracking-wide">
             {domain.title}
           </p>
@@ -74,7 +74,7 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
       </section>
 
       <section className="py-24 md:py-28 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] gap-12 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] gap-12 items-start">
           <article
             className="prose prose-zinc max-w-none"
             dangerouslySetInnerHTML={{ __html: child.contentHtml }}

@@ -14,7 +14,7 @@ export default function Certifications() {
       id="certifications"
       className="py-28 bg-white scroll-mt-20"
     >
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function Certifications() {
               transition={{ delay: i * 0.1 }}
               className="group flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-light-bg border-2 border-primary/10 flex items-center justify-center grayscale group-hover:grayscale-0 group-hover:border-accent/30 group-hover:bg-accent/5 transition-all duration-300">
+              <div className="w-24 h-24 rounded-full bg-zinc-50 border-2 border-primary/10 flex items-center justify-center grayscale group-hover:grayscale-0 group-hover:border-accent/30 group-hover:bg-accent/5 transition-all duration-300">
                 <span className="font-montserrat font-bold text-2xl text-primary/40 group-hover:text-accent">
                   {cert.name.charAt(0)}
                 </span>

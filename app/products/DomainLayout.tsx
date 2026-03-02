@@ -10,7 +10,7 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
   return (
     <>
       <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
       </section>
 
       <section className="py-24 md:py-32 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

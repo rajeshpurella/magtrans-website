@@ -44,7 +44,7 @@ export default function MegaMenu({
             className="absolute left-0 right-0 top-full z-50"
           >
             <div className={barClass}>
-              <div className="max-w-7xl mx-auto px-6 py-8">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
                   <div className="shrink-0">
                     <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
@@ -101,14 +101,14 @@ export default function MegaMenu({
           className="absolute left-0 right-0 top-full z-50"
         >
           <div className={barClass}>
-            <div className="max-w-7xl mx-auto px-6 py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
                 <div className="shrink-0">
                   <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                     Industries We Serve
                   </p>
                 </div>
-                <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-1">
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-1">
                   {INDUSTRIES_MEGA.map((item) => (
                     <div key={item.label}>
                       <Link

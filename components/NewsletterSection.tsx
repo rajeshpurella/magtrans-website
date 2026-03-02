@@ -55,7 +55,7 @@ export default function NewsletterSection() {
     <section className={`bg-zinc-50 ${SECTION_PADDING}`}>
       <motion.div
         {...fadeUp}
-        className="max-w-4xl mx-auto text-center px-6"
+        className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
       >
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
           Stay Updated with MAGTRANS

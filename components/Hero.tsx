@@ -35,14 +35,14 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-20 max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="font-montserrat font-bold text-white uppercase tracking-wide text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
+          <h1 className="font-montserrat font-bold text-white uppercase tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
             Engineering Precision.
             <br />
             <span className="text-accent">Powering Industrial Cooling & Magnetics.</span>
@@ -51,7 +51,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto"
+            className="mt-6 text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto"
           >
             Integrated Engineering Solutions in Process Cooling, Magnetics, Cryogenics & Advanced Laboratory Systems.
           </motion.p>

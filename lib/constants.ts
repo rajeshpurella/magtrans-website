@@ -37,7 +37,7 @@ export const PRODUCTS_MEGA = productDomains.map((d) => ({
 }));
 
 export const SECTION_PADDING = "py-24 md:py-28";
-export const CONTAINER_CLASS = "max-w-7xl mx-auto px-6";
+export const CONTAINER_CLASS = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
 
 export const PRODUCTS_MEGA_COLUMNS: [number[], number[], number[]] = [
   [0, 1, 2],
