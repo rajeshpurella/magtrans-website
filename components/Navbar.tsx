@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
@@ -87,8 +88,26 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ease-in-out ${headerBg}`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-        <Link href="/" className="flex-shrink-0 font-montserrat font-semibold text-xl text-zinc-900 tracking-wide" onClick={closeAll}>
-          MAGTRANS
+        <Link
+          href="/"
+          className="flex-shrink-0 flex items-center gap-3"
+          onClick={closeAll}
+        >
+          <Image
+            src="/products/images/logo/magtranslogo.png"
+            alt="MAGTRANS logo"
+            width={40}
+            height={40}
+            className="h-8 w-auto"
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="font-montserrat font-semibold text-xl text-zinc-900 tracking-wide">
+              MAGTRANS
+            </span>
+            <span className="text-[11px] text-zinc-600 tracking-[0.18em] uppercase">
+              Systems Private Limited
+            </span>
+          </div>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-10">
