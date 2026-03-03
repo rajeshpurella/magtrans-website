@@ -182,8 +182,8 @@ export default function DX100HallEffectMeasurementEquipmentPage() {
           <div className="flex justify-center">
             <div className="w-full max-w-md">
               <Image
-                src="/products/magnetic-testing/hall-effect-measurement-systems/dx-100/DX-320"
-                alt="DX-320 System SourceMeter"
+                src="/products/magnetic-testing/hall-effect-measurement-systems/dx-100/dx-320-system-sourcemeter.png"
+                alt="DX-320 Hall Effect System SourceMeter Unit"
                 width={640}
                 height={480}
                 className="object-contain w-full h-auto"
@@ -480,12 +480,12 @@ export default function DX100HallEffectMeasurementEquipmentPage() {
       <section className="py-12 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-6">
           <a
-            href="/products/magnetic-testing/hall-effect-measurement-systems/dx-100/dx-100-brochure.docx"
+            href="/products/magnetic-testing/hall-effect-measurement-systems/dx-100/dx-100-brochure.pdf.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-green-600 text-white rounded-lg px-6 py-3 text-sm font-semibold"
           >
-            Download Brochure (PDF)
+            Download DX-100 Hall Effect Measurement Equipment Brochure (PDF)
           </a>
         </div>
       </section>
