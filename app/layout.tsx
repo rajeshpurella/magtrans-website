@@ -16,8 +16,14 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://magtrans.in";
+
 export const metadata: Metadata = {
-  title: "MAGTrans Systems | Engineering Precision in Industrial Cooling & Magnetics",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "MAGTrans Systems | Engineering Precision in Industrial Cooling & Magnetics",
+    template: "%s | MAGTrans Systems",
+  },
   description:
     "Advanced process cooling, magnetics & cryogenic solutions for global industries. Trusted testing and proven performance. 45+ years of expertise.",
   keywords: [
@@ -29,11 +35,31 @@ export const metadata: Metadata = {
     "testing instruments",
     "measurement systems",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "MAGTrans Systems",
     title: "MAGTrans Systems | Industrial Cooling & Magnetics",
     description:
       "Advanced process cooling, magnetics & cryogenic solutions for global industries.",
-    url: "https://magtrans.in",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MAGTrans Systems | Industrial Cooling & Magnetics",
+    description:
+      "Advanced process cooling, magnetics & cryogenic solutions for global industries.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -49,8 +75,38 @@ export default function RootLayout({
     >
       <body className="antialiased bg-white text-zinc-900">
         <Navbar />
-        <main className="pt-20 md:pt-24">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          // Organization & Website structured data for enterprise brand
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_URL}#organization`,
+                  name: "MAGTrans Systems Private Limited",
+                  url: SITE_URL,
+                  logo: `${SITE_URL}/products/images/logo/magtranslogo.png`,
+                  description:
+                    "Engineering precision in industrial cooling, magnetics, cryogenic systems and advanced laboratory solutions.",
+                  sameAs: [],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}#website`,
+                  url: SITE_URL,
+                  name: "MAGTrans Systems",
+                  publisher: {
+                    "@id": `${SITE_URL}#organization`,
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

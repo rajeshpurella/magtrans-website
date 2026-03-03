@@ -1,34 +1,18 @@
-"use client";
+ "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { HERO_SLIDES } from "@/lib/hero-slides";
 
-const SLIDE_DURATION_MS = 4000;
+const SLIDE_DURATION_MS = 6000;
 const PROGRESS_TICK_MS = 50;
-const EASE_ENTERPRISE = [0.4, 0, 0.2, 1] as const; // cubic-bezier(0.4,0,0.2,1)
-
-// Mount-only animations (transform + opacity); no scroll trigger
-const textVariants = {
-  enter: { opacity: 0, y: 28 },
-  center: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -12 },
-};
-
-const stagger = {
-  label: { transition: { duration: 0.6, ease: EASE_ENTERPRISE, delay: 0.1 } },
-  heading: { transition: { duration: 0.85, ease: EASE_ENTERPRISE, delay: 0.2 } },
-  description: { transition: { duration: 0.7, ease: EASE_ENTERPRISE, delay: 0.35 } },
-  buttons: { transition: { duration: 0.6, ease: EASE_ENTERPRISE, delay: 0.5 } },
-};
 
 export default function CorporateHeroSlider() {
   const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const elapsedRef = useRef(0);
   const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -45,7 +29,6 @@ export default function CorporateHeroSlider() {
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
     progressIntervalRef.current = setInterval(() => {
       elapsedRef.current += PROGRESS_TICK_MS;
       const p = Math.min(100, (elapsedRef.current / SLIDE_DURATION_MS) * 100);
@@ -60,125 +43,93 @@ export default function CorporateHeroSlider() {
         progressIntervalRef.current = null;
       }
     };
-  }, [isPaused, currentIndex, goNext]);
+  }, [currentIndex, goNext]);
 
   const slide = HERO_SLIDES[currentIndex];
+
+  // Preload all hero images once to avoid flicker on first transition
+  useEffect(() => {
+    HERO_SLIDES.forEach((s) => {
+      const img = new Image();
+      img.src = s.image;
+    });
+  }, []);
 
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center overflow-hidden bg-white"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative w-full min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-6rem)] overflow-hidden bg-black"
     >
-      {/* Background: mount zoom-out (1.05 → 1), transform-only */}
+      {/* Background layers: premium crossfade with subtle scale */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <AnimatePresence mode="wait" initial={false}>
+        {HERO_SLIDES.map((bgSlide, index) => (
           <motion.div
-            key={currentIndex}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: EASE_ENTERPRISE }}
-            style={{ willChange: "opacity" }}
-          >
-            <motion.div
-              className="absolute inset-0 origin-center bg-cover bg-center bg-no-repeat"
-              initial={{ scale: 1.05 }}
-              animate={{ scale: 1 }}
-              transition={{
-                duration: 1.1,
-                ease: EASE_ENTERPRISE,
-              }}
-              style={{
-                willChange: "transform",
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
+            key={bgSlide.image}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${bgSlide.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+            initial={false}
+            animate={{
+              opacity: currentIndex === index ? 1 : 0,
+              scale: currentIndex === index ? 1.03 : 1,
+            }}
+            transition={{
+              opacity: { duration: 0.8 },
+              scale: { duration: 6, ease: "linear" },
+            }}
+          />
+        ))}
         <div
-          className="absolute inset-0 z-[1] bg-gradient-to-r from-black/65 via-black/40 to-transparent pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/40 to-transparent z-10 pointer-events-none"
           aria-hidden
         />
       </div>
 
       {/* Content - left aligned */}
-      <div className="relative z-10 flex flex-1 items-center max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-24">
+      <div className="relative z-20 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="max-w-2xl">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={currentIndex}
-              variants={textVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.6, ease: EASE_ENTERPRISE }}
-              style={{ willChange: "transform, opacity" }}
-            >
-              <motion.div
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                transition={stagger.label.transition}
-                className="inline-block uppercase tracking-widest text-xs bg-black/60 px-3 py-1 rounded"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-block uppercase tracking-widest text-xs bg-black/60 px-3 py-1 rounded">
+              <p className="text-white uppercase tracking-widest">
+                {slide.subtitle}
+              </p>
+            </div>
+            <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+              {slide.title}
+              {slide.titleLine2 != null && (
+                <>
+                  <br />
+                  {slide.titleLine2}
+                </>
+              )}
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm">
+              {slide.description}
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <button
+                type="button"
+                onClick={() => router.push(slide.href)}
+                className="inline-flex justify-center items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
               >
-                <p className="text-white uppercase tracking-widest">
-                  {slide.subtitle}
-                </p>
-              </motion.div>
-              <motion.h1
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                transition={stagger.heading.transition}
-                className="mt-4 text-5xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg"
+                Explore Domain
+              </button>
+              <Link
+                href="/contact"
+                className="inline-flex justify-center items-center px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
               >
-                {slide.title}
-                {slide.titleLine2 != null && (
-                  <>
-                    <br />
-                    {slide.titleLine2}
-                  </>
-                )}
-              </motion.h1>
-              <motion.p
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                transition={stagger.description.transition}
-                className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm"
-              >
-                {slide.description}
-              </motion.p>
-              <motion.div
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                transition={stagger.buttons.transition}
-                className="mt-8 flex flex-col sm:flex-row gap-4"
-              >
-                <button
-                  type="button"
-                  onClick={() => router.push(slide.href)}
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
-                >
-                  Explore Domain
-                </button>
-                <Link
-                  href="/contact"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  Contact Us
-                </Link>
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -210,27 +161,18 @@ export default function CorporateHeroSlider() {
         </div>
       </div>
 
-      {/* Scroll indicator - mount animation, transform + opacity only */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: EASE_ENTERPRISE }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
-      >
+      {/* Scroll indicator - static, no bounce */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
         <a
           href="/#about"
           className="flex flex-col items-center gap-2 text-white/80 drop-shadow-md pointer-events-auto"
           aria-label="Scroll down"
         >
           <span className="block w-6 h-10 rounded-full border-2 border-current flex items-start justify-center pt-2">
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1.5 h-2 rounded-full bg-current animate-bounce"
-            />
+            <span className="w-1.5 h-2 rounded-full bg-current" />
           </span>
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 }

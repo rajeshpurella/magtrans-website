@@ -14,7 +14,6 @@ const HOVER_DELAY_MS = 150;
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
@@ -25,9 +24,7 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Reserved for future scroll-based behavior if needed
   }, []);
 
   const clearProductsDelay = () => {
@@ -79,14 +76,8 @@ export default function Navbar() {
     return link.href;
   };
 
-  const headerBg = isScrolled
-    ? "bg-white shadow-sm border-b border-zinc-200/80"
-    : "bg-white/80 backdrop-blur-md border-b border-zinc-200";
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ease-in-out ${headerBg}`}
-    >
+    <header className="sticky top-0 z-50 w-full h-20 md:h-24 bg-white shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <Link
           href="/"
