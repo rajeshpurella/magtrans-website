@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HERO_SLIDES } from "@/lib/hero-slides";
@@ -68,7 +67,7 @@ export default function CorporateHeroSlider() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-[92vh] flex items-center overflow-hidden bg-white"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -85,35 +84,32 @@ export default function CorporateHeroSlider() {
             style={{ willChange: "opacity" }}
           >
             <motion.div
-              className="absolute inset-0 origin-center"
+              className="absolute inset-0 origin-center bg-cover bg-center bg-no-repeat"
               initial={{ scale: 1.05 }}
               animate={{ scale: 1 }}
               transition={{
                 duration: 1.1,
                 ease: EASE_ENTERPRISE,
               }}
-              style={{ willChange: "transform" }}
+              style={{
+                willChange: "transform",
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
             >
-              <Image
-                src={slide.image}
-                alt=""
-                fill
-                priority={currentIndex === 0}
-                loading={currentIndex === 0 ? undefined : "lazy"}
-                className="object-cover object-center"
-                sizes="100vw"
-              />
             </motion.div>
           </motion.div>
         </AnimatePresence>
         <div
-          className="absolute inset-0 z-[1] bg-gradient-to-r from-black/55 via-black/25 to-black/10 pointer-events-none"
+          className="absolute inset-0 z-[1] bg-gradient-to-r from-black/65 via-black/40 to-transparent pointer-events-none"
           aria-hidden
         />
       </div>
 
-      {/* Content - left aligned, max-w-2xl, extra left padding on desktop */}
-      <div className="relative z-10 flex flex-1 items-center max-w-7xl mx-auto w-full px-6 pl-6 md:pl-16 lg:pl-24">
+      {/* Content - left aligned */}
+      <div className="relative z-10 flex flex-1 items-center max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-24">
         <div className="max-w-2xl">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
@@ -130,9 +126,9 @@ export default function CorporateHeroSlider() {
                 initial="enter"
                 animate="center"
                 transition={stagger.label.transition}
-                className="inline-block bg-black/30 px-3 py-1 rounded backdrop-blur-sm drop-shadow-md"
+                className="inline-block uppercase tracking-widest text-xs bg-black/60 px-3 py-1 rounded"
               >
-                <p className="text-white text-sm font-semibold tracking-[0.2em] uppercase">
+                <p className="text-white uppercase tracking-widest">
                   {slide.subtitle}
                 </p>
               </motion.div>
@@ -141,16 +137,22 @@ export default function CorporateHeroSlider() {
                 initial="enter"
                 animate="center"
                 transition={stagger.heading.transition}
-                className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-white drop-shadow-lg"
+                className="mt-4 text-5xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg"
               >
                 {slide.title}
+                {slide.titleLine2 != null && (
+                  <>
+                    <br />
+                    {slide.titleLine2}
+                  </>
+                )}
               </motion.h1>
               <motion.p
                 variants={textVariants}
                 initial="enter"
                 animate="center"
                 transition={stagger.description.transition}
-                className="mt-4 text-gray-200 text-base leading-relaxed drop-shadow-sm"
+                className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm"
               >
                 {slide.description}
               </motion.p>
@@ -159,18 +161,18 @@ export default function CorporateHeroSlider() {
                 initial="enter"
                 animate="center"
                 transition={stagger.buttons.transition}
-                className="mt-10 flex flex-col sm:flex-row gap-4"
+                className="mt-8 flex flex-col sm:flex-row gap-4"
               >
                 <button
                   type="button"
                   onClick={() => router.push(slide.href)}
-                  className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
                 >
                   Explore Domain
                 </button>
                 <Link
                   href="/contact"
-                  className="inline-flex justify-center items-center px-8 py-4 rounded-full border-2 border-zinc-300 text-zinc-900 font-semibold hover:bg-zinc-100 hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
                 >
                   Contact Us
                 </Link>
