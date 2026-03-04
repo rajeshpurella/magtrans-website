@@ -58,6 +58,18 @@ const SYSTEMS: { name: string; description: string; href: string }[] = [
       "Magnetic field mappers for three-dimensional field mapping, homogeneity analysis and magnet assembly verification.",
     href: "/products/magnetic-testing/magnetic-field-mapper",
   },
+  {
+    name: "Magnetic Shielding Device",
+    description:
+      "Magnetic shielding devices for reducing or eliminating unwanted magnetic fields in sensitive environments such as laboratories, precision electronics, medical equipment and magnetic measurement setups.",
+    href: "/products/magnetic-testing/magnetic-shielding-device",
+  },
+  {
+    name: "Functional Material Measurement",
+    description:
+      "Measurement systems for analysing the magnetic and functional properties of advanced and smart materials, supporting R&D of magnetic functional materials and emerging electronic devices.",
+    href: "/products/magnetic-testing/functional-material-measurement",
+  },
 ];
 
 export default function MagneticTestingPage() {

@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
 import { SECTION_PADDING, CONTAINER_CLASS } from "@/lib/constants";
 
-const MAP_LINK = "https://share.google.com/3cO839Q0LYcyskunq";
+const MAP_LINK = "https://share.google/kAqCAeTtcK0whYNVg";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -125,26 +125,24 @@ export default function Contact() {
               </address>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden border border-zinc-200 aspect-video bg-zinc-100 min-h-[280px]">
+            <div className="rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100">
               <iframe
-                title="MAGTRANS office location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.585678789!2d78.4864!3d17.3850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzA2LjAiTiA3OMKwMjknMTEuMCJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps?q=3-6-369/A/10,+Flat+No.1,+Srinilayam,+Street+No.1,+Himayathnagar,+Hyderabad+500029&output=embed"
                 width="100%"
-                height="100%"
+                height="300"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="pointer-events-none w-full h-full min-h-[280px] absolute inset-0"
+                title="MAGTRANS office location"
               />
               <a
                 href={MAP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 z-10 flex flex-col justify-end text-sm font-medium text-emerald-600 hover:text-emerald-500 bg-transparent hover:bg-black/5 transition-colors"
-                aria-label="View larger map"
+                className="inline-block mt-3 text-sm text-emerald-600 hover:underline"
               >
-                <span className="py-2 text-center bg-white/90 border-t border-zinc-200">View larger map</span>
+                Open in Google Maps
               </a>
             </div>
           </motion.div>
