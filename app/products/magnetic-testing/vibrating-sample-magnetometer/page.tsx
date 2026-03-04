@@ -27,28 +27,28 @@ const PRODUCTS = [
   {
     name: "DXV-130 Vibrating Sample Magnetometry System",
     slug: "dxv-130",
-    image: "/products/vsm/dxv-130-vsm-system.png",
+    image: "/products/vsm/dxv-130-vsm.png",
     description:
       "High-sensitivity VSM system for precise measurement of magnetic moment as a function of applied field.",
   },
   {
     name: "DXV-9000 Magnetic Moment Measurement Equipment",
     slug: "dxv-9000",
-    image: "/products/vsm/dxv-9000-magnetic-moment.png",
+    image: "/products/vsm/dxv-9000-vsm.png",
     description:
       "Premium VSM platform for advanced magnetic moment and hysteresis studies across a wide field and temperature range.",
   },
   {
     name: "DXV-250 VSM with Temperature Control",
     slug: "dxv-250",
-    image: "/products/vsm/dxv-250-vsm-temperature-control.png",
+    image: "/products/vsm/dxv-250-vsm.png",
     description:
       "VSM with integrated temperature control for studying magnetisation behaviour from low to elevated temperatures.",
   },
   {
     name: "DXV-8000 Vibrating Sample Magnetometry System",
     slug: "dxv-8000",
-    image: "/products/vsm/dxv-8000-vsm-system.png",
+    image: "/products/vsm/dxv-8000-vsm.png",
     description:
       "High-performance VSM system designed for demanding magnetic materials R&D and production support.",
   },
