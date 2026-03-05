@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getDomainBySlug } from "@/lib/products-data";
+import BackButton from "@/app/components/BackButton";
 
 interface PageParams {
   domain: string;
@@ -53,6 +54,9 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
     <>
       <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-6">
+            <BackButton />
+          </div>
           <p className="text-sm text-emerald-700 font-medium mb-3 uppercase tracking-wide">
             {domain.title}
           </p>

@@ -125,26 +125,27 @@ export default function Contact() {
               </address>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100">
+            <div className="relative rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100 aspect-video min-h-[280px] w-full">
               <iframe
-                src="https://www.google.com/maps?q=3-6-369/A/10,+Flat+No.1,+Srinilayam,+Street+No.1,+Himayathnagar,+Hyderabad+500029&output=embed"
+                src="https://www.google.com/maps?q=3-6-369%2FA%2F10%2C+Flat+No.1%2C+Srinilayam%2C+Street+No.1%2C+Himayathnagar%2C+Hyderabad+500029&output=embed"
                 width="100%"
-                height="300"
+                height="100%"
+                className="absolute inset-0 w-full h-full"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="MAGTRANS office location"
+                title="MAGTrans Systems office location - Hyderabad"
               />
-              <a
-                href={MAP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-3 text-sm text-emerald-600 hover:underline"
-              >
-                Open in Google Maps
-              </a>
             </div>
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-3 text-sm text-emerald-600 hover:underline"
+            >
+              Open in Google Maps
+            </a>
           </motion.div>
 
           <motion.form

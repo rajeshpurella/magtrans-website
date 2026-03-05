@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllProductSlugs, getProductBySlug } from "@/data/products";
+import BackButton from "@/app/components/BackButton";
 
 type PageProps = {
   params: { slug: string[] };
@@ -52,7 +53,11 @@ export default function ProductPage({ params }: PageProps) {
   return (
     <main className="bg-white">
       <section className="border-b border-zinc-200">
-        <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">
+        <div className="max-w-4xl mx-auto px-6 py-20 space-y-4">
+          <div>
+            <BackButton />
+          </div>
+          <div className="text-center">
           <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
             HALL EFFECT MEASUREMENT SYSTEM
           </p>
@@ -62,6 +67,7 @@ export default function ProductPage({ params }: PageProps) {
           <p className="text-base text-zinc-700 leading-relaxed">
             {product.description}
           </p>
+          </div>
         </div>
       </section>
 

@@ -21,9 +21,9 @@ export default function FerroelectricTestSystemPage() {
             Ferroelectric Test System
           </h1>
           <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            High-performance ferroelectric material testing platform for
-            hysteresis loop, fatigue, imprint, C–V, leakage current and
-            dielectric measurements with wide frequency and voltage coverage.
+            High-performance ferroelectric material testing platform for hysteresis loop, fatigue,
+            imprint, C–V, leakage current and dielectric measurements with wide frequency and
+            voltage coverage.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="rounded-2xl border border-zinc-200 bg-white p-6 flex flex-col items-center text-center">
                 <div className="relative w-full h-40 mb-4">
                   <Image
-                    src="/products/functional-material-measurement/dx-fts2.png"
+                    src="/products/ferroelectric-test-system/dx-fts2.png"
                     alt="DX-FTS2 standard ferroelectric test system"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -84,11 +84,15 @@ export default function FerroelectricTestSystemPage() {
                 <h3 className="text-base font-semibold text-zinc-900">
                   DX-FTS2 – Standard Type
                 </h3>
+                <p className="mt-2 text-sm text-zinc-700 leading-relaxed">
+                  Standard ferroelectric material testing system for laboratory and industrial
+                  testing.
+                </p>
               </div>
               <div className="rounded-2xl border border-zinc-200 bg-white p-6 flex flex-col items-center text-center">
                 <div className="relative w-full h-40 mb-4">
                   <Image
-                    src="/products/functional-material-measurement/dx-fts3.png"
+                    src="/products/ferroelectric-test-system/dx-fts3.png"
                     alt="DX-FTS3 extended ferroelectric test system"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -98,6 +102,9 @@ export default function FerroelectricTestSystemPage() {
                 <h3 className="text-base font-semibold text-zinc-900">
                   DX-FTS3 – Extended Type
                 </h3>
+                <p className="mt-2 text-sm text-zinc-700 leading-relaxed">
+                  Advanced configuration with extended measurement capabilities.
+                </p>
               </div>
             </div>
           </div>
@@ -292,11 +299,18 @@ export default function FerroelectricTestSystemPage() {
               <li>Impedance analysis</li>
               <li>Resistance measurement</li>
             </ul>
+          </div>
+
+          {/* Built-in System Configuration */}
+          <div className="space-y-4 max-w-4xl">
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Built-in System Configuration
+            </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
-              The system includes a built-in industrial computer with:
+              The system includes an integrated industrial computer with:
             </p>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
-              <li>Intel i5 CPU or higher</li>
+              <li>Intel i5 processor or higher</li>
               <li>8GB RAM or greater</li>
               <li>250GB SSD or greater</li>
               <li>Network interface</li>
@@ -349,7 +363,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-40 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/block-test-fixture.png"
+                    src="/products/ferroelectric-test-system/block-test-fixture.png"
                     alt="Block test fixture"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -366,7 +380,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-40 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/thin-film-four-probe-stage.png"
+                    src="/products/ferroelectric-test-system/thin-film-four-probe.png"
                     alt="Thin film four-probe probe station"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -385,7 +399,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-40 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/thin-film-wide-temp-stage.png"
+                    src="/products/ferroelectric-test-system/thin-film-temperature-stage.png"
                     alt="Thin film wide temperature zone probe stage"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -404,7 +418,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-40 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/thin-film-probe-station.png"
+                    src="/products/ferroelectric-test-system/thin-film-probe-station.png"
                     alt="Thin film probe station"
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -431,7 +445,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-32 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/dxam-10kv.png"
+                    src="/products/ferroelectric-test-system/dxam-10kv.png"
                     alt="DXAM-10KV high voltage amplifier"
                     fill
                     sizes="(min-width: 1024px) 260px, 100vw"
@@ -452,7 +466,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-32 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/trek-609e-6.png"
+                    src="/products/ferroelectric-test-system/trek-609e6.png"
                     alt="Trek 609E-6 high voltage amplifier"
                     fill
                     sizes="(min-width: 1024px) 260px, 100vw"
@@ -473,7 +487,7 @@ export default function FerroelectricTestSystemPage() {
               <div className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
                 <div className="relative w-full h-32 mb-2">
                   <Image
-                    src="/products/functional-material-measurement/trek-610e.png"
+                    src="/products/ferroelectric-test-system/trek-610e.png"
                     alt="Trek 610E high voltage amplifier"
                     fill
                     sizes="(min-width: 1024px) 260px, 100vw"
@@ -502,7 +516,7 @@ export default function FerroelectricTestSystemPage() {
             <div className="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center">
               <div className="relative w-full h-40 rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
                 <Image
-                  src="/products/functional-material-measurement/sios-laser-interferometer.png"
+                  src="/products/ferroelectric-test-system/sios-laser-interferometer.png"
                   alt="SIOS laser interferometer single-channel optical probe"
                   fill
                   sizes="(min-width: 1024px) 480px, 100vw"
@@ -528,7 +542,7 @@ export default function FerroelectricTestSystemPage() {
             <h2 className="text-lg font-semibold text-zinc-900">Interface</h2>
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
               <Image
-                src="/products/functional-material-measurement/fts-interface.png"
+                src="/products/ferroelectric-test-system/ferroelectric-interface.png"
                 alt="Ferroelectric test system interface"
                 fill
                 sizes="(min-width: 1024px) 900px, 100vw"

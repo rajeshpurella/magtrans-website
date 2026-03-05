@@ -3,8 +3,15 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { HERO_SLIDES } from "@/lib/hero-slides";
+
+const ROTATING_DOMAINS = [
+  "Magnetic Testing Systems",
+  "Cryogenic Cooling Solutions",
+  "Advanced Measurement Systems",
+];
+const ROTATE_INTERVAL_MS = 3000;
 
 const SLIDE_DURATION_MS = 6000;
 const PROGRESS_TICK_MS = 50;
@@ -46,6 +53,14 @@ export default function CorporateHeroSlider() {
   }, [currentIndex, goNext]);
 
   const slide = HERO_SLIDES[currentIndex];
+  const [rotatingIndex, setRotatingIndex] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setRotatingIndex((i) => (i + 1) % ROTATING_DOMAINS.length);
+    }, ROTATE_INTERVAL_MS);
+    return () => clearInterval(t);
+  }, []);
 
   // Preload all hero images once to avoid flicker on first transition
   useEffect(() => {
@@ -111,6 +126,20 @@ export default function CorporateHeroSlider() {
                 </>
               )}
             </h1>
+            <div className="mt-2 min-h-[2rem] flex items-center">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={rotatingIndex}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35 }}
+                  className="text-base md:text-lg text-emerald-200 font-medium drop-shadow-sm"
+                >
+                  {ROTATING_DOMAINS[rotatingIndex]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
             <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm">
               {slide.description}
             </p>

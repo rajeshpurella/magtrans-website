@@ -4,9 +4,13 @@ import { productDomains } from "@/lib/products-data";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Engineering Domains | MAGTRANS Systems",
+  title: "Products | Magnetic Testing, Cooling & Measurement | MAGTrans Systems",
   description:
-    "Precision systems across core engineering disciplines: process cooling, magnetic testing, cryogenic systems, heat flux, HT solutions, laboratory equipment, geophysical research.",
+    "MAGTrans provides magnetic testing systems, cryogenic cooling, process cooling, heat flux instrumentation, and precision measurement equipment for research and industry.",
+  openGraph: {
+    title: "Products | MAGTrans Systems",
+    description: "Magnetic testing, cryogenic cooling, and precision measurement systems.",
+  },
 };
 
 export default function ProductsPage() {

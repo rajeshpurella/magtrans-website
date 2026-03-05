@@ -230,6 +230,23 @@ export const productDomains: ProductDomain[] = [
       "Closed-cycle Cryostat - 4K",
       "Ultra-low Temperature",
     ],
+    children: [
+      {
+        title: "Closed-cycle Cryostat",
+        slug: "closed-cycle-cryostat",
+        contentHtml: "",
+      },
+      {
+        title: "Liquid Nitrogen Cryostat",
+        slug: "liquid-nitrogen-cryostat",
+        contentHtml: "",
+      },
+      {
+        title: "Closed-cycle Cryostat - 4K",
+        slug: "closed-cycle-cryostat-4k",
+        contentHtml: "",
+      },
+    ],
   },
   {
     slug: "heat-flux-instrumentation",

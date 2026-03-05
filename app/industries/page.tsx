@@ -5,9 +5,13 @@ import { ChevronRight } from "lucide-react";
 import { CONTAINER_CLASS, SECTION_PADDING } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | MAGTRANS Systems",
+  title: "Industries We Serve | MAGTrans Systems",
   description:
     "Delivering precision engineering systems across aerospace, research labs, universities, manufacturing, energy and defense sectors.",
+  openGraph: {
+    title: "Industries | MAGTrans Systems",
+    description: "Precision systems across critical industrial and research sectors.",
+  },
 };
 
 export default function IndustriesPage() {

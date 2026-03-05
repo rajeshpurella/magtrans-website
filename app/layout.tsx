@@ -21,18 +21,19 @@ const SITE_URL = "https://magtrans.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MAGTrans Systems | Engineering Precision in Industrial Cooling & Magnetics",
+    default: "MAGTrans Systems | Magnetic Testing & Cryogenic Cooling Solutions",
     template: "%s | MAGTrans Systems",
   },
   description:
-    "Advanced process cooling, magnetics & cryogenic solutions for global industries. Trusted testing and proven performance. 45+ years of expertise.",
+    "MAGTrans provides advanced magnetic testing systems, cryogenic cooling solutions, and precision engineering equipment for research labs and industrial applications.",
   keywords: [
-    "industrial cooling",
-    "magnetics",
-    "cryogenic systems",
-    "process cooling",
+    "magnetic testing systems",
+    "cryogenic cooling systems",
+    "magnet measurement",
+    "industrial magnet testing",
+    "research magnet systems",
     "MAGTrans",
-    "testing instruments",
+    "process cooling",
     "measurement systems",
   ],
   alternates: {
@@ -42,15 +43,15 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "MAGTrans Systems",
-    title: "MAGTrans Systems | Industrial Cooling & Magnetics",
+    title: "MAGTrans Systems | Magnetic Testing & Cryogenic Cooling Solutions",
     description:
-      "Advanced process cooling, magnetics & cryogenic solutions for global industries.",
+      "MAGTrans provides advanced magnetic testing systems, cryogenic cooling solutions, and precision engineering equipment for research labs and industrial applications.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MAGTrans Systems | Industrial Cooling & Magnetics",
+    title: "MAGTrans Systems | Magnetic Testing & Cryogenic Cooling Solutions",
     description:
-      "Advanced process cooling, magnetics & cryogenic solutions for global industries.",
+      "MAGTrans provides advanced magnetic testing systems, cryogenic cooling solutions, and precision engineering equipment for research labs and industrial applications.",
   },
   robots: {
     index: true,

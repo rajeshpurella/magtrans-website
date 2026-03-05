@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const SLIDER_IMAGES = [
-  "/products/functional-material-measurement/fts-1.png",
-  "/products/functional-material-measurement/fts-2.png",
-  "/products/functional-material-measurement/fts-3.png",
-  "/products/functional-material-measurement/fts-4.png",
-  "/products/functional-material-measurement/fts-5.png",
-  "/products/functional-material-measurement/fts-6.png",
+  "/products/ferroelectric-test-system/ts-1.png",
+  "/products/ferroelectric-test-system/ts-2.png",
+  "/products/ferroelectric-test-system/ts-3.png",
+  "/products/ferroelectric-test-system/ts-4.png",
+  "/products/ferroelectric-test-system/ts-5.png",
 ] as const;
 
 export default function FerroelectricSlider() {

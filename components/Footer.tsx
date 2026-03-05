@@ -72,7 +72,7 @@ export default function Footer() {
             Trusted Testing and Proven Performance.
           </p>
           <p className="text-zinc-500 text-sm">
-            © {new Date().getFullYear()} MAGTRANS Systems Private Limited. All Rights Reserved.
+            © 2026 MAGTrans Systems Pvt Ltd
           </p>
         </div>
       </div>

@@ -3,17 +3,34 @@ import CorporateHeroSlider from "@/components/CorporateHeroSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import StatsCounterSection from "@/components/StatsCounterSection";
-import NewsletterSection from "@/components/NewsletterSection";
+import ClientLogosSection from "@/components/ClientLogosSection";
+import CertificationsSection from "@/components/CertificationsSection";
+import CaseStudySection from "@/components/CaseStudySection";
+import DownloadCatalogSection from "@/components/DownloadCatalogSection";
 import Contact from "@/components/Contact";
-import { productDomains } from "@/lib/products-data";
 import { INDUSTRIES_WITH_DESCRIPTIONS } from "@/lib/constants";
 import { ThermometerSnowflake, Magnet, Snowflake, Building2 } from "lucide-react";
 
-const CORE_DOMAINS = productDomains.slice(0, 3).map((d, i) => ({
-  title: d.title,
-  description: d.shortDescription,
-  icon: [ThermometerSnowflake, Magnet, Snowflake][i],
-}));
+const CORE_DOMAINS = [
+  {
+    title: "Process Cooling",
+    description:
+      "Liquid, industrial and air cooling systems, value-added cooling solutions, cooling towers, air dryers, dehumidifiers and humidifiers engineered to keep processes stable and equipment protected.",
+    icon: ThermometerSnowflake,
+  },
+  {
+    title: "Magnetic Testing",
+    description:
+      "Hall effect measurement systems, vibrating sample magnetometers (VSM) and characterisation solutions for hard and soft magnetic materials, cemented carbides and functional materials.",
+    icon: Magnet,
+  },
+  {
+    title: "Cryogenic Systems",
+    description:
+      "Closed-cycle and liquid nitrogen cryostats, 4 K systems and ultra-low temperature platforms for research laboratories and demanding industrial environments.",
+    icon: Snowflake,
+  },
+];
 
 const STATS = [
   { value: 45, suffix: "+", label: "Years Engineering Experience" },
@@ -33,9 +50,14 @@ export default function Home() {
         subtitle="Process cooling, magnetics, cryogenics and advanced laboratory systems—engineered for precision and reliability."
         className="bg-zinc-50 scroll-mt-20"
       >
-        <p className="text-base text-zinc-600 leading-relaxed max-w-3xl mx-auto text-center">
-          MAGTRANS Systems brings together over 45 years of experience in testing, measurement and cooling systems. We supply state-of-the-art solutions from renowned national and international manufacturers for Indian industry and research.
-        </p>
+        <div className="space-y-4 text-base text-zinc-600 leading-relaxed max-w-3xl mx-auto text-center">
+          <p>
+            MAGTRANS Systems Private Limited brings together over 45 years of experience in testing, measurement and cooling systems for research laboratories and industrial applications.
+          </p>
+          <p>
+            We provide precision engineering systems sourced from leading national and international technology partners, combining proven products with application engineering, commissioning and through-life support.
+          </p>
+        </div>
       </AnimatedSection>
 
       <AnimatedSection
@@ -89,7 +111,11 @@ export default function Home() {
         subtitle="Decades of expertise, global technology sourcing and dedicated after-sales support."
       />
 
-      <NewsletterSection />
+      <ClientLogosSection />
+      <CertificationsSection />
+      <CaseStudySection />
+
+      <DownloadCatalogSection />
 
       <Contact />
     </>
