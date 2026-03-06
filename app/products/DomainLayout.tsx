@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, ChevronRight, ChevronLeft } from "lucide-react";
 import type { ProductDomain } from "@/lib/products-data";
-import BackButton from "@/app/components/BackButton";
 
 export default function DomainLayout({ domain }: { domain: ProductDomain }) {
   return (
@@ -91,9 +90,6 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
                 );
               })}
             </ul>
-            <div className="mt-10">
-              <BackButton />
-            </div>
           </motion.div>
         </div>
       </section>

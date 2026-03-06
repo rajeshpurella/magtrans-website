@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <p className="font-montserrat font-bold text-xl">MAGTRANS Systems</p>
             <p className="mt-2 text-zinc-400 text-sm leading-relaxed">
-              Over 10+ years cooling experience with Werner Finley. MAGTRANS Systems Private Limited is an amalgamation of our 45 years in the field of Climate Simulation Systems and Refrigeration Technology, serving Indian customers with state-of-the-art German systems for decades.
+              MAGTRANS brings over a decade of specialized cooling system expertise developed in collaboration with Werner Finley, supported by 45+ years of engineering heritage in climate simulation and refrigeration technology, serving Indian customers with state-of-the-art German systems for decades.
             </p>
             <p className="mt-4 text-zinc-400 text-sm">
               We offer quality products and systems from leading national and international manufacturers.

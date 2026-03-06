@@ -19,6 +19,34 @@ body {
   }
 }
 
+@keyframes slowZoom {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+.animate-slowZoom {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease forwards;
+}
+
 /* Prevent layout shift during scroll */
 .gpu-accelerated {
   transform: translateZ(0);

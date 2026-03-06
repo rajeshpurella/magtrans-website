@@ -1,26 +1,61 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handleChange = () => {
+      setPrefersReducedMotion(mediaQuery.matches);
+    };
+
+    handleChange();
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else {
+      // Safari & older browsers
+      // eslint-disable-next-line deprecation/deprecation
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else {
+        // eslint-disable-next-line deprecation/deprecation
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80)",
-          }}
+        <Image
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80"
+          alt="Industrial engineering background"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 object-cover"
         />
         <video
-          autoPlay
+          autoPlay={!prefersReducedMotion}
           muted
           loop
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover z-[1]"
           poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80"
         >

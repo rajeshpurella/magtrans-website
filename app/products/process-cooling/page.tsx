@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ChevronRight, ChevronLeft } from "lucide-react";
 import { getDomainBySlug } from "@/lib/products-data";
-import BackButton from "@/app/components/BackButton";
 
 export const metadata: Metadata = {
   title: "Process Cooling | MAGTRANS Systems",
@@ -172,9 +171,6 @@ export default function ProcessCoolingPage() {
                 </div>
               </li>
             </ul>
-            <div className="mt-10">
-              <BackButton />
-            </div>
           </div>
         </div>
       </section>

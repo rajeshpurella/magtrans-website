@@ -1,11 +1,10 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
 export default function BackButton() {
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleClick = () => {
     if (typeof window !== "undefined" && window.history.length > 1) {
@@ -13,14 +12,7 @@ export default function BackButton() {
       return;
     }
 
-    const segments = pathname.split("/").filter(Boolean);
-    if (segments.length <= 1) {
-      router.push("/");
-      return;
-    }
-
-    const parentPath = "/" + segments.slice(0, -1).join("/");
-    router.push(parentPath || "/");
+    router.push("/products");
   };
 
   return (

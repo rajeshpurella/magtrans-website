@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getDomainBySlug } from "@/lib/products-data";
-import BackButton from "@/app/components/BackButton";
 
 interface PageParams {
   domain: string;
@@ -54,9 +53,6 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
     <>
       <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6">
-            <BackButton />
-          </div>
           <p className="text-sm text-emerald-700 font-medium mb-3 uppercase tracking-wide">
             {domain.title}
           </p>
@@ -65,11 +61,12 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
           </h1>
           {child.image && (
             <div className="mt-8 rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100 h-64 md:h-80 flex items-center justify-center">
-              {/* Image placeholder path; real asset can be wired later */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={child.image}
                 alt={child.title}
+                width={1280}
+                height={512}
+                sizes="(min-width: 1024px) 960px, 100vw"
                 className="h-full w-full object-cover"
               />
             </div>
