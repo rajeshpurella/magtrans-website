@@ -246,6 +246,11 @@ export const productDomains: ProductDomain[] = [
         slug: "closed-cycle-cryostat-4k",
         contentHtml: "",
       },
+      {
+        title: "Ultra-low Temperature",
+        slug: "ultra-low-temperature-controller",
+        contentHtml: "",
+      },
     ],
   },
   {
@@ -259,6 +264,18 @@ export const productDomains: ProductDomain[] = [
       "Signal Conditioning Amplifiers",
       "Thermogage",
     ],
+    children: [
+      {
+        title: "Signal Conditioning Amplifiers",
+        slug: "signal-conditioning-amplifiers",
+        contentHtml: "",
+      },
+      {
+        title: "Thermogage",
+        slug: "thermogage",
+        contentHtml: "",
+      },
+    ],
   },
   {
     slug: "ht-solutions",
@@ -270,6 +287,18 @@ export const productDomains: ProductDomain[] = [
     subProducts: [
       "Industrial and Laboratory",
       "Industrial Ovens",
+    ],
+    children: [
+      {
+        title: "Industrial and Laboratory",
+        slug: "industrial-and-laboratory",
+        contentHtml: "",
+      },
+      {
+        title: "Industrial Ovens",
+        slug: "industrial-ovens",
+        contentHtml: "",
+      },
     ],
   },
   {
@@ -284,6 +313,23 @@ export const productDomains: ProductDomain[] = [
       "Bio Safety Cabinets",
       "Fume Hoods",
     ],
+    children: [
+      {
+        title: "Laminar Air Flow Stations",
+        slug: "laminar-air-flow-stations",
+        contentHtml: "",
+      },
+      {
+        title: "Bio Safety Cabinets",
+        slug: "bio-safety-cabinets",
+        contentHtml: "",
+      },
+      {
+        title: "Fume Hoods",
+        slug: "fume-hoods",
+        contentHtml: "",
+      },
+    ],
   },
   {
     slug: "geophysical-research",
@@ -294,6 +340,13 @@ export const productDomains: ProductDomain[] = [
       "MAGTRANS provides instrumentation for geophysical research. Our range includes proton precession systems for magnetic field measurement and related geophysical applications.",
     subProducts: [
       "Proton Precession Systems",
+    ],
+    children: [
+      {
+        title: "Proton Precession Systems",
+        slug: "proton-precession-systems",
+        contentHtml: "",
+      },
     ],
   },
 ];
