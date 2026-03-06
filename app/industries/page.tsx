@@ -27,7 +27,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/aerospace/aerospace.png"
+              src="/products/industries/aerospace/aerospace.png"
               alt="Aerospace"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -51,7 +51,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/research-labs/research-labs.png"
+              src="/products/industries/research-labs/research-labs.png"
               alt="Research Labs"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -75,7 +75,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/universities/universities.png"
+              src="/products/industries/universities/universities.png"
               alt="Universities"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -99,7 +99,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/manufacturing/manufacturing.png"
+              src="/products/industries/manufacturing/manufacturing.png"
               alt="Manufacturing"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -123,7 +123,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/energy-sector/energy-ector.png"
+              src="/products/industries/energy-sector/energy-sector.png"
               alt="Energy Sector"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -147,7 +147,7 @@ export default function IndustriesPage() {
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
             <Image
-              src="/products/Industries/defense/defense.png"
+              src="/products/industries/defense/defense.png"
               alt="Defense"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"

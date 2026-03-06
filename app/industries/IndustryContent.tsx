@@ -91,7 +91,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/defense/defense.png"
+          src="/products/industries/defense/defense.png"
           alt="Industry background"
           fill
           priority={false}
@@ -343,7 +343,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/aerospace/aerospace.png"
+          src="/products/industries/aerospace/aerospace.png"
           alt="Industry background"
           fill
           priority
@@ -581,7 +581,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/research-labs/research-labs.png"
+          src="/products/industries/research-labs/research-labs.png"
           alt="Industry background"
           fill
           priority={false}
@@ -840,7 +840,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/universities/universities.png"
+          src="/products/industries/universities/universities.png"
           alt="Industry background"
           fill
           priority={false}
@@ -1101,7 +1101,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/manufacturing/manufacturing.png"
+          src="/products/industries/manufacturing/manufacturing.png"
           alt="Industry background"
           fill
           priority={false}
@@ -1361,7 +1361,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       {/* HERO */}
       <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/products/Industries/energy-sector/energy-sector.png"
+          src="/products/industries/energy-sector/energy-sector.png"
           alt="Industry background"
           fill
           priority={false}
