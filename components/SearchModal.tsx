@@ -153,7 +153,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-zinc-500 hover:text-zinc-900 rounded-lg transition-colors"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-500 hover:text-zinc-900 rounded-lg transition-colors"
               aria-label="Close search"
             >
               <X className="w-5 h-5" />

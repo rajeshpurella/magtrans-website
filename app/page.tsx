@@ -82,12 +82,12 @@ export default function Home() {
         subtitle="Delivering precision systems across critical industrial and research sectors."
         className="bg-zinc-50 scroll-mt-20"
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {INDUSTRIES_WITH_DESCRIPTIONS.map((item) => (
             <Link
               key={item.slug}
               href={`/industries/${item.slug}`}
-              className="rounded-2xl bg-white/90 border border-zinc-100 p-8 hover:shadow-md hover:border-zinc-200 transition-all duration-300 text-center block"
+              className="rounded-2xl bg-white/90 border border-zinc-100 p-6 sm:p-8 md:p-8 hover:shadow-md hover:border-zinc-200 transition-all duration-300 text-center block"
             >
               <div className="flex justify-center mb-4">
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-100 text-zinc-600">

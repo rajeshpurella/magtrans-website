@@ -51,7 +51,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="py-28 bg-zinc-50 scroll-mt-20"
+      className="py-14 sm:py-16 md:py-24 bg-zinc-50 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

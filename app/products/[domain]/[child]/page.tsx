@@ -51,12 +51,12 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
 
   return (
     <>
-      <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
+      <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-emerald-700 font-medium mb-3 uppercase tracking-wide">
             {domain.title}
           </p>
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
             {child.title}
           </h1>
           {child.image && (
@@ -74,8 +74,8 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
         </div>
       </section>
 
-      <section className="py-24 md:py-28 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] gap-12 items-start">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] gap-8 sm:gap-12 items-start">
           <article
             className="prose prose-zinc max-w-none"
             dangerouslySetInnerHTML={{ __html: child.contentHtml }}

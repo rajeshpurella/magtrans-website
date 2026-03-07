@@ -24,13 +24,13 @@ export default function ClientLogosSection() {
       <div className={CONTAINER_CLASS}>
         <motion.h2
           {...fadeUp}
-          className="text-center text-xl md:text-2xl font-semibold tracking-tight text-zinc-900 mb-12"
+          className="text-center text-xl md:text-2xl font-semibold tracking-tight text-zinc-900 mb-8 sm:mb-10 md:mb-12"
         >
           Trusted by Research Institutions & Industry
         </motion.h2>
         <motion.div
           {...fadeUp}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10"
         >
           {ORGANISATIONS.map((org) => (
             <div

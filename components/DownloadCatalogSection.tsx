@@ -15,7 +15,7 @@ export default function DownloadCatalogSection() {
         {...fadeUp}
         className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white">
           Download Product Catalog
         </h2>
         <p className="mt-3 text-emerald-100 text-base max-w-xl mx-auto">
@@ -25,7 +25,7 @@ export default function DownloadCatalogSection() {
           href={CATALOG_PATH}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-white text-emerald-700 px-6 py-3 font-semibold hover:bg-emerald-50 transition-colors duration-300"
+          className="mt-8 inline-flex items-center justify-center min-h-[44px] gap-2 rounded-full bg-white text-emerald-700 px-6 py-3 font-semibold hover:bg-emerald-50 transition-colors duration-300"
         >
           <Download className="w-5 h-5" />
           Download Catalog

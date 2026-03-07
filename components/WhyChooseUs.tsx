@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="py-28 bg-white scroll-mt-20"
+      className="py-14 sm:py-16 md:py-24 bg-white scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

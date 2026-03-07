@@ -105,7 +105,7 @@ export default function CorporateHeroSlider() {
       </div>
 
       {/* Content - left aligned */}
-      <div className="relative z-20 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-6rem)] flex items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ export default function CorporateHeroSlider() {
                 {slide.subtitle}
               </p>
             </div>
-            <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
               {slide.title}
               {slide.titleLine2 != null && (
                 <>
@@ -140,20 +140,20 @@ export default function CorporateHeroSlider() {
                 </motion.p>
               </AnimatePresence>
             </div>
-            <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm">
+            <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm">
               {slide.description}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <button
                 type="button"
                 onClick={() => router.push(slide.href)}
-                className="inline-flex justify-center items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
+                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
               >
                 Explore Domain
               </button>
               <Link
                 href="/contact"
-                className="inline-flex justify-center items-center px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
+                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
               >
                 Contact Us
               </Link>
@@ -162,7 +162,7 @@ export default function CorporateHeroSlider() {
         </div>
       </div>
 
-      {/* Dots - active emerald-600 wider, inactive zinc-400 */}
+      {/* Dots - active emerald-600 wider, inactive zinc-400 - 44px touch target */}
       <div className="relative z-10 flex justify-center gap-2 py-6">
         {HERO_SLIDES.map((_, i) => (
           <button
@@ -170,12 +170,16 @@ export default function CorporateHeroSlider() {
             type="button"
             onClick={() => goToSlide(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === currentIndex
-                ? "w-8 bg-emerald-600"
-                : "w-1.5 bg-zinc-400 hover:bg-zinc-500"
-            }`}
-          />
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full transition-all duration-300"
+          >
+            <span
+              className={`h-1.5 rounded-full transition-all duration-300 block ${
+                i === currentIndex
+                  ? "w-8 bg-emerald-600"
+                  : "w-1.5 bg-zinc-400 hover:bg-zinc-500"
+              }`}
+            />
+          </button>
         ))}
       </div>
 

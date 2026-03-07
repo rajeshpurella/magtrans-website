@@ -8,7 +8,7 @@ import type { ProductDomain } from "@/lib/products-data";
 export default function DomainLayout({ domain }: { domain: ProductDomain }) {
   return (
     <>
-      <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
+      <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -22,17 +22,17 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
               <ChevronLeft className="w-4 h-4" />
               All Products
             </Link>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               {domain.title}
             </h1>
-            <p className="mt-4 text-zinc-600 text-lg max-w-3xl">
+            <p className="mt-4 text-zinc-600 text-base sm:text-lg max-w-3xl">
               {domain.intro}
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 lg:py-32 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -43,7 +43,7 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
             <h2 className="text-xl font-semibold tracking-tight text-zinc-900 mb-8">
               Products & Systems
             </h2>
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {domain.subProducts.map((item, i) => {
                 const child = domain.children?.find(
                   (c) => c.title.toLowerCase() === item.toLowerCase()
@@ -57,18 +57,27 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05, duration: 0.4 }}
-                      className="flex items-center gap-3 text-zinc-700"
+                      className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-zinc-700"
                     >
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                      </span>
-                      <Link
-                        href={`/products/${domain.slug}/${child.slug}`}
-                        className="inline-flex items-center gap-1 font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
-                      >
-                        <span>{child.title}</span>
-                        <ChevronRight className="w-4 h-4" />
-                      </Link>
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="text-lg font-semibold text-zinc-900">
+                            {child.title}
+                          </h3>
+                        </div>
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                          <Check className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                      <div className="mt-4 flex items-center justify-between text-sm">
+                        <Link
+                          href={`/products/${domain.slug}/${child.slug}`}
+                          className="inline-flex items-center gap-1 font-medium text-emerald-700 group-hover:text-emerald-800 transition-colors"
+                        >
+                          <span>Explore</span>
+                          <ChevronRight className="w-4 h-4" />
+                        </Link>
+                      </div>
                     </motion.li>
                   );
                 }
@@ -80,12 +89,18 @@ export default function DomainLayout({ domain }: { domain: ProductDomain }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className="flex items-center gap-3 text-zinc-700"
+                    className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-zinc-700"
                   >
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                      <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    </span>
-                    <span className="font-medium">{item}</span>
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-semibold text-zinc-900">
+                          {item}
+                        </h3>
+                      </div>
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                        <Check className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
                   </motion.li>
                 );
               })}

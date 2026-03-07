@@ -24,7 +24,7 @@ export default function ProcessCoolingPage() {
               <ChevronLeft className="w-4 h-4" />
               All Products
             </Link>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               {domain.title}
             </h1>
             <p className="mt-4 text-zinc-600 text-lg max-w-3xl">
@@ -34,7 +34,7 @@ export default function ProcessCoolingPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <h2 className="text-xl font-semibold tracking-tight text-zinc-900 mb-8">

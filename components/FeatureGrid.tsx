@@ -35,7 +35,7 @@ export default function FeatureGrid({
         <motion.div
           key={feature.title}
           {...staggerItem}
-          className="rounded-2xl bg-white border border-zinc-200 shadow-sm p-10 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+          className="rounded-2xl bg-white border border-zinc-200 shadow-sm p-6 sm:p-8 md:p-10 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
           {feature.icon && (
             <div className="mb-4 text-emerald-600">{feature.icon}</div>

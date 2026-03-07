@@ -66,7 +66,7 @@ export const PRODUCTS_MEGA_STRUCTURED: ProductsMegaCategory[] = [
   },
 ];
 
-export const SECTION_PADDING = "py-24 md:py-28";
+export const SECTION_PADDING = "py-14 sm:py-16 md:py-24";
 export const CONTAINER_CLASS = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
 
 export const PRODUCTS_MEGA_COLUMNS: [number[], number[], number[]] = [

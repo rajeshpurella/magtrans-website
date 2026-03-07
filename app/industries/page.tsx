@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-24">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">Industries We Serve</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+    <section className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-24">
+      <div className="text-center mb-12 sm:mb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4">Industries We Serve</h1>
+        <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
           Delivering precision engineering systems across critical industrial and research sectors.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         {/* Aerospace */}
         <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
           <div className="relative w-full h-[240px]">
@@ -33,7 +33,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Aerospace</h3>
             <p className="text-gray-600 mb-4">
               Advanced cooling and magnetic testing systems for aerospace environments.
@@ -57,7 +57,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Research Labs</h3>
             <p className="text-gray-600 mb-4">
               Cryogenic and magnetic characterisation systems for R&amp;D and fundamental research.
@@ -81,7 +81,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Universities</h3>
             <p className="text-gray-600 mb-4">
               Laboratory equipment and measurement solutions for academic research and teaching.
@@ -105,7 +105,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Manufacturing</h3>
             <p className="text-gray-600 mb-4">
               Process cooling and quality assurance systems for industrial production.
@@ -129,7 +129,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Energy Sector</h3>
             <p className="text-gray-600 mb-4">
               Thermal and instrumentation systems for energy generation and distribution.
@@ -153,7 +153,7 @@ export default function IndustriesPage() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-3">Defense</h3>
             <p className="text-gray-600 mb-4">
               Ruggedized precision systems for defense and strategic applications.

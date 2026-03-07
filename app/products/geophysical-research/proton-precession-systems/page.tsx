@@ -95,7 +95,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 2 – VERSATILE APPLICATIONS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 3 – NO COIL TUNING (IMAGE LEFT / TEXT RIGHT) */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -168,7 +168,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 4 – SENSOR TECHNOLOGY */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,7 +191,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 5 – WORKS ANYWHERE */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 6 – FEATURE HIGHLIGHT CARDS (Dark Background) */}
-      <section className="py-24 bg-gradient-to-b from-zinc-900 to-zinc-950">
+      <section className="py-14 sm:py-16 md:py-24 bg-gradient-to-b from-zinc-900 to-zinc-950">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -245,7 +245,7 @@ export default function ProtonPrecessionSystemsPage() {
       </section>
 
       {/* SECTION 7 – BIG CENTERED PRODUCT IMAGE */}
-      <section className="py-24 bg-black">
+      <section className="py-14 sm:py-16 md:py-24 bg-black">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}

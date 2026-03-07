@@ -23,7 +23,7 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="py-28 bg-primary scroll-mt-20"
+      className="py-14 sm:py-16 md:py-24 bg-primary scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

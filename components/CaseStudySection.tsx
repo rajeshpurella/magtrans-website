@@ -21,7 +21,7 @@ export default function CaseStudySection() {
       <div className={CONTAINER_CLASS}>
         <motion.div
           {...fadeUp}
-          className="max-w-4xl mx-auto rounded-2xl border border-zinc-200 bg-zinc-50/50 p-8 md:p-12"
+          className="max-w-4xl mx-auto rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 sm:p-8 md:p-12"
         >
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-4">
             Featured Engineering Case Study

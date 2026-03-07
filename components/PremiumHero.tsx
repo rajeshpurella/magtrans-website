@@ -54,7 +54,7 @@ export default function PremiumHero() {
       >
         <motion.h1
           {...heroHeading}
-          className="text-5xl md:text-7xl font-semibold tracking-tight text-white max-w-5xl mx-auto"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight text-white max-w-5xl mx-auto"
         >
           Engineering precision.
           <br />
@@ -72,13 +72,13 @@ export default function PremiumHero() {
         >
           <Link
             href="/products"
-            className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-accent text-primary font-semibold hover:scale-105 transition-all duration-300"
+            className="inline-flex justify-center items-center min-h-[44px] px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-accent text-primary font-semibold hover:scale-105 transition-all duration-300"
           >
             Explore Solutions
           </Link>
           <Link
             href="/#contact"
-            className="inline-flex justify-center items-center px-8 py-4 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-primary transition-all duration-300"
+            className="inline-flex justify-center items-center min-h-[44px] px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-primary transition-all duration-300"
           >
             Contact Us
           </Link>

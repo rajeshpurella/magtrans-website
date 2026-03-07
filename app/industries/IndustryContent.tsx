@@ -36,7 +36,7 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
 
   return (
     <>
-      <section className="bg-white pt-32 pb-20 border-b border-zinc-200">
+      <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 border-b border-zinc-200">
         <div className={CONTAINER_CLASS}>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -50,7 +50,7 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
               <ChevronLeft className="w-4 h-4" />
               All Industries
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900">
               {industry.title}
             </h1>
             <p className="mt-4 text-zinc-600 text-lg max-w-3xl">
@@ -108,7 +108,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
               Defense
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Ruggedized Precision Systems for Defense &amp; Strategic Applications
             </h1>
 
@@ -120,13 +120,13 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="#defense-solutions"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Explore Defense Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 Request Confidential Consultation
               </Link>
@@ -136,7 +136,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – DEFENSE SECTOR CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -169,7 +169,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR DEFENSE SOLUTIONS */}
-      <section id="defense-solutions" className="py-24 bg-zinc-50">
+      <section id="defense-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -209,7 +209,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -259,7 +259,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -285,7 +285,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR DEFENSE? */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -327,7 +327,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Speak to Our Defense Team
           </Link>
@@ -360,7 +360,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
               Aerospace
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Precision Engineering Systems for Aerospace Applications
             </h1>
 
@@ -372,13 +372,13 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Request Consultation
               </Link>
               <Link
                 href="#aerospace-products"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 View Aerospace Products
               </Link>
@@ -388,7 +388,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – INDUSTRY CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -421,7 +421,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR AEROSPACE SOLUTIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -498,7 +498,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -524,7 +524,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -565,7 +565,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Get in Touch
           </Link>
@@ -598,7 +598,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
               Research Labs
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Advanced Cryogenic &amp; Magnetic Characterisation Systems for Research Laboratories
             </h1>
 
@@ -611,13 +611,13 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="#research-solutions"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Explore Research Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 Request Technical Details
               </Link>
@@ -627,7 +627,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – RESEARCH CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -660,7 +660,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR SOLUTIONS */}
-      <section id="research-solutions" className="py-24 bg-zinc-50">
+      <section id="research-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -704,7 +704,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -757,7 +757,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -783,7 +783,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY MAGTRANS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -824,7 +824,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Contact Our Experts
           </Link>
@@ -857,7 +857,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
               Universities
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Advanced Laboratory &amp; Measurement Solutions for Academic Institutions
             </h1>
 
@@ -870,13 +870,13 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="#university-solutions"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Explore Academic Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 Request Lab Setup Consultation
               </Link>
@@ -886,7 +886,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – ACADEMIC CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -919,7 +919,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR UNIVERSITY SOLUTIONS */}
-      <section id="university-solutions" className="py-24 bg-zinc-50">
+      <section id="university-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -964,7 +964,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1018,7 +1018,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1044,7 +1044,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY MAGTRANS FOR UNIVERSITIES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1085,7 +1085,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Speak to Our Academic Team
           </Link>
@@ -1118,7 +1118,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
               Manufacturing
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Precision Cooling &amp; Quality Assurance Systems for Industrial Manufacturing
             </h1>
 
@@ -1130,13 +1130,13 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="#manufacturing-solutions"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Explore Manufacturing Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 Request Technical Consultation
               </Link>
@@ -1146,7 +1146,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – MANUFACTURING CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1179,7 +1179,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR MANUFACTURING SOLUTIONS */}
-      <section id="manufacturing-solutions" className="py-24 bg-zinc-50">
+      <section id="manufacturing-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1223,7 +1223,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1277,7 +1277,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1303,7 +1303,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR MANUFACTURING? */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1345,7 +1345,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Contact Our Industrial Team
           </Link>
@@ -1378,7 +1378,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
               Energy Sector
             </span>
 
-            <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
               Thermal &amp; Instrumentation Systems for Energy Generation and Distribution
             </h1>
 
@@ -1391,13 +1391,13 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 href="#energy-solutions"
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
               >
                 Explore Energy Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
               >
                 Request Project Consultation
               </Link>
@@ -1407,7 +1407,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 2 – ENERGY SECTOR CHALLENGES */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1441,7 +1441,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR ENERGY SOLUTIONS */}
-      <section id="energy-solutions" className="py-24 bg-zinc-50">
+      <section id="energy-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1481,7 +1481,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1531,7 +1531,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1557,7 +1557,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR ENERGY? */}
-      <section className="py-24 bg-white">
+      <section className="py-14 sm:py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
@@ -1599,7 +1599,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
           >
             Contact Our Energy Experts
           </Link>

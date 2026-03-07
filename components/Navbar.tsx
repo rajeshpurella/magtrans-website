@@ -157,7 +157,7 @@ export default function Navbar() {
             type="button"
             aria-label="Search"
             onClick={() => setSearchOpen(true)}
-            className="p-2 text-zinc-600 hover:text-zinc-900 transition-colors duration-300"
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-600 hover:text-zinc-900 transition-colors duration-300"
           >
             <Search className="w-5 h-5" />
           </button>
@@ -168,7 +168,7 @@ export default function Navbar() {
           <Link
             href="/#contact"
             onClick={closeAll}
-            className="inline-flex items-center px-5 py-2 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-500 transition-all duration-300"
+            className="inline-flex items-center min-h-[44px] px-5 py-3 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-500 transition-all duration-300"
           >
             Get in Touch
           </Link>
@@ -177,7 +177,7 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="lg:hidden p-2 text-zinc-900"
+          className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-900"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
         >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -210,28 +210,28 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-white border-t border-zinc-200"
           >
-            <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2">
+            <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-0">
               {NAV_LINKS.filter((l) => !l.mega).map((link) => (
                 <li key={link.label}>
-                  <Link href={getLinkHref(link)} className="block py-3 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
+                  <Link href={getLinkHref(link)} className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/products" className="block py-3 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
+                <Link href="/products" className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="/industries" className="block py-3 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
+                <Link href="/industries" className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
                   Industries
                 </Link>
               </li>
               <li className="pt-4">
                 <Link
                   href="/#contact"
-                  className="inline-flex items-center px-5 py-2.5 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-500 transition-colors"
+                  className="inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-500 transition-colors"
                   onClick={closeAll}
                 >
                   Get in Touch

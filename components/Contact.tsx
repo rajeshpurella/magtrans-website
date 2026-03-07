@@ -89,7 +89,7 @@ export default function Contact() {
           {...fadeUp}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
             Contact Us
           </h2>
           <p className="mt-4 text-zinc-600 text-base">
@@ -151,7 +151,7 @@ export default function Contact() {
           <motion.form
             {...fadeUp}
             onSubmit={handleSubmit}
-            className="bg-white border border-zinc-200 rounded-2xl shadow-sm p-10"
+            className="bg-white border border-zinc-200 rounded-2xl shadow-sm p-6 sm:p-8 md:p-10"
           >
             <div className="space-y-6">
               <div>
@@ -219,7 +219,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full py-3 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-all duration-300 px-6 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full min-h-[44px] py-3 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-all duration-300 px-6 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === "loading" ? "Sending…" : "Send Message"}
               </button>

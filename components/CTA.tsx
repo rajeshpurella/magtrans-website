@@ -7,7 +7,7 @@ export default function CTA() {
   return (
     <section
       id="cta"
-      className="py-28 bg-zinc-50 scroll-mt-20"
+      className="py-14 sm:py-16 md:py-24 bg-zinc-50 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

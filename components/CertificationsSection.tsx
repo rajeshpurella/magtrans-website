@@ -7,7 +7,7 @@ export default function CertificationsSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14 sm:py-16 md:py-24">
       <div className="max-w-[900px] mx-auto px-6 text-center">
         <div className="w-16 h-1 bg-green-600 mx-auto mb-6 rounded-full" />
 
@@ -17,7 +17,7 @@ export default function CertificationsSection() {
           </div>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           ISO 9001:2015 Certified
         </h2>
 
@@ -29,7 +29,7 @@ export default function CertificationsSection() {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="mt-8 inline-flex items-center gap-2 text-green-600 font-medium transition-all duration-300 hover:gap-3"
+          className="mt-8 inline-flex items-center justify-center min-h-[44px] px-5 py-3 gap-2 text-green-600 font-medium transition-all duration-300 hover:gap-3"
         >
           {isOpen ? "Hide Certification Document" : "View Certification Document"}
         </button>

@@ -27,10 +27,10 @@ export default function TestimonialSection({
         {(title || subtitle) && (
           <motion.div
             {...fadeUp}
-            className="text-center max-w-2xl mx-auto mb-16"
+            className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16"
           >
             {title && (
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
                 {title}
               </h2>
             )}
@@ -45,7 +45,7 @@ export default function TestimonialSection({
           {...fadeUp}
           className="max-w-3xl mx-auto"
         >
-          <blockquote className="bg-white border border-zinc-200 rounded-2xl shadow-sm p-8">
+          <blockquote className="bg-white border border-zinc-200 rounded-2xl shadow-sm p-6 sm:p-8">
             <p className="text-xl md:text-2xl text-zinc-700 italic leading-relaxed">
               &ldquo;{testimonial.quote}&rdquo;
             </p>

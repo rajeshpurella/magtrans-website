@@ -66,7 +66,7 @@ export default function StatsCounterSection({
             className="text-center max-w-2xl mx-auto mb-16"
           >
             {title && (
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-900">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-900">
                 {title}
               </h2>
             )}
@@ -87,7 +87,7 @@ export default function StatsCounterSection({
               {...staggerItem}
               className="text-center"
             >
-              <div className="text-5xl font-bold text-emerald-600">
+              <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-emerald-600">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
