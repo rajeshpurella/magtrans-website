@@ -23,19 +23,19 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="py-14 sm:py-16 md:py-24 bg-primary scroll-mt-20"
+      className="py-12 md:py-16 bg-primary scroll-mt-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 md:mb-12"
         >
-          <h2 className="font-montserrat font-bold text-white text-3xl sm:text-4xl uppercase tracking-tight">
+          <h2 className="font-montserrat font-semibold text-2xl md:text-3xl text-white tracking-tight">
             Applications Served
           </h2>
-          <p className="mt-4 text-white/80 text-lg">
+          <p className="mt-4 text-white/80 text-base md:text-lg leading-relaxed">
             From aerospace and defense to research labs, universities, manufacturing and energy.
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group flex flex-col items-center justify-center p-6 rounded-lg border border-white/10 hover:border-accent/50 hover:shadow-[0_0_30px_rgba(47,128,237,0.2)] transition-all duration-300"
+              className="group flex flex-col items-center justify-center p-6 rounded-lg border border-white/10 hover:border-white/40 transition-all duration-200"
             >
               <item.icon className="w-10 h-10 text-white/80 group-hover:text-accent group-hover:scale-110 transition-all duration-300" />
               <span className="mt-3 text-white/90 text-sm font-medium text-center group-hover:text-white">

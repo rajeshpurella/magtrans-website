@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { engineeringDomains } from "@/app/lib/domain-structure";
-import DomainTree from "@/app/components/DomainTree";
+import { productDomains } from "@/lib/products-data";
+import ProductDomainCard from "@/components/ProductDomainCard";
 
 export const metadata: Metadata = {
-  title: "Products | Magnetic Testing, Cooling & Measurement | MAGTrans Systems",
+  title: "Products & Engineering Domains | MAGTRANS Systems",
   description:
-    "MAGTrans provides magnetic testing systems, cryogenic cooling, process cooling, heat flux instrumentation, and precision measurement equipment for research and industry.",
+    "Explore MAGTRANS products across process cooling, magnetic testing, cryogenic systems, heat flux instrumentation and high-temperature solutions.",
   openGraph: {
     title: "Products | MAGTrans Systems",
     description: "Magnetic testing, cryogenic cooling, and precision measurement systems.",
@@ -14,26 +14,28 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <>
-      <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900">
-              Engineering Domains
-            </h1>
-            <p className="mt-4 text-zinc-600 text-base sm:text-lg max-w-2xl mx-auto">
-              Precision systems across core engineering disciplines.
-            </p>
-          </div>
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-10 md:mb-12">
+          <h1 className="text-4xl md:text-5xl font-semibold text-zinc-900 mb-4">
+          Engineering Domains
+        </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
+          Precision systems across core engineering disciplines for research and industry.
+        </p>
         </div>
-      </section>
 
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <DomainTree nodes={engineeringDomains} basePath="/products" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {productDomains.map((domain) => (
+            <ProductDomainCard
+              key={domain.slug}
+              slug={domain.slug}
+              title={domain.title}
+              shortDescription={domain.shortDescription}
+            />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
-

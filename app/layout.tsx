@@ -21,11 +21,11 @@ const SITE_URL = "https://magtrans.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MAGTrans Systems | Magnetic Testing & Cryogenic Cooling Solutions",
-    template: "%s | MAGTrans Systems",
+    default: "MAGTRANS Systems | Magnetic Testing, Cryogenics & Process Cooling",
+    template: "%s | MAGTRANS Systems",
   },
   description:
-    "MAGTrans provides advanced magnetic testing systems, cryogenic cooling solutions, and precision engineering equipment for research labs and industrial applications.",
+    "MAGTRANS Systems delivers magnetic testing, cryogenic platforms and process cooling solutions for research labs and industrial manufacturers.",
   keywords: [
     "magnetic testing systems",
     "cryogenic cooling systems",

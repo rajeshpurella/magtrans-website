@@ -70,14 +70,14 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="font-montserrat font-bold text-white uppercase tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
+          <h1 className="font-montserrat font-semibold text-white text-4xl md:text-5xl leading-tight tracking-tight">
             Engineering Precision.
             <br />
             <span className="text-accent">Powering Industrial Cooling & Magnetics.</span>
@@ -86,7 +86,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto"
+            className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed"
           >
             Integrated Engineering Solutions in Process Cooling, Magnetics, Cryogenics & Advanced Laboratory Systems.
           </motion.p>
@@ -98,13 +98,13 @@ export default function Hero() {
           >
             <Link
               href="/products"
-              className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded bg-accent text-white font-semibold hover:bg-accent/90 transition-colors"
+              className="w-full sm:w-auto inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
             >
               Explore Solutions
             </Link>
             <Link
               href="#contact"
-              className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded border-2 border-white text-white font-semibold hover:bg-white hover:text-primary transition-colors"
+              className="w-full sm:w-auto inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full border border-white/40 text-white text-base font-semibold hover:bg-white/10 backdrop-blur-md transition-all duration-200"
             >
               Contact Us
             </Link>

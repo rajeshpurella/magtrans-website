@@ -117,7 +117,7 @@ export default function CorporateHeroSlider() {
                 {slide.subtitle}
               </p>
             </div>
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+            <h1 className="mt-4 text-4xl md:text-5xl font-semibold leading-tight text-white drop-shadow-lg">
               {slide.title}
               {slide.titleLine2 != null && (
                 <>
@@ -140,20 +140,20 @@ export default function CorporateHeroSlider() {
                 </motion.p>
               </AnimatePresence>
             </div>
-            <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow-sm">
+            <p className="mt-4 text-base md:text-lg text-white/80 max-w-2xl leading-relaxed drop-shadow-sm">
               {slide.description}
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <button
                 type="button"
                 onClick={() => router.push(slide.href)}
-                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300"
+                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
               >
                 Explore Domain
               </button>
               <Link
                 href="/contact"
-                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
+                className="inline-flex justify-center items-center min-h-[44px] px-6 py-3 rounded-full border border-white/40 text-white text-base font-semibold hover:bg-white/10 backdrop-blur-md transition-all duration-200"
               >
                 Contact Us
               </Link>

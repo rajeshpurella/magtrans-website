@@ -58,7 +58,7 @@ export default function LiquidNitrogenCryostatPage() {
                 >
                   <Image
                     src={`/products/cryogenic-systems/liquid-nitrogen-cryostat/${filename}`}
-                    alt={filename.replace(".png", "")}
+                    alt="Liquid nitrogen cryostat product image"
                     fill
                     sizes="(min-width: 1024px) 320px, 50vw"
                     className="object-contain"

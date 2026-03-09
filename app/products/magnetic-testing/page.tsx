@@ -4,9 +4,9 @@ import { getDomainBySlug } from "@/lib/products-data";
 import ContextBackLink from "@/app/components/ContextBackLink";
 
 export const metadata: Metadata = {
-  title: "Magnetic Testing | MAGTRANS Systems",
+  title: "Magnetic Testing Systems | MAGTRANS Systems",
   description:
-    "Hall effect measurement, VSM, hard and soft magnetic materials, cemented carbides, magneto-optic Kerr effect, field mappers, shielding and functional material measurement.",
+    "Hall effect, VSM, hard and soft magnetic measurement, cemented carbides, MOKE, field mapping and shielding systems for advanced magnetic characterisation.",
 };
 
 const SYSTEMS: { name: string; description: string; href: string }[] = [
@@ -78,41 +78,69 @@ export default function MagneticTestingPage() {
   return (
     <main className="bg-white">
       <header className="border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
           <p className="text-xs font-semibold tracking-wide uppercase text-emerald-700 mb-3">
             Products
           </p>
-          <h1 className="text-4xl font-semibold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
             {domain.title}
           </h1>
-          <p className="text-gray-600 leading-relaxed max-w-3xl">
+          <p className="text-gray-600 text-base leading-relaxed max-w-3xl">
             {domain.intro}
           </p>
+          <p className="mt-4 text-gray-600 text-sm leading-relaxed max-w-3xl">
+            Commonly deployed in{" "}
+            <Link
+              href="/industries/aerospace"
+              className="text-emerald-700 hover:underline"
+            >
+              aerospace
+            </Link>
+            ,{" "}
+            <Link
+              href="/industries/research-labs"
+              className="text-emerald-700 hover:underline"
+            >
+              research labs
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/industries/defense"
+              className="text-emerald-700 hover:underline"
+            >
+              defense
+            </Link>{" "}
+            projects.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
+            >
+              Talk to a Product Specialist
+            </a>
+          </div>
           <div className="mt-8">
             <ContextBackLink />
           </div>
         </div>
       </header>
 
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 mb-10">
             Products &amp; Systems
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {SYSTEMS.map((system) => (
-              <Link
-                key={system.name}
-                href={system.href}
-                className="block"
-              >
-                <div className="border border-gray-200 rounded-lg p-6 bg-white hover:shadow-md transition cursor-pointer h-full flex flex-col justify-between">
+              <Link key={system.name} href={system.href} className="block h-full">
+                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 h-full flex flex-col justify-between transition-all duration-200 hover:bg-zinc-50">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">
+                    <h3 className="text-xl font-semibold text-zinc-900 mb-2">
                       {system.name}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-base text-gray-600 leading-relaxed">
                       {system.description}
                     </p>
                   </div>

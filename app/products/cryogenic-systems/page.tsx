@@ -3,9 +3,9 @@ import { getDomainBySlug } from "@/lib/products-data";
 import DomainLayout from "../DomainLayout";
 
 export const metadata: Metadata = {
-  title: "Cryogenic Systems | MAGTRANS Systems",
+  title: "Cryogenic Systems & Cryostats | MAGTRANS Systems",
   description:
-    "Closed-cycle and liquid nitrogen cryostats, 4K systems and ultra-low temperature solutions for research and industrial applications.",
+    "Closed-cycle and liquid nitrogen cryostats, 4 K and ultra-low temperature platforms for magnetic, optical and electrical measurements without helium loss.",
 };
 
 export default function CryogenicSystemsPage() {

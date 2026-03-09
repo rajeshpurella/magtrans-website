@@ -1,22 +1,46 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "DX-1000L Low Temperature Hall Effect Test System | Hall Effect Measurement Systems | MAGTRANS Systems",
+    "DX-1000L Low Temperature Hall Effect System | MAGTRANS Systems",
   description:
-    "DX-1000L low temperature Hall effect test system with precision electromagnet, bipolar power supply and cryostat for transport measurements from cryogenic to near-ambient temperatures.",
+    "DX-1000L low temperature Hall effect system with precision electromagnet, bipolar supply and cryostat for transport measurements down to cryogenic temperatures.",
 };
 
 export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "DX-1000L Low Temperature Hall Effect Test System",
+            image: [
+              "https://www.magtrans.in/products/magnetic-testing/hall-effect-measurement-systems/dx-1000l.avif",
+            ],
+            description:
+              "DX-1000L low temperature Hall effect system with precision electromagnet, bipolar supply and cryostat for transport measurements down to cryogenic temperatures.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category:
+              "Magnetic testing – low temperature Hall effect measurement system",
+            url:
+              "https://www.magtrans.in/products/magnetic-testing/hall-effect-measurement-systems/dx-1000l",
+          }),
+        }}
+      />
       {/* HERO */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 text-center space-y-4">
           <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
             Hall Effect Measurement System
           </p>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             DX-1000L Low Temperature Hall Effect Test System
           </h1>
           <p className="text-base text-zinc-700 leading-relaxed">
@@ -29,7 +53,7 @@ export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
 
       {/* OVERVIEW */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 space-y-4">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-4">
           <p className="text-base text-zinc-700 leading-relaxed">
             The DX-1000L low temperature Hall effect test system integrates a precision
             electromagnet, bipolar constant current power supply, high‑resolution voltage
@@ -52,8 +76,10 @@ export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
 
       {/* KEY FEATURES */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 space-y-6">
-          <h2 className="text-lg font-semibold text-zinc-900">Key Features</h2>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-6">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            Key Features
+          </h2>
           <div className="grid gap-6 md:grid-cols-2">
             <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed list-disc list-inside">
               <li>
@@ -94,8 +120,8 @@ export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
 
       {/* TECHNICAL SPECIFICATIONS */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 space-y-8">
-          <h2 className="text-lg font-semibold text-zinc-900 text-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-8">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 text-center">
             Technical Specifications
           </h2>
 
@@ -227,8 +253,10 @@ export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
 
       {/* APPLICATIONS */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 space-y-3">
-          <h2 className="text-lg font-semibold text-zinc-900">Applications</h2>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-3">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            Applications
+          </h2>
           <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed list-disc list-inside">
             <li>
               Low temperature transport studies of semiconductor and functional materials.
@@ -244,6 +272,48 @@ export default function DX1000LLowTemperatureHallEffectTestSystemPage() {
             <li>
               Advanced teaching and research experiments on electrical transport in
               cryogenic environments.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            Related Pages
+          </h2>
+          <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+            <li>
+              <Link
+                href="/products/magnetic-testing/hall-effect-measurement-systems"
+                className="text-emerald-700 hover:underline"
+              >
+                Hall Effect Measurement Systems category
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                Magnetic Testing domain overview
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/industries/research-labs"
+                className="text-emerald-700 hover:underline"
+              >
+                Research Labs industry
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/industries/aerospace"
+                className="text-emerald-700 hover:underline"
+              >
+                Aerospace industry
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Closed-cycle Cryostat | Cryogenic Systems | MAGTRANS Systems",
   description:
-    "Closed-cycle cryostat platform based on SHI 4K cryocooler for variable-temperature magnetic, optical and electrical measurements without liquid helium consumption.",
+    "Closed-cycle cryostat on SHI 4 K cryocooler for variable-temperature magnetic, optical and electrical measurements without liquid helium consumption.",
 };
 
 const GALLERY_IMAGES = [
@@ -17,12 +18,12 @@ export default function ClosedCycleCryostatPage() {
   return (
     <main className="bg-white">
       {/* HERO */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
           <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
             Cryogenic Systems
           </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Closed-cycle Cryostat
           </h1>
           <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
@@ -46,10 +47,10 @@ export default function ClosedCycleCryostatPage() {
 
       {/* MAIN CONTENT */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-12">
           {/* Product Image Gallery */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Product Image Gallery
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -72,7 +73,9 @@ export default function ClosedCycleCryostatPage() {
 
           {/* Key Features */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Key Features</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Key Features
+            </h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
               <li>
                 No liquid helium consumption required, enabling easy access to cryogenic
@@ -97,7 +100,7 @@ export default function ClosedCycleCryostatPage() {
 
           {/* Performance and Characteristics */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Performance and Characteristics
             </h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
@@ -122,7 +125,7 @@ export default function ClosedCycleCryostatPage() {
 
           {/* Specifications and Parameters */}
           <div className="space-y-4 max-w-6xl">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Specifications and Parameters
             </h2>
             <div className="overflow-x-auto rounded-xl border border-zinc-200 bg-white">
@@ -319,7 +322,9 @@ export default function ClosedCycleCryostatPage() {
 
           {/* System Image */}
           <div className="space-y-4 max-w-5xl">
-            <h2 className="text-lg font-semibold text-zinc-900">System Image</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              System Image
+            </h2>
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
               <Image
                 src="/products/cryogenic-systems/image.png"
@@ -330,6 +335,40 @@ export default function ClosedCycleCryostatPage() {
               />
             </div>
           </div>
+
+          <section>
+            <div className="max-w-7xl mx-auto px-0 py-0">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+                Related Pages
+              </h2>
+              <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+                <li>
+                  <Link
+                    href="/products/cryogenic-systems"
+                    className="text-emerald-700 hover:underline"
+                  >
+                    Cryogenic Systems domain
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/industries/research-labs"
+                    className="text-emerald-700 hover:underline"
+                  >
+                    Research Labs industry
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/industries/aerospace"
+                    className="text-emerald-700 hover:underline"
+                  >
+                    Aerospace industry
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
       </section>
     </main>

@@ -6,7 +6,7 @@ import ContextBackLink from "@/app/components/ContextBackLink";
 export const metadata: Metadata = {
   title: "Liquid Cooling Systems | Process Cooling | MAGTRANS Systems",
   description:
-    "Liquid cooling systems for industrial and laboratory applications, including air-cooled, water-cooled, oil, coolant, inverter and modular chillers.",
+    "Air- and water-cooled chillers, oil and coolant chillers, inverter and modular liquid cooling systems for industrial and laboratory processes.",
   alternates: {
     canonical:
       "/products/process-cooling/industrial-cooling/liquid-cooling",
@@ -35,8 +35,8 @@ function ProductSection({
   const hasImage = Boolean(image);
 
   return (
-    <section className="py-16 border-t border-zinc-200 first:border-t-0">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-12 md:py-16 border-t border-zinc-200 first:border-t-0">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div
           className={
             hasImage
@@ -64,7 +64,7 @@ function ProductSection({
             }
           >
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
                 {title}
               </h2>
               <p className="mt-3 text-sm md:text-base text-zinc-600 leading-relaxed">
@@ -73,7 +73,7 @@ function ProductSection({
             </div>
 
             <div>
-              <h3 className="text-xl font-medium text-zinc-900">Key Features</h3>
+              <h3 className="text-xl font-semibold text-zinc-900">Key Features</h3>
               <ul className="mt-3 list-disc list-inside space-y-1.5 text-sm text-zinc-700 leading-relaxed">
                 {features.map((item) => (
                   <li key={item}>{item}</li>
@@ -91,16 +91,6 @@ function ProductSection({
               </div>
             </div>
 
-            <div>
-              <a
-                href={capacityChartLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
-              >
-                View Capacity Chart
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -250,29 +240,53 @@ const PRODUCTS: ProductSectionProps[] = [
 export default function LiquidCoolingPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Liquid Cooling Systems",
+            image: [
+              "https://www.magtrans.in/products/Air%20Cooled%20Chiller.png",
+            ],
+            description:
+              "Air- and water-cooled chillers, oil and coolant chillers, inverter and modular liquid cooling systems for industrial and laboratory processes.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category: "Process cooling – industrial liquid cooling systems",
+            url:
+              "https://www.magtrans.in/products/process-cooling/industrial-cooling/liquid-cooling",
+          }),
+        }}
+      />
       {/* Hero */}
-      <section className="pt-32 pb-16 border-b border-zinc-200 bg-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section className="pt-24 md:pt-28 pb-12 md:pb-16 border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Liquid Cooling Systems
           </h1>
-          <p className="mt-4 text-base text-zinc-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-base text-zinc-600 leading-relaxed max-w-2xl mx-auto">
             Industrial liquid cooling solutions covering compact air-cooled and
             water-cooled chillers, oil and coolant chillers, inverter technology
             and modular systems for scalable plant expansion.
           </p>
-          <ContextBackLink />
+          <div className="mt-6 flex justify-center">
+            <ContextBackLink />
+          </div>
         </div>
       </section>
 
       {/* Compact Water Chillers Intro */}
-      <section className="py-16 bg-[#f8fafc] border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 md:py-16 bg-[#f8fafc] border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="space-y-4 max-w-3xl">
             <p className="text-xs font-semibold tracking-wide uppercase text-emerald-700">
               Compact Water Chillers · Series: NANO CHILL
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Compact process cooling for constrained footprints
             </h2>
             <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
@@ -296,6 +310,48 @@ export default function LiquidCoolingPage() {
       {PRODUCTS.map((product) => (
         <ProductSection key={product.title} {...product} />
       ))}
+
+      <section className="border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            Related Pages
+          </h2>
+          <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+            <li>
+              <Link
+                href="/products/process-cooling"
+                className="text-emerald-700 hover:underline"
+              >
+                Process Cooling systems overview
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products/process-cooling/industrial-cooling"
+                className="text-emerald-700 hover:underline"
+              >
+                Industrial Cooling category
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/industries/manufacturing"
+                className="text-emerald-700 hover:underline"
+              >
+                Manufacturing industry applications
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/industries/energy-sector"
+                className="text-emerald-700 hover:underline"
+              >
+                Energy sector projects
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }

@@ -5,7 +5,7 @@ import DomainLayout from "../DomainLayout";
 export const metadata: Metadata = {
   title: "Heat Flux & Instrumentation | MAGTRANS Systems",
   description:
-    "Signal conditioning amplifiers and thermogage instrumentation for heat flux and thermal measurement.",
+    "Heat flux sensors, signal conditioning amplifiers and thermogage instrumentation for precise thermal and heat flux measurement in research and industry.",
 };
 
 export default function HeatFluxInstrumentationPage() {

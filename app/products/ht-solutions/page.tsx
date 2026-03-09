@@ -3,9 +3,9 @@ import { getDomainBySlug } from "@/lib/products-data";
 import DomainLayout from "../DomainLayout";
 
 export const metadata: Metadata = {
-  title: "HT Solutions | MAGTRANS Systems",
+  title: "High-Temperature Ovens & HT Solutions | MAGTRANS Systems",
   description:
-    "Industrial and laboratory thermal solutions and industrial ovens for controlled heating applications.",
+    "Laboratory and industrial ovens, refrigerated air dryers and high-temperature furnaces for controlled heating, drying and thermal processing.",
 };
 
 export default function HTSolutionsPage() {

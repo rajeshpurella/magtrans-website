@@ -1,22 +1,46 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vatell Signal Conditioning Amplifiers | Heat Flux & Instrumentation | MAGTRANS Systems",
+  title: "Vatell Signal Conditioning Amplifiers | Heat Flux | MAGTRANS Systems",
   description:
-    "Vatell signal conditioning amplifiers for heat flux and temperature sensors. Dual and single channel amps for HFM and Thermogage, with transmitters and panel meters.",
+    "Vatell dual and single channel signal conditioning amplifiers for heat flux and temperature sensors, with transmitters and panel meters for clean data acquisition.",
 };
 
 export default function SignalConditioningAmplifiersPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Vatell Signal Conditioning Amplifiers",
+            image: [
+              "https://www.magtrans.in/products/heat-flux-instrumentation/signal-conditioning-amplifiers/Vatell%20Signal%20Conditioning%20Amplifiers.png",
+            ],
+            description:
+              "Vatell dual and single channel signal conditioning amplifiers for heat flux and temperature sensors, with transmitters and panel meters for clean data acquisition.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category:
+              "Heat flux & instrumentation – signal conditioning amplifiers",
+            url:
+              "https://www.magtrans.in/products/heat-flux-instrumentation/signal-conditioning-amplifiers",
+          }),
+        }}
+      />
       {/* HERO */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
           <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
             Heat Flux & Instrumentation
           </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Vatell Signal Conditioning Amplifiers
           </h1>
           <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
@@ -31,10 +55,12 @@ export default function SignalConditioningAmplifiersPage() {
 
       {/* MAIN CONTENT */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-12">
           {/* Product Image */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-zinc-900">Product Image</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Product Image
+            </h2>
             <div className="relative w-full max-w-2xl aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
               <Image
                 src="/products/heat-flux-instrumentation/signal-conditioning-amplifiers/Vatell Signal Conditioning Amplifiers.png"
@@ -48,7 +74,9 @@ export default function SignalConditioningAmplifiersPage() {
 
           {/* Product Overview */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Product Overview</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Product Overview
+            </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
               Whether looking at a low heat flux level, pushing a signal through a long cable
               length, or even just for signal processing convenience, a signal conditioning
@@ -60,7 +88,7 @@ export default function SignalConditioningAmplifiersPage() {
 
           {/* Section 1: Dual Channel HFM Amplifiers */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Dual Channel HFM Amplifiers
             </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
@@ -77,7 +105,7 @@ export default function SignalConditioningAmplifiersPage() {
 
           {/* Section 2: Single Channel Amplifiers */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Single Channel Amplifiers
             </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
@@ -96,7 +124,9 @@ export default function SignalConditioningAmplifiersPage() {
 
           {/* Amplifier Table */}
           <div className="space-y-4 max-w-6xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Amplifier Table</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Amplifier Table
+            </h2>
             <div className="overflow-x-auto rounded-xl border border-zinc-200 bg-white">
               <table className="min-w-full text-left text-sm text-zinc-800">
                 <thead className="bg-zinc-50">
@@ -172,7 +202,7 @@ export default function SignalConditioningAmplifiersPage() {
 
           {/* Transmitters and Panel Meters */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Transmitters and Panel Meters
             </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
@@ -182,6 +212,38 @@ export default function SignalConditioningAmplifiersPage() {
               more details.
             </p>
           </div>
+
+      <div className="max-w-7xl mx-auto px-0 pt-8">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+          Related Pages
+        </h2>
+        <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+          <li>
+            <Link
+              href="/products/heat-flux-instrumentation"
+              className="text-emerald-700 hover:underline"
+            >
+              Heat Flux & Instrumentation domain
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/industries/research-labs"
+              className="text-emerald-700 hover:underline"
+            >
+              Research Labs industry
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/industries/energy-sector"
+              className="text-emerald-700 hover:underline"
+            >
+              Energy Sector industry
+            </Link>
+          </li>
+        </ul>
+      </div>
         </div>
       </section>
     </main>

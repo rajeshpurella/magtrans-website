@@ -5,7 +5,7 @@ import DomainLayout from "../DomainLayout";
 export const metadata: Metadata = {
   title: "Laboratory Equipment | MAGTRANS Systems",
   description:
-    "Laminar air flow stations, bio safety cabinets and fume hoods for controlled laboratory environments.",
+    "Laminar air flow stations, bio-safety cabinets and fume hoods engineered to provide safe, clean and compliant environments for laboratory workflows.",
 };
 
 export default function LaboratoryEquipmentPage() {

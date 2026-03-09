@@ -47,8 +47,8 @@ export const heroCta = {
 };
 
 export const megaMenu = {
-  initial: { opacity: 0, y: -10 },
+  initial: { opacity: 0, y: 8 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-  transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+  exit: { opacity: 0, y: 8 },
+  transition: { duration: 0.2, ease: "easeOut" },
 };

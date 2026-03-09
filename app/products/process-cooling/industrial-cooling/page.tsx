@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Industrial Cooling | Process Cooling | MAGTRANS Systems",
+  title: "Industrial Cooling Systems | Process Cooling | MAGTRANS Systems",
   description:
-    "Industrial cooling systems including liquid cooling, air cooling, value added cooling solutions, dehumidifiers, humidifiers and cooling tower with air dryer configurations.",
+    "Industrial liquid and air cooling, value-added packages, dehumidifiers, humidifiers and cooling tower–air dryer systems for plant utilities.",
 };
 
 const SECTIONS = [
@@ -43,12 +43,12 @@ const SECTIONS = [
 export default function IndustrialCoolingPage() {
   return (
     <main className="bg-white">
-      <section className="py-20 border-b border-zinc-200 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Industrial Cooling
           </h1>
-          <p className="mt-4 text-base text-zinc-600 max-w-2xl">
+          <p className="mt-4 text-base text-zinc-600 leading-relaxed max-w-2xl">
             Industrial cooling systems for process equipment, utilities and
             environmental control. This section covers liquid and air cooling,
             value added configurations, dehumidification / humidification and
@@ -57,26 +57,44 @@ export default function IndustrialCoolingPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav
             aria-label="Industrial cooling sections"
-            className="divide-y divide-zinc-200 border border-zinc-200 rounded-xl bg-white"
+            className="border border-zinc-200 rounded-2xl bg-white overflow-hidden"
           >
-            {SECTIONS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-6 py-5 hover:bg-zinc-50 transition-colors group"
-              >
-                <h2 className="text-lg md:text-xl font-medium text-zinc-900 group-hover:text-red-600 transition-colors">
-                  {item.label}
-                </h2>
-                {item.description && (
-                  <p className="mt-1 text-sm text-zinc-600">{item.description}</p>
-                )}
-              </Link>
-            ))}
+            {SECTIONS.map((item) => {
+              const slug = item.href.split("/").pop()!;
+              const viewMoreHref = `/products/process-cooling/${slug}`;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={viewMoreHref}
+                  className="group block border-b border-zinc-200 last:border-b-0 hover:bg-zinc-50 transition-all duration-200"
+                >
+                  <div className="flex flex-col px-8 py-10 border-l-4 border-emerald-600">
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+                      {item.label}
+                    </h2>
+                    {item.description && (
+                      <p className="mt-3 text-base text-zinc-600 leading-relaxed max-w-2xl">
+                        {item.description}
+                      </p>
+                    )}
+                    <span className="mt-4 text-emerald-700 font-medium inline-flex items-center gap-1">
+                      View More
+                      <span
+                        aria-hidden
+                        className="transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </section>

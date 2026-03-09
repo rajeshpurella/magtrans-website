@@ -3,9 +3,9 @@ import { getDomainBySlug } from "@/lib/products-data";
 import DomainLayout from "../DomainLayout";
 
 export const metadata: Metadata = {
-  title: "Geophysical Research | MAGTRANS Systems",
+  title: "Geophysical Research Systems | MAGTRANS Systems",
   description:
-    "Proton precession systems for geophysical measurement and research applications.",
+    "Proton precession systems and magnetic measurement equipment for geophysical exploration, field surveys and research applications.",
 };
 
 export default function GeophysicalResearchPage() {

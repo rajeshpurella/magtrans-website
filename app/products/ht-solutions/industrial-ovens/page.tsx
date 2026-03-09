@@ -1,22 +1,45 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Industrial Ovens | HT Solutions | MAGTRANS Systems",
+  title: "Industrial Ovens & Furnaces | HT Solutions | MAGTRANS Systems",
   description:
-    "Laboratory and industrial ovens, refrigerated air dryers, industrial furnaces. Precision electric ovens, NABL calibration, 4L to 14000L capacity.",
+    "Precision laboratory and industrial ovens, refrigerated air dryers and high-temperature furnaces for controlled heating, drying and thermal processing.",
 };
 
 export default function IndustrialOvensPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Industrial Ovens",
+            image: [
+              "https://www.magtrans.in/products/ht-solutions/industrial-ovens/Industrial%20Ovens.png",
+            ],
+            description:
+              "Precision laboratory and industrial ovens, refrigerated air dryers and high-temperature furnaces for controlled heating, drying and thermal processing.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category: "HT solutions – industrial ovens and furnaces",
+            url:
+              "https://www.magtrans.in/products/ht-solutions/industrial-ovens",
+          }),
+        }}
+      />
       {/* HERO */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
           <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
             HT Solutions
           </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Industrial Ovens
           </h1>
         </div>
@@ -24,7 +47,7 @@ export default function IndustrialOvensPage() {
 
       {/* MAIN CONTENT */}
       <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-12">
           {/* Section 1 */}
           <div className="space-y-4 max-w-4xl">
             <p className="text-base text-zinc-700 leading-relaxed">
@@ -53,7 +76,9 @@ export default function IndustrialOvensPage() {
 
           {/* Standard Features */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Standard Features</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Standard Features
+            </h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
               <li>Capacity – 4 Liter to 14000 Liters</li>
               <li>
@@ -71,7 +96,9 @@ export default function IndustrialOvensPage() {
 
           {/* Section 2: Refrigerated Air Dryers */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Refrigerated Air Dryers</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Refrigerated Air Dryers
+            </h2>
           </div>
 
           <div className="space-y-4">
@@ -155,7 +182,9 @@ export default function IndustrialOvensPage() {
 
           {/* Section 3: Industrial Furnaces */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Industrial Furnaces</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Industrial Furnaces
+            </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
               Industrial Bottom Loading Furnace is suitable for 1600°C as well as 1800°C
               application. The Industrial Bottom Loading Furnace is a kind of user friendly
@@ -210,6 +239,30 @@ export default function IndustrialOvensPage() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-0 pt-8">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Related Pages
+            </h2>
+            <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+              <li>
+                <Link
+                  href="/products/ht-solutions"
+                  className="text-emerald-700 hover:underline"
+                >
+                  HT Solutions domain
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/industries/manufacturing"
+                  className="text-emerald-700 hover:underline"
+                >
+                  Manufacturing industry
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

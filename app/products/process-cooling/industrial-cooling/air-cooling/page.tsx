@@ -104,16 +104,6 @@ export default function IndustrialAirCoolingPage() {
                   <li>High air throw fans</li>
                 </ul>
               </div>
-              <div>
-                <a
-                  href="https://wernerfinley.com/panel-air-conditioner.html#:~:text=X%20275%20X-,1400,-3500"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
-                >
-                  View Technical Reference
-                </a>
-              </div>
             </div>
           </section>
 
@@ -151,16 +141,6 @@ export default function IndustrialAirCoolingPage() {
                   </li>
                   <li>High air throw fans</li>
                 </ul>
-              </div>
-              <div>
-                <a
-                  href="https://wernerfinley.com/panel-air-conditioner.html#:~:text=X%20550%20X-,875,-5250"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
-                >
-                  View Technical Reference
-                </a>
               </div>
             </div>
           </section>
@@ -215,16 +195,6 @@ export default function IndustrialAirCoolingPage() {
                 <li>Vertical: 0.2 – 1 TR</li>
                 <li>Ductable: 0.3 – 3 TR</li>
               </ul>
-            </div>
-            <div>
-              <a
-                href="https://wernerfinley.com/panel-air-conditioner.html#:~:text=X%20275%20X-,1400,-3500"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
-              >
-                View Technical Reference
-              </a>
             </div>
           </div>
         </div>
@@ -301,16 +271,6 @@ export default function IndustrialAirCoolingPage() {
                   <li>In-row: 20 – 30 kW</li>
                   <li>Rack mount: 0.7 – 5.5 kW</li>
                 </ul>
-              </div>
-              <div>
-                <a
-                  href="https://wernerfinley.com/data-center-cooling-system.html#:~:text=10%CB%9AC%20%2D%2050-,%CB%9AC,-Cooling%20Capacity%203.5kW"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
-                >
-                  View Technical Reference
-                </a>
               </div>
             </div>
           </section>

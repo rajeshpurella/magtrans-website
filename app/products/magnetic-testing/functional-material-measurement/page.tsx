@@ -79,7 +79,7 @@ const PRODUCTS = [
     name: "Atomic Force Microscope",
     slug: "atomic-force-microscope",
     image:
-      "/products/functional-material-measurement/atomic-force-microscope.png",
+      "/products/functional-material-measurement/atomic-force-microscope/Atomic Force Microscope.png",
     description:
       "Wafer-level atomic force microscope for 3D surface morphology characterisation of conductors, semiconductors and insulating materials.",
   },

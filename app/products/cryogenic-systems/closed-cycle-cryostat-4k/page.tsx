@@ -16,6 +16,28 @@ const GALLERY_IMAGES = [
 export default function ClosedCycleCryostat4KPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Closed-cycle Cryostat – 4K 6.5K 10K 30K",
+            image: [
+              "https://www.magtrans.in/products/cryogenic-systems/Closed-cycle%20Cryostat%20-%204K/Closed-cycle%20Cryostat.png",
+            ],
+            description:
+              "Closed-cycle cryostat series for 4K–30K operation using GM thermodynamic cycle, supporting magnetic, optical and electrical measurements in low-temperature environments.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category: "Cryogenic systems – closed-cycle cryostats",
+            url:
+              "https://www.magtrans.in/products/cryogenic-systems/closed-cycle-cryostat-4k",
+          }),
+        }}
+      />
       {/* HERO */}
       <section className="border-b border-zinc-200">
         <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
@@ -62,7 +84,7 @@ export default function ClosedCycleCryostat4KPage() {
                 >
                   <Image
                     src={`/products/cryogenic-systems/Closed-cycle Cryostat - 4K/${filename}`}
-                    alt={filename.replace(".png", "")}
+                    alt="Closed-cycle cryostat 4K series product image"
                     fill
                     sizes="(min-width: 1024px) 320px, 50vw"
                     className="object-contain"

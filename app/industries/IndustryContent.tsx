@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ArrowRight } from "lucide-react";
 import type { Industry } from "@/lib/industries-data";
 import { SECTION_PADDING, CONTAINER_CLASS } from "@/lib/constants";
+import IndustryHero from "@/components/IndustryHero";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -36,7 +37,7 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
 
   return (
     <>
-      <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 border-b border-zinc-200">
+      <section className="bg-white pt-24 md:pt-28 pb-12 md:pb-16 border-b border-zinc-200">
         <div className={CONTAINER_CLASS}>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -50,10 +51,10 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
               <ChevronLeft className="w-4 h-4" />
               All Industries
             </Link>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900">
+            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
               {industry.title}
             </h1>
-            <p className="mt-4 text-zinc-600 text-lg max-w-3xl">
+            <p className="mt-4 text-zinc-600 text-base leading-relaxed max-w-3xl">
               {industry.intro}
             </p>
           </motion.div>
@@ -68,7 +69,7 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease }}
           >
-            <p className="text-zinc-600 leading-relaxed max-w-3xl">
+            <p className="text-zinc-600 text-base leading-relaxed max-w-3xl">
               {industry.shortDescription}
             </p>
             <Link
@@ -88,63 +89,45 @@ export default function IndustryContent({ industry }: { industry: Industry }) {
 function DefenseIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/defense/defense.png"
-          alt="Industry background"
-          fill
-          priority={false}
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_35%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Defense
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Ruggedized Precision Systems for Defense &amp; Strategic Applications
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS delivers high-reliability cooling, magnetic testing and instrumentation
-              systems engineered for demanding defense environments and mission-critical operations.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="#defense-solutions"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Explore Defense Solutions
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                Request Confidential Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Defense"
+        title="Ruggedized Precision Systems for Defense & Strategic Applications"
+        subtitle="MAGTRANS delivers high-reliability cooling, magnetic testing and instrumentation systems engineered for demanding defense environments and mission-critical operations."
+        image="/products/industries/defense/defense.png"
+        primaryCta={{
+          label: "Explore Defense Solutions",
+          href: "#defense-solutions",
+        }}
+        secondaryCta={{
+          label: "Request Confidential Consultation",
+          href: "/#contact",
+        }}
+      />
 
       {/* SECTION 2 – DEFENSE SECTOR CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Defense Sector Challenges
             </h2>
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Defense applications require uncompromising system stability, rugged construction and
-              precision performance under extreme operational conditions.
+              precision performance under extreme operational conditions, often leveraging{" "}
+              <Link
+                href="/products/process-cooling"
+                className="text-emerald-700 hover:underline"
+              >
+                process cooling systems
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                magnetic testing platforms
+              </Link>
+              .
             </p>
           </div>
 
@@ -198,10 +181,10 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 transition-all duration-200 hover:bg-zinc-50 min-h-[260px]"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -209,15 +192,15 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/products/thermal-control-units",
@@ -246,9 +229,9 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
               },
             ].map((product) => (
               <Link key={product.href + product.name} href={product.href} className="flex flex-col">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px] flex flex-col flex-1">
-                  <h3 className="text-2xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-lg leading-relaxed flex-1">
+                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
+                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
+                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
                     {product.description}
                   </p>
                 </div>
@@ -259,8 +242,8 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Applications
@@ -285,8 +268,8 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR DEFENSE? */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Defense?
@@ -313,21 +296,21 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-20 bg-zinc-900">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-16 bg-zinc-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Partner with MAGTRANS for mission-ready precision systems built for defense
               excellence.
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
               Engage with our defense applications team to specify solutions aligned with your
               operational, qualification and deployment requirements.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
           >
             Speak to Our Defense Team
           </Link>
@@ -340,52 +323,20 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
 function AerospaceIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/aerospace/aerospace.png"
-          alt="Industry background"
-          fill
-          priority
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_30%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Aerospace
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Precision Engineering Systems for Aerospace Applications
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS delivers advanced cooling, magnetic testing and instrumentation solutions
-              that support aerospace R&amp;D, validation and production environments.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Request Consultation
-              </Link>
-              <Link
-                href="#aerospace-products"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                View Aerospace Products
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Aerospace"
+        title="Precision Engineering Systems for Aerospace Applications"
+        subtitle="MAGTRANS delivers advanced cooling, magnetic testing and instrumentation solutions that support aerospace R&D, validation and production environments."
+        image="/products/industries/aerospace/aerospace.png"
+        primaryCta={{
+          label: "Request Consultation",
+          href: "/#contact",
+        }}
+        secondaryCta={{
+          label: "View Aerospace Products",
+          href: "#aerospace-products",
+        }}
+      />
 
       {/* SECTION 2 – INDUSTRY CHALLENGES */}
       <section className="py-14 sm:py-16 md:py-24 bg-white">
@@ -396,7 +347,21 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             </h2>
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Aerospace systems demand uncompromising accuracy, environmental stability and
-              repeatable testing under extreme operational conditions.
+              repeatable testing under extreme operational conditions, supported by{" "}
+              <Link
+                href="/products/cryogenic-systems"
+                className="text-emerald-700 hover:underline"
+              >
+                cryogenic systems
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                magnetic testing platforms
+              </Link>
+              .
             </p>
           </div>
 
@@ -421,8 +386,8 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR AEROSPACE SOLUTIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Our Aerospace Solutions
@@ -434,7 +399,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
             {[
               {
                 title: "Cooling & Cryogenic Systems",
@@ -455,10 +420,10 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -466,13 +431,15 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section id="aerospace-products" className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">Related Products</h2>
-          <p className="text-gray-600 mb-10 max-w-2xl">
+      <section id="aerospace-products" className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-6">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            Related Products
+          </h2>
+          <p className="text-gray-600 max-w-2xl leading-relaxed">
             Explore representative MAGTRANS systems commonly configured for aerospace projects.
           </p>
-          <ul className="space-y-6 text-lg text-gray-800">
+          <ul className="space-y-4 text-base leading-relaxed text-gray-800">
             <li>
               <span className="font-semibold">Cryogenic Test Systems</span> – Low-temperature
               platforms for component and material characterisation.
@@ -498,8 +465,8 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Aerospace Applications
@@ -524,8 +491,8 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Aerospace?
@@ -552,20 +519,20 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-20 bg-zinc-900">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-16 bg-zinc-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Ready to enhance your aerospace testing capabilities?
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
               Speak with our application engineering team to configure a solution that fits your
               mission profile and qualification roadmap.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
           >
             Get in Touch
           </Link>
@@ -578,64 +545,45 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
 function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/research-labs/research-labs.png"
-          alt="Industry background"
-          fill
-          priority={false}
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_40%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Research Labs
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Advanced Cryogenic &amp; Magnetic Characterisation Systems for Research Laboratories
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS provides high-precision cooling, magnetic measurement and instrumentation
-              systems designed for R&amp;D institutions, innovation centers and advanced research
-              facilities.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="#research-solutions"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Explore Research Solutions
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                Request Technical Details
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Research Labs"
+        title="Advanced Cryogenic & Magnetic Characterisation Systems for Research Laboratories"
+        subtitle="MAGTRANS provides high-precision cooling, magnetic measurement and instrumentation systems designed for R&D institutions, innovation centers and advanced research facilities."
+        image="/products/industries/research-labs/research-labs.png"
+        primaryCta={{
+          label: "Explore Research Solutions",
+          href: "#research-solutions",
+        }}
+        secondaryCta={{
+          label: "Request Technical Details",
+          href: "/#contact",
+        }}
+      />
 
       {/* SECTION 2 – RESEARCH CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Research Challenges
             </h2>
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Scientific discovery demands precision, stability and adaptable systems capable of
-              supporting complex experimental requirements.
+              supporting complex experimental requirements, typically combining{" "}
+              <Link
+                href="/products/cryogenic-systems"
+                className="text-emerald-700 hover:underline"
+              >
+                cryogenic platforms
+              </Link>{" "}
+              with{" "}
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                magnetic testing systems
+              </Link>
+              .
             </p>
           </div>
 
@@ -660,8 +608,8 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR SOLUTIONS */}
-      <section id="research-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section id="research-solutions" className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Our Solutions for Research Laboratories
@@ -672,7 +620,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
             {[
               {
                 title: "Cryogenic Systems",
@@ -693,10 +641,10 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -704,8 +652,8 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Related Products
@@ -715,7 +663,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/products/cryogenic-test-systems",
@@ -744,9 +692,9 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
               },
             ].map((product) => (
               <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px] flex flex-col flex-1">
-                  <h3 className="text-2xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-lg leading-relaxed flex-1">
+                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
+                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
+                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
                     {product.description}
                   </p>
                 </div>
@@ -757,8 +705,8 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Applications
@@ -783,8 +731,8 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY MAGTRANS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Why MAGTRANS for Research Labs?
@@ -811,20 +759,20 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-20 bg-zinc-900">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-16 bg-zinc-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Partner with MAGTRANS to power your next scientific breakthrough.
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
               Connect with our application engineering team to design systems that align with your
               laboratory&apos;s research roadmap.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
           >
             Contact Our Experts
           </Link>
@@ -837,53 +785,20 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
 function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/universities/universities.png"
-          alt="Industry background"
-          fill
-          priority={false}
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_35%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Universities
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Advanced Laboratory &amp; Measurement Solutions for Academic Institutions
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS supports universities and technical institutes with precision laboratory
-              equipment, magnetic measurement systems and research-grade instrumentation for
-              teaching and advanced study.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="#university-solutions"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Explore Academic Solutions
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                Request Lab Setup Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Universities"
+        title="Advanced Laboratory & Measurement Solutions for Academic Institutions"
+        subtitle="MAGTRANS supports universities and technical institutes with precision laboratory equipment, magnetic measurement systems and research-grade instrumentation for teaching and advanced study."
+        image="/products/industries/universities/universities.png"
+        primaryCta={{
+          label: "Explore Academic Solutions",
+          href: "#university-solutions",
+        }}
+        secondaryCta={{
+          label: "Request Lab Setup Consultation",
+          href: "/#contact",
+        }}
+      />
 
       {/* SECTION 2 – ACADEMIC CHALLENGES */}
       <section className="py-14 sm:py-16 md:py-24 bg-white">
@@ -894,7 +809,21 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
             </h2>
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Modern academic institutions require flexible, durable and precise laboratory systems
-              to support both foundational teaching and advanced research.
+              to support both foundational teaching and advanced research, combining{" "}
+              <Link
+                href="/products/laboratory-equipment"
+                className="text-emerald-700 hover:underline"
+              >
+                laboratory equipment
+              </Link>{" "}
+              with{" "}
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                magnetic testing instruments
+              </Link>
+              .
             </p>
           </div>
 
@@ -1098,63 +1027,45 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
 function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/manufacturing/manufacturing.png"
-          alt="Industry background"
-          fill
-          priority={false}
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_45%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Manufacturing
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Precision Cooling &amp; Quality Assurance Systems for Industrial Manufacturing
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS delivers advanced thermal control, magnetic testing and instrumentation
-              systems that enhance production efficiency, process stability and product quality.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="#manufacturing-solutions"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Explore Manufacturing Solutions
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                Request Technical Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Manufacturing"
+        title="Precision Cooling & Quality Assurance Systems for Industrial Manufacturing"
+        subtitle="MAGTRANS delivers advanced thermal control, magnetic testing and instrumentation systems that enhance production efficiency, process stability and product quality."
+        image="/products/industries/manufacturing/manufacturing.png"
+        primaryCta={{
+          label: "Explore Manufacturing Solutions",
+          href: "#manufacturing-solutions",
+        }}
+        secondaryCta={{
+          label: "Request Technical Consultation",
+          href: "/#contact",
+        }}
+      />
 
       {/* SECTION 2 – MANUFACTURING CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Manufacturing Challenges
             </h2>
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Manufacturing operations require robust, repeatable and precise systems that maintain
-              quality standards while supporting high-volume production.
+              quality standards while supporting high-volume production, typically integrating{" "}
+              <Link
+                href="/products/process-cooling"
+                className="text-emerald-700 hover:underline"
+              >
+                process cooling
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/magnetic-testing"
+                className="text-emerald-700 hover:underline"
+              >
+                magnetic testing
+              </Link>{" "}
+              solutions.
             </p>
           </div>
 
@@ -1179,8 +1090,8 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR MANUFACTURING SOLUTIONS */}
-      <section id="manufacturing-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section id="manufacturing-solutions" className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Our Manufacturing Solutions
@@ -1191,7 +1102,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
             {[
               {
                 title: "Process Cooling Systems",
@@ -1212,10 +1123,10 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -1223,8 +1134,8 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Related Products
@@ -1235,7 +1146,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/products/process-cooling/industrial-cooling",
@@ -1264,9 +1175,9 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
               },
             ].map((product) => (
               <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px] flex flex-col flex-1">
-                  <h3 className="text-2xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-lg leading-relaxed flex-1">
+                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
+                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
+                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
                     {product.description}
                   </p>
                 </div>
@@ -1277,8 +1188,8 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Applications
@@ -1303,8 +1214,8 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR MANUFACTURING? */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Manufacturing?
@@ -1331,21 +1242,21 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-20 bg-zinc-900">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-16 bg-zinc-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Improve efficiency and maintain quality with precision-engineered manufacturing
               systems.
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
               Work with our industrial applications team to configure cooling, magnetic testing and
               instrumentation systems aligned to your production goals.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
           >
             Contact Our Industrial Team
           </Link>
@@ -1358,57 +1269,24 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
 function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-[520px] md:h-[620px] lg:h-[700px] flex items-center overflow-hidden">
-        <Image
-          src="/products/industries/energy-sector/energy-sector.png"
-          alt="Industry background"
-          fill
-          priority={false}
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[center_40%] scale-105 animate-slowZoom"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-white">
-          <div className="max-w-3xl animate-fadeUp">
-            <span className="text-green-400 tracking-widest uppercase text-sm font-medium">
-              Energy Sector
-            </span>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg max-w-3xl">
-              Thermal &amp; Instrumentation Systems for Energy Generation and Distribution
-            </h1>
-
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-              MAGTRANS provides precision cooling, magnetic measurement and monitoring solutions
-              designed to enhance performance, reliability and safety in power generation and
-              energy infrastructure.
-            </p>
-
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link
-                href="#energy-solutions"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-700 transition-colors"
-              >
-                Explore Energy Solutions
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors"
-              >
-                Request Project Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryHero
+        categoryLabel="Energy Sector"
+        title="Thermal & Instrumentation Systems for Energy Generation and Distribution"
+        subtitle="MAGTRANS provides precision cooling, magnetic measurement and monitoring solutions designed to enhance performance, reliability and safety in power generation and energy infrastructure."
+        image="/products/industries/energy-sector/energy-sector.png"
+        primaryCta={{
+          label: "Explore Energy Solutions",
+          href: "#energy-solutions",
+        }}
+        secondaryCta={{
+          label: "Request Project Consultation",
+          href: "/#contact",
+        }}
+      />
 
       {/* SECTION 2 – ENERGY SECTOR CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Energy Sector Challenges
@@ -1416,7 +1294,21 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
               Power plants and energy infrastructure demand robust systems capable of operating
               under extreme thermal and electrical conditions while maintaining consistent
-              performance.
+              performance, supported by{" "}
+              <Link
+                href="/products/process-cooling"
+                className="text-emerald-700 hover:underline"
+              >
+                process cooling systems
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/heat-flux-instrumentation"
+                className="text-emerald-700 hover:underline"
+              >
+                instrumentation platforms
+              </Link>
+              .
             </p>
           </div>
 
@@ -1441,15 +1333,15 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR ENERGY SOLUTIONS */}
-      <section id="energy-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section id="energy-solutions" className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Our Energy Solutions
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
             {[
               {
                 title: "Thermal Management Systems",
@@ -1470,10 +1362,10 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -1481,15 +1373,15 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/products/thermal-control-units",
@@ -1518,9 +1410,9 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
               },
             ].map((product) => (
               <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px] flex flex-col flex-1">
-                  <h3 className="text-2xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-lg leading-relaxed flex-1">
+                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
+                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
+                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
                     {product.description}
                   </p>
                 </div>
@@ -1531,8 +1423,8 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Applications
@@ -1557,8 +1449,8 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR ENERGY? */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Energy?
@@ -1585,21 +1477,21 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-20 bg-zinc-900">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-16 bg-zinc-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Enhance reliability and performance across your energy infrastructure with
               precision-engineered systems.
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl">
+            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
               Our engineering team helps utilities and energy operators specify and implement
               solutions that support long-term, stable operation.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
           >
             Contact Our Energy Experts
           </Link>

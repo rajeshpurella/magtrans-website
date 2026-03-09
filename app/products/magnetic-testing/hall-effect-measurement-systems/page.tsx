@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Hall Effect Measurement Systems | Magnetic Testing | MAGTRANS Systems",
   description:
-    "Hall effect measurement systems for determining carrier concentration, mobility, resistivity and Hall coefficient in semiconductor and functional materials.",
+    "Hall effect systems for measuring carrier concentration, mobility, resistivity and Hall coefficient in semiconductor and functional materials.",
 };
 
 const HALL_PRODUCTS = [
@@ -91,9 +91,32 @@ const HALL_PRODUCTS = [
 export default function HallEffectMeasurementSystemsPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Hall Effect Measurement Systems",
+            image: [
+              "https://www.magtrans.in/products/magnetic-testing/hall-effect-measurement-systems/dx-1000l.avif",
+            ],
+            description:
+              "Hall effect systems for measuring carrier concentration, mobility, resistivity and Hall coefficient in semiconductor and functional materials.",
+            brand: {
+              "@type": "Organization",
+              name: "MAGTRANS Systems",
+            },
+            category:
+              "Magnetic testing – Hall effect measurement systems",
+            url:
+              "https://www.magtrans.in/products/magnetic-testing/hall-effect-measurement-systems",
+          }),
+        }}
+      />
       {/* Breadcrumb */}
       <section className="border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
           <p className="text-sm text-gray-500">
             Products &gt; Magnetic Testing &gt; Products &amp; Systems &gt; Hall
             Effect Measurement Systems
@@ -103,11 +126,11 @@ export default function HallEffectMeasurementSystemsPage() {
 
       {/* Header */}
       <section className="border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <h1 className="text-3xl font-semibold text-gray-900 mb-4">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
             Hall Effect Measurement Systems
           </h1>
-          <p className="text-gray-600 leading-relaxed max-w-3xl">
+          <p className="text-gray-600 text-base leading-relaxed max-w-3xl">
             MAGTRANS offers Hall Effect Measurement Systems for determining
             carrier concentration, mobility, resistivity and Hall coefficient in
             semiconductor and functional materials under controlled magnetic
@@ -117,13 +140,13 @@ export default function HallEffectMeasurementSystemsPage() {
       </section>
 
       {/* Product grid */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+      <section className="py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mt-10">
             {HALL_PRODUCTS.map((product) => (
               <div
                 key={product.slug}
-                className="border border-gray-200 rounded-lg p-6 bg-white hover:shadow-md transition"
+                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-6 h-full flex flex-col transition-all duration-200 hover:bg-zinc-50"
               >
                 <Image
                   src={product.image}
@@ -132,20 +155,52 @@ export default function HallEffectMeasurementSystemsPage() {
                   height={200}
                   className="object-contain h-[160px] w-full mb-4"
                 />
-                <h3 className="text-base font-semibold mb-2">
+                <h3 className="text-xl font-semibold text-zinc-900 mb-2">
                   {product.name}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-base text-gray-600 leading-relaxed mb-4">
                   {product.description}
                 </p>
                 <Link
                   href={`/products/magnetic-testing/hall-effect-measurement-systems/${product.slug}`}
-                  className="text-sm font-medium text-blue-600"
+                  className="text-sm font-medium text-emerald-700 hover:underline"
                 >
                   View Details →
                 </Link>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 border-t border-zinc-200 pt-10">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+              Related Pages
+            </h2>
+            <ul className="mt-4 space-y-2 text-base leading-relaxed text-zinc-700 list-disc list-inside">
+              <li>
+                <Link
+                  href="/products/magnetic-testing"
+                  className="text-emerald-700 hover:underline"
+                >
+                  Magnetic Testing domain overview
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/industries/research-labs"
+                  className="text-emerald-700 hover:underline"
+                >
+                  Research Labs industry
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/industries/universities"
+                  className="text-emerald-700 hover:underline"
+                >
+                  Universities industry
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
