@@ -1,17 +1,15 @@
-const easeEnterprise = [0.4, 0, 0.2, 1] as const;
-
 export const fadeUp = {
   initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.5, ease: easeEnterprise },
+  transition: { duration: 0.5, ease: "easeOut" },
 };
 
 export const fadeUpFast = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.4, ease: easeEnterprise },
+  transition: { duration: 0.4, ease: "easeOut" },
 };
 
 export const staggerContainer = {
@@ -25,25 +23,25 @@ export const staggerItem = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.5, ease: easeEnterprise },
+  transition: { duration: 0.7, ease: "easeOut" },
 };
 
 export const heroHeading = {
   initial: { opacity: 0, y: 32 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: easeEnterprise },
+  transition: { duration: 0.6, ease: "easeOut" },
 };
 
 export const heroSubtitle = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay: 0.15, ease: easeEnterprise },
+  transition: { duration: 0.5, delay: 0.15, ease: "easeOut" },
 };
 
 export const heroCta = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay: 0.3, ease: easeEnterprise },
+  transition: { duration: 0.5, delay: 0.3, ease: "easeOut" },
 };
 
 export const megaMenu = {

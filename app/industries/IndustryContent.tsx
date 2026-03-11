@@ -131,7 +131,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Extreme environmental durability",
               "High electromagnetic stability",
@@ -139,12 +139,9 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
               "Precision validation under harsh conditions",
               "Mission-critical reliability",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -152,15 +149,18 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR DEFENSE SOLUTIONS */}
-      <section id="defense-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section id="defense-solutions" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Defense Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our Defense Solutions
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-16">
             {[
               {
                 title: "Rugged Cooling Systems",
@@ -181,10 +181,10 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 transition-all duration-200 hover:bg-zinc-50 min-h-[260px]"
+                className="group space-y-4 transition-transform duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
+                <p className="text-lg text-zinc-600 leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -200,7 +200,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             </h2>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 divide-y divide-zinc-200">
             {[
               {
                 href: "/products/thermal-control-units",
@@ -228,13 +228,15 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
                 description: "Application-specific instrumentation platforms for strategic programs.",
               },
             ].map((product) => (
-              <Link key={product.href + product.name} href={product.href} className="flex flex-col">
-                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
-                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
-                    {product.description}
-                  </p>
-                </div>
+              <Link
+                key={product.href + product.name}
+                href={product.href}
+                className="block py-6 transition hover:bg-zinc-50"
+              >
+                <h3 className="font-medium text-zinc-900">{product.name}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {product.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -276,7 +278,7 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "High-reliability engineering",
               "Rugged system design",
@@ -286,9 +288,9 @@ function DefenseIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-base text-zinc-700 leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>
@@ -339,13 +341,16 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       />
 
       {/* SECTION 2 – INDUSTRY CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Aerospace Engineering Demands
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Aerospace Engineering Demands
             </h2>
-            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Aerospace systems demand uncompromising accuracy, environmental stability and
               repeatable testing under extreme operational conditions, supported by{" "}
               <Link
@@ -365,7 +370,7 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-4">
             {[
               "Extreme temperature simulation",
               "Magnetic field interference testing",
@@ -373,12 +378,11 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
               "Component-level precision measurement",
               "Environmental qualification",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
+                <p className="text-zinc-600 text-base md:text-lg leading-relaxed">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
@@ -386,20 +390,23 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR AEROSPACE SOLUTIONS */}
-      <section className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Aerospace Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our Aerospace Solutions
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               MAGTRANS combines domain expertise with proven technologies to deliver integrated
               solutions for aerospace laboratories, environmental test facilities and production
               lines.
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-4">
             {[
               {
                 title: "Cooling & Cryogenic Systems",
@@ -420,10 +427,10 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
+                className="group space-y-4 transition-transform duration-300 ease-out hover:-translate-y-1"
               >
                 <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
+                <p className="text-zinc-600 text-lg leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -431,49 +438,73 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section id="aerospace-products" className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-6">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
-            Related Products
-          </h2>
-          <p className="text-gray-600 max-w-2xl leading-relaxed">
-            Explore representative MAGTRANS systems commonly configured for aerospace projects.
-          </p>
-          <ul className="space-y-4 text-base leading-relaxed text-gray-800">
-            <li>
-              <span className="font-semibold">Cryogenic Test Systems</span> – Low-temperature
-              platforms for component and material characterisation.
-            </li>
-            <li>
-              <span className="font-semibold">Magnetic Field Mapping Systems</span> – High-resolution
-              mapping for payloads, enclosures and test fixtures.
-            </li>
-            <li>
-              <span className="font-semibold">High-End Gaussmeters</span> – Precision field
-              measurement for qualification and troubleshooting.
-            </li>
-            <li>
-              <span className="font-semibold">Thermal Control Units</span> – Closed-loop thermal
-              conditioning for chambers and test rigs.
-            </li>
-            <li>
-              <span className="font-semibold">Instrumentation Modules</span> – Signal conditioning
-              and data acquisition modules for aerospace labs.
-            </li>
-          </ul>
+      <section id="aerospace-products" className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
+          <div className="max-w-3xl">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Related Products
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
+              Related Products
+            </h2>
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed max-w-2xl">
+              Explore representative MAGTRANS systems commonly configured for aerospace projects.
+            </p>
+          </div>
+
+          <div className="mt-4 divide-y divide-zinc-200">
+            {[
+              {
+                title: "Cryogenic Test Systems",
+                description: "Low-temperature platforms for component and material characterisation.",
+              },
+              {
+                title: "Magnetic Field Mapping Systems",
+                description: "High-resolution mapping for payloads, enclosures and test fixtures.",
+              },
+              {
+                title: "High-End Gaussmeters",
+                description:
+                  "Precision field measurement for qualification and troubleshooting.",
+              },
+              {
+                title: "Thermal Control Units",
+                description:
+                  "Closed-loop thermal conditioning for chambers and test rigs.",
+              },
+              {
+                title: "Instrumentation Modules",
+                description:
+                  "Signal conditioning and data acquisition modules for aerospace labs.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="py-6 hover:bg-zinc-50 transition-colors duration-200"
+              >
+                <h3 className="font-medium text-zinc-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Applications
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Aerospace Applications
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-12 mt-4">
             {[
               "Satellite component testing",
               "Avionics validation",
@@ -482,8 +513,10 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
               "Magnetic interference analysis",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+                <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
+                <p className="text-zinc-600 text-base md:text-lg leading-relaxed">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
@@ -491,15 +524,18 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Why MAGTRANS
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Aerospace?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-4">
             {[
               "Indigenous engineering expertise",
               "Custom-built solutions",
@@ -509,9 +545,9 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-zinc-700 text-base leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>
@@ -519,20 +555,20 @@ function AerospaceIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 7 – FINAL CTA */}
-      <section className="py-16 bg-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="py-24 bg-gradient-to-r from-zinc-900 via-zinc-950 to-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
               Ready to enhance your aerospace testing capabilities?
             </h2>
-            <p className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl leading-relaxed">
+            <p className="mt-4 text-base md:text-lg text-zinc-300 max-w-xl leading-relaxed">
               Speak with our application engineering team to configure a solution that fits your
               mission profile and qualification roadmap.
             </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all duration-200"
+            className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-emerald-600 px-8 py-4 text-base font-medium text-white hover:bg-emerald-700 transition-all duration-200"
           >
             Get in Touch
           </Link>
@@ -561,13 +597,16 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       />
 
       {/* SECTION 2 – RESEARCH CHALLENGES */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Research Challenges
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Research Challenges
             </h2>
-            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Scientific discovery demands precision, stability and adaptable systems capable of
               supporting complex experimental requirements, typically combining{" "}
               <Link
@@ -587,7 +626,7 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Ultra-low temperature environments",
               "Stable magnetic field measurement",
@@ -595,12 +634,9 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
               "High repeatability and accuracy",
               "Flexible experimental setups",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -608,19 +644,22 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR SOLUTIONS */}
-      <section id="research-solutions" className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section id="research-solutions" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Research Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our Solutions for Research Laboratories
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               MAGTRANS works closely with research teams to configure systems that match specific
               experimental goals, infrastructure constraints and future scalability needs.
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-16">
             {[
               {
                 title: "Cryogenic Systems",
@@ -641,10 +680,10 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
+                className="group space-y-4 transition-transform duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
+                <p className="text-lg text-zinc-600 leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -652,18 +691,21 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Related Products
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Explore representative MAGTRANS systems frequently deployed in research laboratories.
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 divide-y divide-zinc-200">
             {[
               {
                 href: "/products/cryogenic-test-systems",
@@ -691,13 +733,15 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
                 description: "Closed-loop temperature control for cryostats and experimental rigs.",
               },
             ].map((product) => (
-              <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
-                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
-                    {product.description}
-                  </p>
-                </div>
+              <Link
+                key={product.href}
+                href={product.href}
+                className="block py-6 transition hover:bg-zinc-50"
+              >
+                <h3 className="font-medium text-zinc-900">{product.name}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {product.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -705,15 +749,18 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Applications
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Applications
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
             {[
               "Material science research",
               "Superconducting material testing",
@@ -722,8 +769,8 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
               "Advanced physics experiments",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -731,15 +778,18 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY MAGTRANS */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Why MAGTRANS
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Why MAGTRANS for Research Labs?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Precision-focused engineering",
               "Custom lab integration",
@@ -749,9 +799,9 @@ function ResearchLabsIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-base text-zinc-700 leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>
@@ -801,13 +851,16 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       />
 
       {/* SECTION 2 – ACADEMIC CHALLENGES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Academic Challenges
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Academic Challenges
             </h2>
-            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Modern academic institutions require flexible, durable and precise laboratory systems
               to support both foundational teaching and advanced research, combining{" "}
               <Link
@@ -827,7 +880,7 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Reliable lab equipment for teaching",
               "Research-grade precision systems",
@@ -835,12 +888,9 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
               "Modular setups for multiple experiments",
               "Cost-effective yet high-performance systems",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -848,20 +898,23 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR UNIVERSITY SOLUTIONS */}
-      <section id="university-solutions" className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section id="university-solutions" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              University Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our University Solutions
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               MAGTRANS collaborates with academic stakeholders to build laboratories that are
               intuitive for students while offering the performance required for cutting-edge
               research.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-16">
             {[
               {
                 title: "Teaching Laboratory Systems",
@@ -882,10 +935,10 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px]"
+                className="group space-y-4 transition-transform duration-300 hover:-translate-y-1"
               >
-                <h3 className="text-2xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-lg leading-relaxed">{card.text}</p>
+                <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
+                <p className="text-lg text-zinc-600 leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -893,19 +946,22 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Related Products
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Representative MAGTRANS products commonly configured for university teaching and
               research laboratories.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 divide-y divide-zinc-200">
             {[
               {
                 href: "/products/high-end-gaussmeters",
@@ -933,13 +989,15 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
                 description: "Centralised monitoring for multi-channel laboratory experiments.",
               },
             ].map((product) => (
-              <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 min-h-[260px] flex flex-col flex-1">
-                  <h3 className="text-2xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-lg leading-relaxed flex-1">
-                    {product.description}
-                  </p>
-                </div>
+              <Link
+                key={product.href}
+                href={product.href}
+                className="block py-6 transition hover:bg-zinc-50"
+              >
+                <h3 className="font-medium text-zinc-900">{product.name}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {product.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -947,15 +1005,18 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-14 sm:py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Applications
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Applications
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
             {[
               "Physics department labs",
               "Engineering research centers",
@@ -964,8 +1025,8 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
               "PhD research projects",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -973,15 +1034,18 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY MAGTRANS FOR UNIVERSITIES */}
-      <section className="py-14 sm:py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Why MAGTRANS
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Why MAGTRANS for Universities?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Academic-focused solutions",
               "Easy integration into existing labs",
@@ -991,9 +1055,9 @@ function UniversitiesIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-base text-zinc-700 leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>
@@ -1043,13 +1107,16 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       />
 
       {/* SECTION 2 – MANUFACTURING CHALLENGES */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Manufacturing Challenges
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Manufacturing Challenges
             </h2>
-            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Manufacturing operations require robust, repeatable and precise systems that maintain
               quality standards while supporting high-volume production, typically integrating{" "}
               <Link
@@ -1069,7 +1136,7 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Continuous process cooling",
               "Stable thermal control",
@@ -1077,12 +1144,9 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
               "High uptime and reliability",
               "Real-time monitoring & instrumentation",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -1090,19 +1154,22 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR MANUFACTURING SOLUTIONS */}
-      <section id="manufacturing-solutions" className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section id="manufacturing-solutions" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Manufacturing Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our Manufacturing Solutions
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               MAGTRANS partners with industrial teams to implement systems that improve process
               control, reduce variability and support stringent quality requirements.
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-16">
             {[
               {
                 title: "Process Cooling Systems",
@@ -1123,10 +1190,10 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
+                className="group space-y-4 transition-transform duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
+                <p className="text-lg text-zinc-600 leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -1134,19 +1201,22 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Related Products
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
-            <p className="mt-4 text-zinc-600 leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Explore representative MAGTRANS systems deployed across industrial manufacturing
               environments.
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 divide-y divide-zinc-200">
             {[
               {
                 href: "/products/process-cooling/industrial-cooling",
@@ -1174,13 +1244,15 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
                 description: "Modular platforms for capturing key process and quality parameters.",
               },
             ].map((product) => (
-              <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
-                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
-                    {product.description}
-                  </p>
-                </div>
+              <Link
+                key={product.href}
+                href={product.href}
+                className="block py-6 transition hover:bg-zinc-50"
+              >
+                <h3 className="font-medium text-zinc-900">{product.name}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {product.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -1188,15 +1260,18 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Applications
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Applications
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
             {[
               "Automotive component manufacturing",
               "Electronics production",
@@ -1205,8 +1280,8 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
               "Industrial R&D units",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -1214,15 +1289,18 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR MANUFACTURING? */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Why MAGTRANS
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Manufacturing?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Reliable industrial-grade systems",
               "Custom-built integration",
@@ -1232,9 +1310,9 @@ function ManufacturingIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-base text-zinc-700 leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>
@@ -1285,13 +1363,16 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       />
 
       {/* SECTION 2 – ENERGY SECTOR CHALLENGES */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Energy Sector Challenges
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Energy Sector Challenges
             </h2>
-            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
               Power plants and energy infrastructure demand robust systems capable of operating
               under extreme thermal and electrical conditions while maintaining consistent
               performance, supported by{" "}
@@ -1312,7 +1393,7 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Stable thermal management",
               "Continuous performance monitoring",
@@ -1320,12 +1401,9 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
               "High reliability under heavy loads",
               "Long-term operational stability",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4"
-              >
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+              <div key={item} className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -1333,15 +1411,18 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 3 – OUR ENERGY SOLUTIONS */}
-      <section id="energy-solutions" className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section id="energy-solutions" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Energy Solutions
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Our Energy Solutions
             </h2>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-16 mt-16">
             {[
               {
                 title: "Thermal Management Systems",
@@ -1362,10 +1443,10 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] transition-all duration-200 hover:bg-zinc-50"
+                className="group space-y-4 transition-transform duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-3 text-gray-600 text-base leading-relaxed">{card.text}</p>
+                <p className="text-lg text-zinc-600 leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -1373,15 +1454,18 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 4 – RELATED PRODUCTS */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Related Products
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Related Products
             </h2>
           </div>
 
-          <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 divide-y divide-zinc-200">
             {[
               {
                 href: "/products/thermal-control-units",
@@ -1409,13 +1493,15 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
                 description: "Cooling solutions engineered for heavy-duty energy sector applications.",
               },
             ].map((product) => (
-              <Link key={product.href} href={product.href} className="flex flex-col">
-                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 min-h-[260px] flex flex-col flex-1 transition-all duration-200 hover:bg-zinc-50">
-                  <h3 className="text-xl font-semibold text-zinc-900">{product.name}</h3>
-                  <p className="mt-2 text-gray-600 text-base leading-relaxed flex-1">
-                    {product.description}
-                  </p>
-                </div>
+              <Link
+                key={product.href}
+                href={product.href}
+                className="block py-6 transition hover:bg-zinc-50"
+              >
+                <h3 className="font-medium text-zinc-900">{product.name}</h3>
+                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                  {product.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -1423,15 +1509,18 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 5 – APPLICATIONS */}
-      <section className="py-12 md:py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Applications
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Applications
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
             {[
               "Power generation plants",
               "Renewable energy facilities",
@@ -1440,8 +1529,8 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
               "Energy R&D centers",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700">{item}</p>
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2" />
+                <p className="text-lg text-zinc-600 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -1449,15 +1538,18 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
       </section>
 
       {/* SECTION 6 – WHY CHOOSE MAGTRANS FOR ENERGY? */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
+      <section className="py-24 md:py-32 bg-zinc-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+            <p className="text-emerald-600 uppercase tracking-widest text-sm font-semibold">
+              Why MAGTRANS
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900">
               Why Choose MAGTRANS for Energy?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {[
               "Industrial-grade reliability",
               "High-performance cooling",
@@ -1467,9 +1559,9 @@ function EnergySectorIndustryPage({ industry }: { industry: Industry }) {
             ].map((reason) => (
               <div
                 key={reason}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 px-5 py-4"
+                className="px-6 py-4 bg-zinc-50 rounded-lg transition-all duration-200 hover:bg-white hover:shadow-sm"
               >
-                <p className="text-sm md:text-base text-zinc-700">{reason}</p>
+                <p className="text-base text-zinc-700 leading-relaxed">{reason}</p>
               </div>
             ))}
           </div>

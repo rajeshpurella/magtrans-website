@@ -89,10 +89,10 @@ export default function Navbar() {
             alt="MAGTRANS logo"
             width={160}
             height={40}
-            className="h-8 w-auto"
+            className="h-10 md:h-12 w-auto"
             priority
           />
-          <span className="text-[10px] md:text-[11px] text-zinc-600 tracking-[0.18em] uppercase whitespace-nowrap leading-none">
+          <span className="uppercase whitespace-nowrap text-[11px] md:text-xs tracking-widest text-zinc-700 font-medium">
             Systems Private Limited
           </span>
         </Link>

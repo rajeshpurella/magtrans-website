@@ -40,8 +40,6 @@ export default function IndustryHero({
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/40" />
 
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

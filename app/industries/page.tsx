@@ -12,161 +12,96 @@ export const metadata: Metadata = {
   },
 };
 
+const INDUSTRIES = [
+  {
+    title: "Aerospace",
+    slug: "aerospace",
+    image: "/products/industries/aerospace/aerospace.png",
+    shortDescription:
+      "Advanced cooling and magnetic testing systems for aerospace environments.",
+  },
+  {
+    title: "Research Labs",
+    slug: "research-labs",
+    image: "/products/industries/research-labs/research-labs.png",
+    shortDescription:
+      "Cryogenic and magnetic characterisation systems for R&D and fundamental research.",
+  },
+  {
+    title: "Universities",
+    slug: "universities",
+    image: "/products/industries/universities/universities.png",
+    shortDescription:
+      "Laboratory equipment and measurement solutions for academic research and teaching.",
+  },
+  {
+    title: "Manufacturing",
+    slug: "manufacturing",
+    image: "/products/industries/manufacturing/manufacturing.png",
+    shortDescription:
+      "Process cooling and quality assurance systems for industrial production.",
+  },
+  {
+    title: "Energy Sector",
+    slug: "energy-sector",
+    image: "/products/industries/energy-sector/energy-sector.png",
+    shortDescription:
+      "Thermal and instrumentation systems for energy generation and distribution.",
+  },
+  {
+    title: "Defense",
+    slug: "defense",
+    image: "/products/industries/defense/defense.png",
+    shortDescription:
+      "Ruggedized precision systems for defense and strategic applications.",
+  },
+] as const;
+
 export default function IndustriesPage() {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-12">
-          <h1 className="text-4xl md:text-5xl font-semibold mb-4">Industries We Serve</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-            Delivering precision engineering systems across critical industrial and research sectors.
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
+            Industries We Serve
+          </h1>
+          <p className="mt-4 text-lg text-zinc-600 leading-relaxed max-w-2xl mx-auto">
+            Delivering precision engineering systems across critical industrial and research
+            sectors.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {/* Aerospace */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/aerospace/aerospace.png"
-                alt="Aerospace industry applications with advanced cooling and magnetic testing systems"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Aerospace</h3>
-              <p className="text-gray-600 mb-4">
-                Advanced cooling and magnetic testing systems for aerospace environments.
-              </p>
-              <Link
-                href="/industries/aerospace"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {INDUSTRIES.map((industry) => (
+            <Link
+              key={industry.slug}
+              href={`/industries/${industry.slug}`}
+              className="block h-full"
+            >
+              <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden transition hover:shadow-md h-full group">
+                <div className="relative w-full h-48">
+                  <Image
+                    src={industry.image}
+                    alt={industry.title}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
 
-          {/* Research Labs */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/research-labs/research-labs.png"
-                alt="Research laboratory environment with cryogenic and magnetic characterisation systems"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Research Labs</h3>
-              <p className="text-gray-600 mb-4">
-                Cryogenic and magnetic characterisation systems for R&amp;D and fundamental research.
-              </p>
-              <Link
-                href="/industries/research-labs"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
-
-          {/* Universities */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/universities/universities.png"
-                alt="University laboratory teaching space with precision measurement equipment"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Universities</h3>
-              <p className="text-gray-600 mb-4">
-                Laboratory equipment and measurement solutions for academic research and teaching.
-              </p>
-              <Link
-                href="/industries/universities"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
-
-          {/* Manufacturing */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/manufacturing/manufacturing.png"
-                alt="Manufacturing plant using process cooling and quality assurance systems"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Manufacturing</h3>
-              <p className="text-gray-600 mb-4">
-                Process cooling and quality assurance systems for industrial production.
-              </p>
-              <Link
-                href="/industries/manufacturing"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
-
-          {/* Energy Sector */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/energy-sector/energy-sector.png"
-                alt="Energy sector facility with thermal management and instrumentation systems"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Energy Sector</h3>
-              <p className="text-gray-600 mb-4">
-                Thermal and instrumentation systems for energy generation and distribution.
-              </p>
-              <Link
-                href="/industries/energy-sector"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
-
-          {/* Defense */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="relative w-full h-[240px]">
-              <Image
-                src="/products/industries/defense/defense.png"
-                alt="Defense infrastructure using ruggedized precision cooling and magnetic systems"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4 sm:p-6">
-              <h3 className="text-xl font-semibold mb-3">Defense</h3>
-              <p className="text-gray-600 mb-4">
-                Ruggedized precision systems for defense and strategic applications.
-              </p>
-              <Link
-                href="/industries/defense"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-zinc-900 group-hover:text-emerald-600 transition">
+                    {industry.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                    {industry.shortDescription}
+                  </p>
+                  <span className="mt-4 inline-flex items-center text-sm font-medium text-emerald-600 group-hover:text-emerald-700 transition">
+                    View More →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

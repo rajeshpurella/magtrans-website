@@ -39,41 +39,40 @@ export default function CementedCarbidesMeasurementPage() {
         </div>
       </section>
 
-      {/* PRODUCT GRID */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {/* PRODUCT GALLERY */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid gap-20 sm:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.map((product) => (
-              <div
+              <Link
                 key={product.slug}
-                className="rounded-xl border border-zinc-200 bg-white p-6 hover:shadow-lg transition-all duration-300 flex flex-col"
+                href={`/products/magnetic-testing/cemented-carbides-measurement/${product.slug}`}
+                className="group relative block"
               >
-                <div className="relative w-full h-52 mb-4">
+                <div className="relative w-full aspect-[4/5] overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    sizes="(min-width: 1024px) 320px, 100vw"
-                    className="object-contain"
+                    className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/70 opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                  {/* Hover content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 text-white">
+                    <h3 className="text-xl font-semibold">{product.name}</h3>
+                    <p className="mt-2 text-sm text-zinc-200">
+                      {product.description}
+                    </p>
+                    <span className="mt-4 text-emerald-400 text-sm font-medium">
+                      View Details →
+                    </span>
+                  </div>
                 </div>
-                <div className="flex-1 space-y-2">
-                  <h2 className="text-base font-semibold text-zinc-900">
-                    {product.name}
-                  </h2>
-                  <p className="text-sm text-zinc-700 leading-relaxed">
-                    {product.description}
-                  </p>
-                </div>
-                <div className="mt-4">
-                  <Link
-                    href={`/products/magnetic-testing/cemented-carbides-measurement/${product.slug}`}
-                    className="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-800"
-                  >
-                    Read More →
-                  </Link>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -47,6 +47,38 @@ body {
   animation: fadeUp 1s ease forwards;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-scroll {
+  animation: scroll 1.8s infinite ease-in-out;
+}
+
+@keyframes slideProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-slide-progress {
+  animation: slideProgress 6s linear forwards;
+}
+
 /* Prevent layout shift during scroll */
 .gpu-accelerated {
   transform: translateZ(0);
