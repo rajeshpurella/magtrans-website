@@ -80,12 +80,6 @@ export default function IndustrialAirCoolingPage() {
         "Industrial automation and drives",
         "Data centre rack and row-level cooling",
       ]}
-      images={[
-        "/products/air-cooling/vertical.jpg",
-        "/products/air-cooling/ductable.jpg",
-        "/products/air-cooling/inverter-panel-air-conditioner.jpg",
-        "/products/air-cooling/inrack.png",
-      ]}
     >
       {/* Original detailed sections preserved below */}
       {/* Hero context backlink */}

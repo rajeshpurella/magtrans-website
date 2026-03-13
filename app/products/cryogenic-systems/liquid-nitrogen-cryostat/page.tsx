@@ -105,10 +105,6 @@ export default function LiquidNitrogenCryostatPage() {
         "Magnetic field testing and optical experiments",
         "Laboratory cryogenic platforms for R&D",
       ]}
-      images={GALLERY_IMAGES.map(
-        (file) =>
-          `/products/cryogenic-systems/liquid-nitrogen-cryostat/${file}`,
-      )}
     >
       {/* Original detailed description and tables preserved below */}
       <section className="border-b border-zinc-200">

@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionShell } from "@/components/ui/SectionShell";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { InsightCard } from "@/components/insights/InsightCard";

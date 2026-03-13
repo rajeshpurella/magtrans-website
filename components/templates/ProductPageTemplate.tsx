@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle2, FileText, Download } from "lucide-react";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -44,6 +45,11 @@ export interface ProductDownload {
   type?: "brochure" | "datasheet" | "manual" | "other";
 }
 
+export interface UsedInIndustryLink {
+  label: string;
+  href: string;
+}
+
 export interface ProductPageTemplateProps {
   hero: ProductHeroProps;
   overview: {
@@ -56,6 +62,8 @@ export interface ProductPageTemplateProps {
   applications?: string[];
   downloads?: ProductDownload[];
   breadcrumbs?: BreadcrumbItem[];
+  usedInIndustries?: UsedInIndustryLink[];
+  canonicalUrl?: string;
   /** Optional extra sections rendered after the standard layout */
   children?: ReactNode;
 }
@@ -68,10 +76,33 @@ export function ProductPageTemplate({
   applications,
   downloads,
   breadcrumbs,
+  usedInIndustries,
+  canonicalUrl,
   children,
 }: ProductPageTemplateProps) {
+  const productJsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: hero.name,
+    description: overview.paragraphs[0],
+    brand: {
+      "@type": "Brand",
+      name: "MAGTRANS Systems Private Limited",
+    },
+    category: hero.categoryLabel,
+    image: hero.imageSrc,
+  };
+
+  if (canonicalUrl) {
+    productJsonLd.url = canonicalUrl;
+  }
+
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {breadcrumbs && breadcrumbs.length > 0 ? (
         <div className="w-full border-b border-zinc-100 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-4 pb-2">
@@ -227,15 +258,30 @@ export function ProductPageTemplate({
             align="left"
             subtitle={undefined}
           />
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {applications.map((app) => (
-              <div key={app} className="flex items-start gap-2">
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                <p className="text-sm md:text-base text-zinc-700 leading-relaxed">
-                  {app}
-                </p>
+          <div className="mt-8 space-y-6">
+            <div className="grid gap-3 md:grid-cols-2">
+              {applications.map((app) => (
+                <div key={app} className="flex items-start gap-2">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  <p className="text-sm md:text-base text-zinc-700 leading-relaxed">
+                    {app}
+                  </p>
+                </div>
+              ))}
+            </div>
+            {usedInIndustries && usedInIndustries.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {usedInIndustries.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs sm:text-sm font-medium text-emerald-700 hover:bg-emerald-50 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </SectionShell>
       )}

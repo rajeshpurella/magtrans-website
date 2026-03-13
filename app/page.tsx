@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -42,9 +42,43 @@ const industriesItem = {
   },
 };
 
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "MAGTRANS Systems Private Limited",
+  url: "https://magtrans.in",
+  logo: "https://magtrans.in/products/images/logo/magtranslogo.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "3-6-369/A/10, Flat No.1, Srinilayam, Street No.1, Himayathnagar",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500029",
+    addressCountry: "IN",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91 93921 23094",
+      contactType: "sales",
+      email: "sales@magtrans.in",
+      areaServed: "IN",
+      availableLanguage: ["en"],
+    },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/magtrans-systems-private-limited/",
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <CorporateHeroSlider />
 
       <SectionShell id="about" background="muted" aria-label="About MAGTRANS">

@@ -11,11 +11,11 @@ export interface NavLink {
 
 export const NAV_LINKS: readonly NavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/products", label: "Products", mega: "products" },
   { href: "/industries", label: "Industries", mega: "industries" },
   { href: "/insights", label: "Insights" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const INDUSTRIES_MEGA = industries.map((i) => ({

@@ -61,7 +61,7 @@ export function MobileMenu({
             </li>
             <li className="pt-4">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center w-full min-h-[48px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
                 onClick={onCloseAll}
               >

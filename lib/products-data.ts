@@ -259,6 +259,64 @@ export const productDomains: ProductDomain[] = [
         title: "Closed-cycle Cryostat",
         slug: "closed-cycle-cryostat",
         contentHtml: "",
+        overview:
+          "Closed-cycle cryostats based on SHI 4 K cryocoolers provide a robust, helium-free platform for low-temperature measurements. The cold head and sample space are integrated into a compact vacuum chamber, delivering stable temperature control from around 4 K up to room temperature without the cost and logistics of liquid helium.",
+        features: [
+          "Helium-free operation using a closed-cycle SHI 4 K cryocooler with no liquid helium consumption.",
+          "Stable vacuum sample environment that supports precise, repeatable low-temperature measurements.",
+          "Modular sample mounting hardware to accommodate different sample sizes, geometries and experimental fixtures.",
+          "Provision for optical and electrical access, including windows and electrical feedthroughs for complex experiments.",
+          "Flexible integration with magnets, optical benches and custom test rigs through configurable flanges and interfaces.",
+          "Designed for long-duration measurements with reliable temperature stability and continuous operation.",
+        ],
+        specifications: [
+          {
+            title: "Performance",
+            rows: [
+              { label: "Base temperature", value: "Approximately 4 K (model dependent)" },
+              {
+                label: "Temperature range",
+                value: "Typical 4 K – 300 K with appropriate temperature control",
+              },
+              {
+                label: "Cooling power",
+                value: "Application and model dependent; sized for experimental load",
+              },
+            ],
+          },
+          {
+            title: "Cryocooler System",
+            rows: [
+              { label: "Cryocooler", value: "SHI two-stage 4 K cryocooler" },
+              { label: "Compressor", value: "Air-cooled compressor package" },
+              {
+                label: "Operation",
+                value: "Closed-cycle refrigeration with no liquid helium consumption",
+              },
+            ],
+          },
+          {
+            title: "Integration & Interfaces",
+            rows: [
+              { label: "Electrical feedthroughs", value: "Configurable electrical wiring feedthroughs for sample biasing and sensing" },
+              {
+                label: "Optical access",
+                value: "Optional optical windows and ports for spectroscopy and imaging",
+              },
+              {
+                label: "Vacuum chamber",
+                value: "Sample vacuum chamber configurable for different experimental geometries",
+              },
+            ],
+          },
+        ],
+        applications: [
+          "Low-temperature magnetic characterisation of materials and devices.",
+          "Electrical transport and magnetotransport measurements at cryogenic temperatures.",
+          "Optical spectroscopy, including reflection, transmission and photoluminescence at 4 K.",
+          "Device and sensor testing at 4 K and variable temperature for R&D and qualification.",
+          "General-purpose cryogenic platforms for university and national research laboratories.",
+        ],
       },
       {
         title: "Liquid Nitrogen Cryostat",

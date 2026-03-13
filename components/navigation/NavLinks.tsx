@@ -134,7 +134,7 @@ export function NavLinks({
           <Search className="w-5 h-5" />
         </button>
         <Link
-          href="/#contact"
+          href="/contact"
           onClick={onNavigate}
           className="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
         >
