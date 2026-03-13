@@ -50,3 +50,11 @@ export const megaMenu = {
   exit: { opacity: 0, y: 8 },
   transition: { duration: 0.2, ease: "easeOut" },
 };
+
+export const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.4, ease: "easeOut" },
+};
+

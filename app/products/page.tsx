@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { productDomains } from "@/lib/products-data";
 import ProductDomainCard from "@/components/ProductDomainCard";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Products & Engineering Domains | MAGTRANS Systems",
@@ -10,12 +11,23 @@ export const metadata: Metadata = {
     title: "Products | MAGTrans Systems",
     description: "Magnetic testing, cryogenic cooling, and precision measurement systems.",
   },
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 export default function ProductsPage() {
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="mb-6 md:mb-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Products" },
+            ]}
+          />
+        </div>
         <div className="text-center mb-10 md:mb-12">
           <h1 className="text-4xl md:text-5xl font-semibold text-zinc-900 mb-4">
           Engineering Domains

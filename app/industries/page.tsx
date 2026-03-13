@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | MAGTRANS Systems",
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Industries | MAGTRANS Systems",
     description: "Precision systems across critical industrial and research sectors.",
+  },
+  alternates: {
+    canonical: "/industries",
   },
 };
 
@@ -61,6 +65,14 @@ export default function IndustriesPage() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="mb-6">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Industries" },
+            ]}
+          />
+        </div>
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Industries We Serve
@@ -71,31 +83,31 @@ export default function IndustriesPage() {
           </p>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {INDUSTRIES.map((industry) => (
             <Link
               key={industry.slug}
               href={`/industries/${industry.slug}`}
               className="block h-full"
             >
-              <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden transition hover:shadow-md h-full group">
-                <div className="relative w-full h-48">
+              <div className="h-full flex flex-col bg-white/95 border border-zinc-100 rounded-2xl overflow-hidden shadow-sm transition-transform transition-shadow duration-300 hover:shadow-md hover:-translate-y-1 group">
+                <div className="relative w-full h-48 bg-zinc-50">
                   <Image
                     src={industry.image}
                     alt={industry.title}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-zinc-900 group-hover:text-emerald-600 transition">
+                <div className="flex-1 flex flex-col p-5 sm:p-6">
+                  <h3 className="text-lg font-semibold text-zinc-900 group-hover:text-emerald-600 transition-colors">
                     {industry.title}
                   </h3>
                   <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
                     {industry.shortDescription}
                   </p>
-                  <span className="mt-4 inline-flex items-center text-sm font-medium text-emerald-600 group-hover:text-emerald-700 transition">
+                  <span className="mt-auto inline-flex items-center text-sm font-medium text-emerald-700 group-hover:text-emerald-800 transition-colors">
                     View More →
                   </span>
                 </div>

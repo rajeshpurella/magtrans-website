@@ -1,10 +1,34 @@
+export interface ProductSpecificationRow {
+  label: string;
+  value: string;
+}
+
+export interface ProductSpecificationGroup {
+  title?: string;
+  rows: ProductSpecificationRow[];
+}
+
+export interface ProductDownloadLink {
+  label: string;
+  href: string;
+  type?: "brochure" | "datasheet" | "manual" | "other";
+}
+
 export interface ProductChild {
   slug: string;
   title: string;
   image?: string;
   pdf?: string;
   externalLinks?: { label: string; href: string }[];
+  /** Existing rich HTML content (kept for backwards compatibility). */
   contentHtml: string;
+  /** Optional structured fields for template-based product pages. */
+  overview?: string;
+  features?: string[];
+  specifications?: ProductSpecificationGroup[];
+  applications?: string[];
+  downloads?: ProductDownloadLink[];
+  images?: string[];
 }
 
 export interface ProductDomain {

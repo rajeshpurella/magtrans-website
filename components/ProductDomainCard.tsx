@@ -33,35 +33,35 @@ export default function ProductDomainCard({
   const gradient = GRADIENT_BY_SLUG[slug] ?? GRADIENT_BY_SLUG.default;
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-      <div className="relative w-full aspect-[4/3] bg-white">
-        <div className="flex h-full w-full items-center justify-center p-6">
-          {imageError ? (
-            <div
-              className={`h-full w-full rounded-t-2xl bg-gradient-to-br ${gradient}`}
-              aria-hidden
-            />
-          ) : (
-            <Image
-              src={imageSrc}
-              alt={`${title} product domain hero image`}
-              width={800}
-              height={600}
-              className="max-h-full max-w-full object-contain object-center rounded-t-2xl group-hover:scale-105 transition-transform duration-500"
-              onError={() => setImageError(true)}
-            />
-          )}
-        </div>
+    <div className="group h-full flex flex-col rounded-2xl border border-zinc-100 bg-white/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-transform transition-shadow duration-300">
+      <div className="w-full h-[220px] bg-zinc-50 flex items-center justify-center p-4 overflow-hidden">
+        {imageError ? (
+          <div
+            className={`h-full w-full rounded-lg bg-gradient-to-br ${gradient}`}
+            aria-hidden
+          />
+        ) : (
+          <Image
+            src={imageSrc}
+            alt={`${title} product domain hero image`}
+            width={320}
+            height={220}
+            className="max-h-full max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            onError={() => setImageError(true)}
+          />
+        )}
       </div>
 
-      <div className="p-4 sm:p-6">
-        <h3 className="text-xl font-semibold text-zinc-900 mb-3">{title}</h3>
-        <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-3">
+      <div className="flex-1 flex flex-col p-4 sm:p-6">
+        <h3 className="text-xl font-semibold text-zinc-900 mb-3 line-clamp-2">
+          {title}
+        </h3>
+        <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-3 min-h-[3.75rem]">
           {shortDescription}
         </p>
         <Link
           href={href}
-          className="inline-flex items-center gap-1.5 text-green-600 font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded"
+          className="mt-auto inline-flex items-center gap-1.5 text-emerald-700 font-medium hover:text-emerald-800 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded"
         >
           View Products
           <span aria-hidden>→</span>

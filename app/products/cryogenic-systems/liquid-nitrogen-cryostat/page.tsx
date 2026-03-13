@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
 export const metadata: Metadata = {
   title: "Liquid Nitrogen Cryostat | Cryogenic Systems | MAGTRANS Systems",
   description:
     "Dexinmag liquid nitrogen cryostat with wide 65K–800K temperature range, fast cooling and stable vacuum environment for optical, electrical and magnetic experiments.",
+  alternates: {
+    canonical: "/products/cryogenic-systems/liquid-nitrogen-cryostat",
+  },
+  openGraph: {
+    title: "Liquid Nitrogen Cryostat | Cryogenic Systems | MAGTRANS Systems",
+    description:
+      "Dexinmag liquid nitrogen cryostat with wide 65K–800K temperature range, fast cooling and stable vacuum environment for optical, electrical and magnetic experiments.",
+    images: [
+      "/products/cryogenic-systems/liquid-nitrogen-cryostat/Liquid Nitrogen Cryostat.png",
+    ],
+  },
 };
 
 const GALLERY_IMAGES = [
@@ -15,53 +26,109 @@ const GALLERY_IMAGES = [
 
 export default function LiquidNitrogenCryostatPage() {
   return (
-    <main className="bg-white">
-      {/* HERO */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            Cryogenic Systems
-          </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
-            Liquid Nitrogen Cryostat
-          </h1>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            Dexinmag Liquid Nitrogen Cryostat provides a wide temperature range (65K–800K), high
-            efficiency, fast cooling speed and a stable experimental environment, making it a
-            preferred low-temperature platform for many scientific research experiments.
-          </p>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            Based on the steady-state bubble principle, liquid nitrogen is stored in the cryostat
-            tank. By adjusting the cone air plug clearance and changing the boiling condition of the
-            gas–liquid interface, the heat leakage of the constant temperature block is stabilised,
-            while precise heater control enables rapid temperature change between 65K and 800K.
-          </p>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            Main advantages include high cost-effectiveness, compact structure and strong
-            expandability for integration into optical, electrical, magnetic and thermal
-            measurement systems.
-          </p>
-        </div>
-      </section>
-
-      {/* MAIN CONTENT */}
+    <ProductPageTemplate
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
+        { label: "Cryogenic Systems", href: "/products/cryogenic-systems" },
+        { label: "Liquid Nitrogen Cryostat" },
+      ]}
+      hero={{
+        categoryLabel: "Cryogenic Systems",
+        name: "Liquid Nitrogen Cryostat",
+        tagline:
+          "Wide 65 K–800 K temperature range, fast cooling and stable vacuum environment for optical, electrical and magnetic experiments.",
+        imageSrc:
+          "/products/cryogenic-systems/liquid-nitrogen-cryostat/Liquid Nitrogen Cryostat.png",
+        imageAlt: "Liquid nitrogen cryostat system",
+        primaryCtaHref: "/#contact",
+        primaryCtaLabel: "Contact Sales",
+        secondaryCtaHref: "/#contact",
+        secondaryCtaLabel: "Request Brochure",
+      }}
+      overview={{
+        heading: "Product Overview",
+        paragraphs: [
+          "Dexinmag Liquid Nitrogen Cryostat provides a wide temperature range (65 K–800 K), high efficiency, fast cooling speed and a stable experimental environment, making it a preferred low‑temperature platform for many scientific research experiments.",
+          "Based on the steady‑state bubble principle, liquid nitrogen is stored in the cryostat tank. By adjusting the cone air plug clearance and changing the boiling condition of the gas–liquid interface, the heat leakage of the constant temperature block is stabilised while precise heater control enables rapid temperature change.",
+          "The system offers high cost‑effectiveness, compact structure and strong expandability for integration into optical, electrical, magnetic and thermal measurement systems.",
+        ],
+      }}
+      features={[
+        {
+          title: "Wide variable temperature range",
+          description:
+            "Supports 65 K–800 K operation with precise control, covering a broad spectrum of experimental requirements.",
+        },
+        {
+          title: "High efficiency and fast cooling",
+          description:
+            "Efficient thermal design and liquid nitrogen management enable rapid cooldown and stable operation.",
+        },
+        {
+          title: "Stable vacuum environment",
+          description:
+            "Low‑temperature adsorbent and optimised vacuum interlayer extend liquid nitrogen usage and measurement stability.",
+        },
+        {
+          title: "Flexible experimental configurations",
+          description:
+            "Supports multiple sample holders, optical windows and electrical interfaces for diverse experiment types.",
+        },
+      ]}
+      specifications={[
+        {
+          title: "Key Cryostat Parameters",
+          rows: [
+            {
+              label: "Temperature Range",
+              value: "65 K–500 K (extendable to 800 K)",
+            },
+            {
+              label: "Ultimate Vacuum",
+              value: "10⁻⁴ Pa",
+            },
+            {
+              label: "Liquid Nitrogen Capacity",
+              value: "400 ml",
+            },
+            {
+              label: "Temperature Accuracy",
+              value: "±0.1 K",
+            },
+          ],
+        },
+      ]}
+      applications={[
+        "Variable temperature testing for materials research",
+        "Optical, electrical, magnetic and thermal measurements",
+        "Magnetic field testing and optical experiments",
+        "Laboratory cryogenic platforms for R&D",
+      ]}
+      images={GALLERY_IMAGES.map(
+        (file) =>
+          `/products/cryogenic-systems/liquid-nitrogen-cryostat/${file}`,
+      )}
+    >
+      {/* Original detailed description and tables preserved below */}
       <section className="border-b border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-16 space-y-12">
           {/* Image Gallery */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-zinc-900">Product Image Gallery</h2>
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Product Image Gallery
+            </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {GALLERY_IMAGES.map((filename) => (
                 <div
                   key={filename}
                   className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50"
                 >
-                  <Image
+                  <img
                     src={`/products/cryogenic-systems/liquid-nitrogen-cryostat/${filename}`}
                     alt="Liquid nitrogen cryostat product image"
-                    fill
-                    sizes="(min-width: 1024px) 320px, 50vw"
-                    className="object-contain"
+                    className="h-full w-full object-contain object-center"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -70,7 +137,9 @@ export default function LiquidNitrogenCryostatPage() {
 
           {/* Product Overview */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Product Overview</h2>
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Product Overview
+            </h2>
             <p className="text-base text-zinc-700 leading-relaxed">
               Dexinmag Liquid Nitrogen Cryostat provides a wide temperature range (65K–800K), high
               efficiency, fast cooling speed and a stable experimental environment. It has become a
@@ -92,7 +161,9 @@ export default function LiquidNitrogenCryostatPage() {
 
           {/* Key Features */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Key Features</h2>
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Key Features
+            </h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
               <li>Wide temperature range (65K – 800K).</li>
               <li>High efficiency and fast cooling speed.</li>
@@ -144,7 +215,9 @@ export default function LiquidNitrogenCryostatPage() {
                 </thead>
                 <tbody>
                   <tr className="border-t border-zinc-200">
-                    <td className="px-4 py-3 font-semibold">Liquid nitrogen storage capacity</td>
+                    <td className="px-4 py-3 font-semibold">
+                      Liquid nitrogen storage capacity
+                    </td>
                     <td className="px-4 py-3" colSpan={3}>
                       400 ml
                     </td>
@@ -188,7 +261,9 @@ export default function LiquidNitrogenCryostatPage() {
 
           {/* Additional Parameters */}
           <div className="space-y-4 max-w-4xl">
-            <h2 className="text-lg font-semibold text-zinc-900">Additional Parameters</h2>
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Additional Parameters
+            </h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-zinc-700 leading-relaxed">
               <li>Number of measurement leads: 8 (expandable).</li>
               <li>Lead material: four-color phosphor bronze low-temperature wire.</li>
@@ -215,31 +290,31 @@ export default function LiquidNitrogenCryostatPage() {
 
           {/* Bottom Images */}
           <div className="space-y-4 max-w-6xl">
-            <h2 className="text-lg font-semibold text-zinc-900">System Images</h2>
+            <h2 className="text-lg font-semibold text-zinc-900">
+              System Images
+            </h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
-                <Image
+                <img
                   src="/products/cryogenic-systems/liquid-nitrogen-cryostat/image1.png"
                   alt="Liquid nitrogen cryostat system image 1"
-                  fill
-                  sizes="(min-width: 1024px) 480px, 100vw"
-                  className="object-contain"
+                  className="h-full w-full object-contain object-center"
+                  loading="lazy"
                 />
               </div>
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
-                <Image
+                <img
                   src="/products/cryogenic-systems/liquid-nitrogen-cryostat/image2.png"
                   alt="Liquid nitrogen cryostat system image 2"
-                  fill
-                  sizes="(min-width: 1024px) 480px, 100vw"
-                  className="object-contain"
+                  className="h-full w-full object-contain object-center"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </ProductPageTemplate>
   );
 }
 

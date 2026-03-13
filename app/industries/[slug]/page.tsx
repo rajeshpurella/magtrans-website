@@ -5,6 +5,7 @@ import {
   getAllIndustrySlugs,
 } from "@/lib/industries-data";
 import IndustryContent from "../IndustryContent";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export async function generateStaticParams() {
   return getAllIndustrySlugs().map((slug) => ({ slug }));
@@ -22,6 +23,9 @@ export async function generateMetadata({
   return {
     title: `${industry.title} | MAGTRANS Systems`,
     description: industry.shortDescription,
+    alternates: {
+      canonical: `/industries/${slug}`,
+    },
   };
 }
 
@@ -33,5 +37,20 @@ export default async function IndustryPage({
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
   if (!industry) notFound();
-  return <IndustryContent industry={industry} />;
+  return (
+    <>
+      <div className="bg-white border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6 pb-4">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Industries", href: "/industries" },
+              { label: industry.title },
+            ]}
+          />
+        </div>
+      </div>
+      <IndustryContent industry={industry} />;
+    </>
+  );
 }

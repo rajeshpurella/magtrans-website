@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CardContainer } from "@/components/ui/CardContainer";
 
 export const metadata: Metadata = {
   title: "Industrial Cooling Systems | Process Cooling | MAGTRANS Systems",
   description:
     "Industrial liquid and air cooling, value-added packages, dehumidifiers, humidifiers and cooling tower–air dryer systems for plant utilities.",
+  alternates: {
+    canonical: "/products/process-cooling/industrial-cooling",
+  },
 };
 
 const SECTIONS = [
@@ -61,7 +65,7 @@ export default function IndustrialCoolingPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav
             aria-label="Industrial cooling sections"
-            className="border border-zinc-200 rounded-2xl bg-white overflow-hidden"
+            className="space-y-4"
           >
             {SECTIONS.map((item) => {
               const slug = item.href.split("/").pop()!;
@@ -71,14 +75,18 @@ export default function IndustrialCoolingPage() {
                 <Link
                   key={item.href}
                   href={viewMoreHref}
-                  className="group block border-b border-zinc-200 last:border-b-0 hover:bg-zinc-50 transition-all duration-200"
+                  className="block"
                 >
-                  <div className="flex flex-col px-8 py-10 border-l-4 border-emerald-600">
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+                  <CardContainer
+                    as="article"
+                    interactive
+                    className="flex flex-col px-8 py-8 md:py-10 border-l-4 border-emerald-600"
+                  >
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-900">
                       {item.label}
                     </h2>
                     {item.description && (
-                      <p className="mt-3 text-base text-zinc-600 leading-relaxed max-w-2xl">
+                      <p className="mt-3 text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
                         {item.description}
                       </p>
                     )}
@@ -91,7 +99,7 @@ export default function IndustrialCoolingPage() {
                         →
                       </span>
                     </span>
-                  </div>
+                  </CardContainer>
                 </Link>
               );
             })}

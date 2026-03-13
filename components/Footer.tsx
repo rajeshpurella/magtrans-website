@@ -1,7 +1,7 @@
-"use client";
+ "use client";
 
 import Link from "next/link";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -64,16 +64,56 @@ export default function Footer() {
                 </a>
               </p>
             </address>
+            <div className="mt-4 flex items-center gap-3">
+              <span className="text-zinc-500 text-xs uppercase tracking-[0.16em]">
+                Connect
+              </span>
+              <Link
+                href="https://www.linkedin.com/company/magtrans-systems-private-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAGTRANS on LinkedIn"
+                className="inline-flex items-center justify-center rounded-full bg-zinc-900 border border-zinc-700 p-1.5 text-zinc-300 transition-colors transition-transform duration-300 hover:text-[#0A66C2] hover:border-[#0A66C2] hover:bg-zinc-800 hover:scale-110"
+              >
+                <Linkedin className="w-7 h-7 animate-pulse hover:animate-none" />
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col gap-3 sm:gap-4">
+          <p className="text-zinc-500 text-sm text-center sm:text-left">
             Trusted Testing and Proven Performance.
           </p>
-          <p className="text-zinc-500 text-sm">
-            © 2026 MAGTrans Systems Pvt Ltd
-          </p>
+
+          <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-sm">
+              <Link
+                href="/privacy-policy"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <span className="hidden sm:inline text-zinc-700">|</span>
+              <Link
+                href="/terms"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                Terms &amp; Conditions
+              </Link>
+              <span className="hidden sm:inline text-zinc-700">|</span>
+              <Link
+                href="/sitemap"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                Sitemap
+              </Link>
+            </div>
+
+            <p className="text-zinc-500 text-sm text-center sm:text-right">
+              © 2026 MAGTrans Systems Pvt Ltd
+            </p>
+          </div>
         </div>
       </div>
     </footer>

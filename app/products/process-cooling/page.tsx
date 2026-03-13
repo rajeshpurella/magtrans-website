@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ChevronRight, ChevronLeft } from "lucide-react";
 import { getDomainBySlug } from "@/lib/products-data";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CardContainer } from "@/components/ui/CardContainer";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
 
 export const metadata: Metadata = {
   title: "Process Cooling Systems | MAGTRANS Systems",
   description:
     "Liquid, air and industrial cooling systems, value-added packages, dehumidifiers, humidifiers and cooling towers engineered for stable process temperatures.",
+  alternates: {
+    canonical: "/products/process-cooling",
+  },
 };
 
 export default function ProcessCoolingPage() {
@@ -17,6 +23,15 @@ export default function ProcessCoolingPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-12 border-b border-zinc-200">
           <div>
+            <div className="mb-4">
+              <Breadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Products", href: "/products" },
+                  { label: domain.title },
+                ]}
+              />
+            </div>
             <Link
               href="/products"
               className="inline-flex items-center gap-2 text-zinc-600 hover:text-emerald-600 text-sm font-medium mb-6 transition-colors"
@@ -72,112 +87,112 @@ export default function ProcessCoolingPage() {
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 mb-8">
               Products &amp; Systems
             </h2>
-            <ul className="grid md:grid-cols-2 gap-8 md:gap-10">
-              <li className="border border-zinc-200 border-l-4 border-emerald-600 px-8 py-8 transition-colors duration-200 hover:bg-zinc-50">
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
-                      Air Cooling
-                    </h3>
-                    <p className="mt-3 text-zinc-600 text-base leading-relaxed max-w-2xl">
-                      Air-cooled chillers and heat rejection systems where
-                      ambient air is the preferred heat sink.
-                    </p>
-                  </div>
-                  <Link
-                    href="/products/process-cooling/air-cooling"
-                    className="inline-flex items-center gap-1 mt-5 text-emerald-700 font-medium group"
-                  >
-                    <span>View System Details</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <CardContainer
+                as="article"
+                interactive
+                className="flex flex-col justify-between border-l-4 border-emerald-600"
+              >
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                    Air Cooling
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
+                    Air-cooled chillers and heat rejection systems where ambient air is the
+                    preferred heat sink.
+                  </p>
                 </div>
-              </li>
+                <div className="px-6 pb-5 pt-1">
+                  <PrimaryButton href="/products/process-cooling/air-cooling">
+                    View System
+                  </PrimaryButton>
+                </div>
+              </CardContainer>
 
-              <li className="border border-zinc-200 border-l-4 border-emerald-600 px-8 py-8 transition-colors duration-200 hover:bg-zinc-50">
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
-                      Value Added Cooling Solutions
-                    </h3>
-                    <p className="mt-3 text-zinc-600 text-base leading-relaxed max-w-2xl">
-                      Engineered cooling packages that combine chillers,
-                      controls and auxiliaries around a defined process.
-                    </p>
-                  </div>
-                  <Link
-                    href="/products/process-cooling/value-added-cooling"
-                    className="inline-flex items-center gap-1 mt-5 text-emerald-700 font-medium group"
-                  >
-                    <span>View System Details</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+              <CardContainer
+                as="article"
+                interactive
+                className="flex flex-col justify-between border-l-4 border-emerald-600"
+              >
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                    Value Added Cooling Solutions
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
+                    Engineered cooling packages that combine chillers, controls and auxiliaries
+                    around a defined process.
+                  </p>
                 </div>
-              </li>
+                <div className="px-6 pb-5 pt-1">
+                  <PrimaryButton href="/products/process-cooling/value-added-cooling">
+                    View System
+                  </PrimaryButton>
+                </div>
+              </CardContainer>
 
-              <li className="border border-zinc-200 border-l-4 border-emerald-600 px-8 py-8 transition-colors duration-200 hover:bg-zinc-50">
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
-                      Cooling Tower &amp; Air Dryer
-                    </h3>
-                    <p className="mt-3 text-zinc-600 text-base leading-relaxed max-w-2xl">
-                      Utility-side cooling tower and air dryer solutions that
-                      stabilise plant services.
-                    </p>
-                  </div>
-                  <Link
-                    href="/products/process-cooling/cooling-tower-air-dryer"
-                    className="inline-flex items-center gap-1 mt-5 text-emerald-700 font-medium group"
-                  >
-                    <span>View System Details</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+              <CardContainer
+                as="article"
+                interactive
+                className="flex flex-col justify-between border-l-4 border-emerald-600"
+              >
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                    Cooling Tower &amp; Air Dryer
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
+                    Utility-side cooling tower and air dryer solutions that stabilise plant
+                    services.
+                  </p>
                 </div>
-              </li>
+                <div className="px-6 pb-5 pt-1">
+                  <PrimaryButton href="/products/process-cooling/cooling-tower-air-dryer">
+                    View System
+                  </PrimaryButton>
+                </div>
+              </CardContainer>
 
-              <li className="border border-zinc-200 border-l-4 border-emerald-600 px-8 py-8 transition-colors duration-200 hover:bg-zinc-50">
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
-                      Industrial Cooling
-                    </h3>
-                    <p className="mt-3 text-zinc-600 text-base leading-relaxed max-w-2xl">
-                      Core industrial cooling stack including liquid, air and
-                      modular systems grouped by application.
-                    </p>
-                  </div>
-                  <Link
-                    href="/products/process-cooling/industrial-cooling"
-                    className="inline-flex items-center gap-1 mt-5 text-emerald-700 font-medium group"
-                  >
-                    <span>View System Details</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+              <CardContainer
+                as="article"
+                interactive
+                className="flex flex-col justify-between border-l-4 border-emerald-600"
+              >
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                    Industrial Cooling
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
+                    Core industrial cooling stack including liquid, air and modular systems grouped
+                    by application.
+                  </p>
                 </div>
-              </li>
+                <div className="px-6 pb-5 pt-1">
+                  <PrimaryButton href="/products/process-cooling/industrial-cooling">
+                    View System
+                  </PrimaryButton>
+                </div>
+              </CardContainer>
 
-              <li className="border border-zinc-200 border-l-4 border-emerald-600 px-8 py-8 transition-colors duration-200 hover:bg-zinc-50 md:col-span-2">
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
-                      Dehumidifier / Humidifier
-                    </h3>
-                    <p className="mt-3 text-zinc-600 text-base leading-relaxed max-w-2xl">
-                      Precision air treatment to keep humidity within a defined
-                      band for sensitive processes and materials.
-                    </p>
-                  </div>
-                  <Link
-                    href="/products/process-cooling/dehumidifier-humidifier"
-                    className="inline-flex items-center gap-1 mt-5 text-emerald-700 font-medium group"
-                  >
-                    <span>View System Details</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+              <CardContainer
+                as="article"
+                interactive
+                className="md:col-span-2 flex flex-col justify-between border-l-4 border-emerald-600"
+              >
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                    Dehumidifier / Humidifier
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl">
+                    Precision air treatment to keep humidity within a defined band for sensitive
+                    processes and materials.
+                  </p>
                 </div>
-              </li>
-            </ul>
+                <div className="px-6 pb-5 pt-1">
+                  <PrimaryButton href="/products/process-cooling/dehumidifier-humidifier">
+                    View System
+                  </PrimaryButton>
+                </div>
+              </CardContainer>
+            </div>
           </div>
         </div>
       </section>

@@ -49,7 +49,7 @@ export default function ClientLogosSection() {
           Trusted by Research Institutions & Industry
         </motion.h2>
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -59,7 +59,7 @@ export default function ClientLogosSection() {
             <motion.div
               key={org.name}
               variants={itemVariants}
-              className="flex flex-col items-center justify-center gap-2"
+              className="group flex flex-col items-center justify-center gap-2"
             >
               <div className="flex items-center justify-center">
                 <Image
@@ -67,7 +67,7 @@ export default function ClientLogosSection() {
                   alt={org.name}
                   width={200}
                   height={100}
-                  className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
+                  className="h-16 w-auto object-contain opacity-90 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
                 />
               </div>
               <p className="text-xs font-medium text-zinc-600 text-center">

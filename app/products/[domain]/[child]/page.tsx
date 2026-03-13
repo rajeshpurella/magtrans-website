@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getDomainBySlug } from "@/lib/products-data";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
+import { CardContainer } from "@/components/ui/CardContainer";
 
 interface PageParams {
   domain: string;
@@ -26,6 +29,9 @@ export async function generateMetadata({
   return {
     title: `${child.title} | ${domain.title} | MAGTRANS Systems`,
     description: domain.shortDescription,
+    alternates: {
+      canonical: `/products/${params.domain}/${params.child}`,
+    },
   };
 }
 
@@ -53,6 +59,16 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
     <>
       <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-4">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Products", href: "/products" },
+                { label: domain.title, href: `/products/${domain.slug}` },
+                { label: child.title },
+              ]}
+            />
+          </div>
           <p className="text-sm text-emerald-700 font-medium mb-3 uppercase tracking-wide">
             {domain.title}
           </p>
@@ -67,7 +83,7 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
                 width={1280}
                 height={512}
                 sizes="(min-width: 1024px) 960px, 100vw"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
           )}
@@ -83,18 +99,19 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
 
           <aside className="space-y-6">
             {child.pdf && (
-              <a
-                href={child.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-xl border border-zinc-200 bg-white px-5 py-4 text-sm font-semibold text-emerald-700 hover:border-emerald-500 hover:text-emerald-800 transition-colors"
-              >
-                View detailed PDF
-              </a>
+              <CardContainer className="p-5">
+                <PrimaryButton
+                  href={child.pdf}
+                  fullWidth
+                  className="justify-center"
+                >
+                  View Detailed PDF
+                </PrimaryButton>
+              </CardContainer>
             )}
 
             {child.externalLinks && child.externalLinks.length > 0 && (
-              <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+              <CardContainer className="px-5 py-4">
                 <p className="text-xs font-semibold tracking-wide text-zinc-500 uppercase mb-3">
                   Related links
                 </p>
@@ -112,7 +129,7 @@ export default function ProductChildPage({ params }: { params: PageParams }) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </CardContainer>
             )}
           </aside>
         </div>

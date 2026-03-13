@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
 export const metadata: Metadata = {
   title: "Closed-cycle Cryostat | Cryogenic Systems | MAGTRANS Systems",
   description:
     "Closed-cycle cryostat on SHI 4 K cryocooler for variable-temperature magnetic, optical and electrical measurements without liquid helium consumption.",
+  alternates: {
+    canonical: "/products/cryogenic-systems/closed-cycle-cryostat",
+  },
+  openGraph: {
+    title: "Closed-cycle Cryostat | Cryogenic Systems | MAGTRANS Systems",
+    description:
+      "Closed-cycle cryostat on SHI 4 K cryocooler for variable-temperature magnetic, optical and electrical measurements without liquid helium consumption.",
+    images: ["/products/cryogenic-systems/Closed-cycle Cryostat.png"],
+  },
 };
 
 const GALLERY_IMAGES = [
@@ -16,36 +25,91 @@ const GALLERY_IMAGES = [
 
 export default function ClosedCycleCryostatPage() {
   return (
-    <main className="bg-white">
-      {/* HERO */}
-      <section className="border-b border-zinc-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
-          <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            Cryogenic Systems
-          </p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
-            Closed-cycle Cryostat
-          </h1>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            The closed-cycle cryostat provided by Dexing Magnet is a variable-temperature cryogenic
-            platform based on the SHI 4K cryocooler from Japan, designed for magnetic, optical and
-            electrical measurements in low-temperature environments.
-          </p>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            Users can configure the system according to their experimental requirements with
-            optional accessories including optical windows, customised sample stages, extended
-            structures and other experimental interfaces. The cryostat can be integrated into
-            different experimental systems to perform magneto-optic, photoelectric, optical
-            reflection, optical transmission, fluorescence and magnetoresistance measurements.
-          </p>
-          <p className="mt-4 text-base text-zinc-700 leading-relaxed max-w-3xl">
-            Main advantages include high cost performance, compact structure, no consumption of
-            refrigerants and strong system expandability.
-          </p>
-        </div>
-      </section>
-
-      {/* MAIN CONTENT */}
+    <ProductPageTemplate
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
+        { label: "Cryogenic Systems", href: "/products/cryogenic-systems" },
+        { label: "Closed-cycle Cryostat" },
+      ]}
+      hero={{
+        categoryLabel: "Cryogenic Systems",
+        name: "Closed-cycle Cryostat",
+        tagline:
+          "Variable-temperature cryogenic platform on SHI 4 K cryocooler for magnetic, optical and electrical measurements without liquid helium.",
+        imageSrc: "/products/cryogenic-systems/Closed-cycle Cryostat.png",
+        imageAlt: "Closed-cycle cryostat system",
+        primaryCtaHref: "/#contact",
+        primaryCtaLabel: "Contact Sales",
+        secondaryCtaHref: "/#contact",
+        secondaryCtaLabel: "Request Brochure",
+      }}
+      overview={{
+        heading: "Product Overview",
+        paragraphs: [
+          "The closed-cycle cryostat provided by Dexing Magnet is a variable-temperature cryogenic platform based on the SHI 4 K cryocooler from Japan, designed for magnetic, optical and electrical measurements in low-temperature environments.",
+          "Users can configure the system with optical windows, customised sample stages, extended structures and other experimental interfaces, integrating the cryostat into magneto‑optic, photoelectric, reflection, transmission, fluorescence and magnetoresistance measurement setups.",
+          "Key advantages include high cost performance, compact structure, no liquid helium consumption and strong system expandability.",
+        ],
+      }}
+      features={[
+        {
+          title: "Helium-free 4 K operation",
+          description:
+            "Achieves cryogenic temperatures around 4 K without liquid helium consumption, reducing operating cost and complexity.",
+        },
+        {
+          title: "Stable vacuum sample environment",
+          description:
+            "Vacuum sample chamber maintains a controlled low‑temperature environment for precise measurements.",
+        },
+        {
+          title: "Flexible cooling capacity",
+          description:
+            "Multiple cooling power options support large samples and demanding experimental loads.",
+        },
+        {
+          title: "Compact mechanical design",
+          description:
+            "Space‑efficient layout simplifies installation, operation and transport within laboratory environments.",
+        },
+        {
+          title: "Versatile sample holders",
+          description:
+            "Optical and electrical sample holders enable rapid mounting and reconfiguration for different experiments.",
+        },
+      ]}
+      specifications={[
+        {
+          title: "Key Cryostat Parameters",
+          rows: [
+            {
+              label: "Temperature Range",
+              value: "4 K – 325 K (model dependent)",
+            },
+            {
+              label: "Sample Environment",
+              value: "Vacuum",
+            },
+            {
+              label: "Typical Cooling Time",
+              value: "60 – 150 min from room temperature to 4.2 K",
+            },
+          ],
+        },
+      ]}
+      applications={[
+        "Low-temperature magnetic, optical and electrical measurements",
+        "Magneto‑optic and photoelectric experiments",
+        "Optical reflection, transmission and fluorescence studies",
+        "Magnetoresistance and transport measurements",
+        "Integration into custom cryogenic test systems",
+      ]}
+      images={GALLERY_IMAGES.map(
+        (file) => `/products/cryogenic-systems/${file}`,
+      )}
+    >
+      {/* Original detailed content preserved below */}
       <section className="border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 space-y-12">
           {/* Product Image Gallery */}
@@ -59,12 +123,11 @@ export default function ClosedCycleCryostatPage() {
                   key={`${filename}-${index}`}
                   className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50"
                 >
-                  <Image
+                  <img
                     src={`/products/cryogenic-systems/${filename}`}
                     alt={filename.replace(".png", "")}
-                    fill
-                    sizes="(min-width: 1024px) 320px, 50vw"
-                    className="object-contain"
+                    className="h-full w-full object-contain object-center"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -326,12 +389,11 @@ export default function ClosedCycleCryostatPage() {
               System Image
             </h2>
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50">
-              <Image
+              <img
                 src="/products/cryogenic-systems/image.png"
                 alt="Closed-cycle cryostat system overview"
-                fill
-                sizes="(min-width: 1024px) 900px, 100vw"
-                className="object-contain"
+                className="h-full w-full object-contain object-center"
+                loading="lazy"
               />
             </div>
           </div>
@@ -371,7 +433,7 @@ export default function ClosedCycleCryostatPage() {
           </section>
         </div>
       </section>
-    </main>
+    </ProductPageTemplate>
   );
 }
 

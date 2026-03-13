@@ -4,11 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
-import MegaMenu from "./MegaMenu";
+import { Menu, X } from "lucide-react";
 import SearchModal from "./SearchModal";
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, type NavLink as NavLinkType } from "@/lib/constants";
+import { NavbarContainer } from "@/components/navigation/NavbarContainer";
+import { NavLinks } from "@/components/navigation/NavLinks";
+import { MobileMenu } from "@/components/navigation/MobileMenu";
+import MegaMenu from "@/components/navigation/MegaMenu";
 
 const HOVER_DELAY_MS = 150;
 
@@ -22,10 +24,6 @@ export default function Navbar() {
   const industriesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isHome = pathname === "/";
-
-  useEffect(() => {
-    // Reserved for future scroll-based behavior if needed
-  }, []);
 
   const clearProductsDelay = () => {
     if (productsTimeoutRef.current) {
@@ -71,17 +69,29 @@ export default function Navbar() {
     setIsMobileOpen(false);
   };
 
-  const getLinkHref = (link: (typeof NAV_LINKS)[number]) => {
+  const getLinkHref = (link: NavLinkType) => {
     if (link.href.startsWith("/#")) return link.href;
     return link.href;
   };
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setProductsOpen(false);
+        setIndustriesOpen(false);
+        setIsMobileOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full h-20 md:h-24 bg-white shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+    <NavbarContainer>
+      <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-7 h-20 md:h-24 flex items-center justify-between">
         <Link
           href="/"
-          className="flex-shrink-0 flex items-center gap-3"
+          className="flex-shrink-0 flex items-center gap-3 mr-6 lg:mr-8"
           onClick={closeAll}
         >
           <Image
@@ -97,150 +107,56 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-10">
-          {NAV_LINKS.map((link) => {
-            if (link.mega === "products") {
-              return (
-                <li
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={handleProductsEnter}
-                  onMouseLeave={handleProductsLeave}
-                >
-                  <Link
-                    href="/products"
-                    className="relative inline-flex items-center gap-1 py-2 text-zinc-700 hover:text-emerald-600 transition-colors duration-200 text-sm font-medium group"
-                  >
-                    {link.label}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`} />
-                    <span className="absolute bottom-0 left-0 h-px bg-emerald-600 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] w-full" />
-                  </Link>
-                </li>
-              );
-            }
-            if (link.mega === "industries") {
-              return (
-                <li
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={handleIndustriesEnter}
-                  onMouseLeave={handleIndustriesLeave}
-                >
-                  <Link
-                    href="/industries"
-                    className="relative inline-flex items-center gap-1 py-2 text-zinc-700 hover:text-emerald-600 transition-colors duration-200 text-sm font-medium group"
-                  >
-                    {link.label}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
-                    <span className="absolute bottom-0 left-0 h-px bg-emerald-600 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] w-full" />
-                  </Link>
-                </li>
-              );
-            }
-            return (
-              <li key={link.label}>
-                <Link
-                  href={isHome ? getLinkHref(link) : link.href}
-                  className="relative inline-block py-2 text-zinc-700 hover:text-emerald-600 transition-colors duration-200 text-sm font-medium group"
-                  onClick={closeAll}
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 h-px bg-emerald-600 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] w-full" />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="hidden lg:flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Search"
-            onClick={() => setSearchOpen(true)}
-            className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-600 hover:text-zinc-900 transition-colors duration-300"
-          >
-            <Search className="w-5 h-5" />
-          </button>
-          <SearchModal
-            isOpen={searchOpen}
-            onClose={() => setSearchOpen(false)}
-          />
-          <Link
-            href="/#contact"
-            onClick={closeAll}
-            className="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
-          >
-            Get in Touch
-          </Link>
-        </div>
+        <NavLinks
+          isHome={isHome}
+          productsOpen={productsOpen}
+          industriesOpen={industriesOpen}
+          onProductsEnter={handleProductsEnter}
+          onProductsLeave={handleProductsLeave}
+          onIndustriesEnter={handleIndustriesEnter}
+          onIndustriesLeave={handleIndustriesLeave}
+          onNavigate={closeAll}
+          onOpenSearch={() => setSearchOpen(true)}
+        />
 
         <button
           type="button"
           aria-label="Toggle menu"
           className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-900"
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          onClick={() => setIsMobileOpen((open) => !open)}
         >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      <div className="hidden lg:block">
-          <MegaMenu
-            type="products"
-            isOpen={productsOpen}
-            onClose={closeAll}
-            onMouseEnter={handleProductsEnter}
-            onMouseLeave={handleProductsLeave}
-          />
-          <MegaMenu
-            type="industries"
-            isOpen={industriesOpen}
-            onClose={closeAll}
-            onMouseEnter={handleIndustriesEnter}
-            onMouseLeave={handleIndustriesLeave}
-          />
-        </div>
+      <div className="hidden lg:block relative">
+        <MegaMenu
+          type="products"
+          isOpen={productsOpen}
+          onClose={closeAll}
+          onMouseEnter={handleProductsEnter}
+          onMouseLeave={handleProductsLeave}
+        />
+        <MegaMenu
+          type="industries"
+          isOpen={industriesOpen}
+          onClose={closeAll}
+          onMouseEnter={handleIndustriesEnter}
+          onMouseLeave={handleIndustriesLeave}
+        />
+      </div>
 
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-zinc-200"
-          >
-            <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-0">
-              {NAV_LINKS.filter((l) => !l.mega).map((link) => (
-                <li key={link.label}>
-                  <Link href={getLinkHref(link)} className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/products" className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries" className="flex items-center min-h-[44px] py-4 px-1 text-zinc-900 font-medium hover:text-emerald-600 transition-colors" onClick={closeAll}>
-                  Industries
-                </Link>
-              </li>
-              <li className="pt-4">
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-emerald-600 text-white text-base font-semibold hover:bg-emerald-700 transition-all duration-200"
-                  onClick={closeAll}
-                >
-                  Get in Touch
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+      <MobileMenu
+        isOpen={isMobileOpen}
+        navLinks={NAV_LINKS}
+        getLinkHref={(link) => getLinkHref(link)}
+        onCloseAll={closeAll}
+      />
+
+      <SearchModal
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+      />
+    </NavbarContainer>
   );
 }

@@ -9,11 +9,13 @@ import StatsCounterSection from "@/components/StatsCounterSection";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import CaseStudySection from "@/components/CaseStudySection";
-import DownloadCatalogSection from "@/components/DownloadCatalogSection";
 import Contact from "@/components/Contact";
 import CoreDomains from "@/components/CoreDomains";
 import { INDUSTRIES_WITH_DESCRIPTIONS } from "@/lib/constants";
 import { Building2 } from "lucide-react";
+import { SectionShell } from "@/components/ui/SectionShell";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CardContainer } from "@/components/ui/CardContainer";
 
 const STATS = [
   { value: 45, suffix: "+", label: "Years Engineering Experience" },
@@ -45,53 +47,46 @@ export default function Home() {
     <>
       <CorporateHeroSlider />
 
-      <section
-        id="about"
-        className="py-12 md:py-16 bg-zinc-50 scroll-mt-20"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
-                Integrated engineering solutions
-              </h2>
-              <p className="mt-4 text-base md:text-lg text-zinc-600 leading-relaxed">
-                Process cooling, magnetics, cryogenics and advanced laboratory systems—engineered for
-                precision and reliability.
+      <SectionShell id="about" background="muted" aria-label="About MAGTRANS">
+        <AnimatedSection>
+          <div className="flex flex-col items-center text-center">
+            <SectionHeader
+              title="Integrated engineering solutions"
+              subtitle="Process cooling, magnetics, cryogenics and advanced laboratory systems—engineered for precision and reliability."
+            />
+            <div className="mt-6 space-y-4 text-base text-zinc-600 leading-relaxed max-w-3xl">
+              <p>
+                MAGTRANS Systems Private Limited brings together over 45 years of
+                experience in testing, measurement and cooling systems for
+                research laboratories and industrial applications.
               </p>
-              <div className="mt-6 space-y-4 text-base text-zinc-600 leading-relaxed">
-                <p>
-                  MAGTRANS Systems Private Limited brings together over 45 years of experience in testing,
-                  measurement and cooling systems for research laboratories and industrial applications.
-                </p>
-                <p>
-                  We provide precision engineering systems sourced from leading national and international
-                  technology partners, combining proven products with application engineering, commissioning
-                  and through-life support.
-                </p>
-              </div>
+              <p>
+                We provide precision engineering systems sourced from leading
+                national and international technology partners, combining proven
+                products with application engineering, commissioning and
+                through-life support.
+              </p>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </SectionShell>
 
       <AnimatedSection>
         <CoreDomains />
       </AnimatedSection>
 
-      <section
+      <SectionShell
         id="industries"
-        className="py-12 md:py-16 bg-zinc-50 scroll-mt-20"
+        background="muted"
+        aria-label="Industries we serve"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
-                Industries We Serve
-              </h2>
-              <p className="mt-4 text-base text-zinc-600 leading-relaxed">
-                Delivering precision systems across critical industrial and research sectors.
-              </p>
+        <AnimatedSection>
+          <div className="flex flex-col gap-10 md:gap-12">
+            <div className="flex justify-center">
+              <SectionHeader
+                title="Industries We Serve"
+                subtitle="Delivering precision systems across critical industrial and research sectors."
+              />
             </div>
 
             <motion.div
@@ -103,28 +98,27 @@ export default function Home() {
             >
               {INDUSTRIES_WITH_DESCRIPTIONS.map((item) => (
                 <motion.div key={item.slug} variants={industriesItem}>
-                  <Link
-                    href={`/industries/${item.slug}`}
-                    className="rounded-2xl bg-white/90 border border-zinc-100 p-6 sm:p-8 md:p-8 hover:shadow-md hover:border-zinc-200 transition-all duration-300 text-center block"
-                  >
-                    <div className="flex justify-center mb-4">
-                      <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-100 text-zinc-600">
-                        <Building2 className="w-6 h-6" />
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-zinc-900 tracking-tight">
-                      {item.label}
-                    </h3>
-                    <p className="mt-3 text-sm text-zinc-600 leading-relaxed max-w-sm mx-auto">
-                      {item.description}
-                    </p>
+                  <Link href={`/industries/${item.slug}`}>
+                    <CardContainer className="h-full text-center px-6 sm:px-8 py-6 sm:py-8">
+                      <div className="flex justify-center mb-4">
+                        <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-100 text-zinc-600">
+                          <Building2 className="w-6 h-6" />
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-zinc-900 tracking-tight">
+                        {item.label}
+                      </h3>
+                      <p className="mt-3 text-sm text-zinc-600 leading-relaxed max-w-sm mx-auto">
+                        {item.description}
+                      </p>
+                    </CardContainer>
                   </Link>
                 </motion.div>
               ))}
             </motion.div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </SectionShell>
 
       <AnimatedSection>
         <StatsCounterSection
@@ -144,10 +138,6 @@ export default function Home() {
 
       <AnimatedSection>
         <CaseStudySection />
-      </AnimatedSection>
-
-      <AnimatedSection>
-        <DownloadCatalogSection />
       </AnimatedSection>
 
       <AnimatedSection>

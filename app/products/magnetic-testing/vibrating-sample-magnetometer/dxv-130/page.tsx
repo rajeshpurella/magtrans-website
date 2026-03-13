@@ -1,149 +1,132 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
 export const metadata: Metadata = {
   title:
     "DXV-130 Vibrating Sample Magnetometry System | VSM | MAGTRANS Systems",
   description:
     "DXV-130 VSM system for magnetic materials research and quality control. Measures magnetisation curves, hysteresis loops and demagnetisation curves with high sensitivity and field up to 1.2 Tesla.",
+  alternates: {
+    canonical:
+      "/products/magnetic-testing/vibrating-sample-magnetometer/dxv-130",
+  },
+  openGraph: {
+    title:
+      "DXV-130 Vibrating Sample Magnetometry System | VSM | MAGTRANS Systems",
+    description:
+      "DXV-130 VSM system for magnetic materials research and quality control. Measures magnetisation curves, hysteresis loops and demagnetisation curves with high sensitivity and field up to 1.2 Tesla.",
+    images: ["/products/vsm/dxv-130-vsm.png"],
+  },
 };
 
 export default function DXV130VSMPage() {
   return (
-    <main className="bg-white">
-      {/* HERO SECTION */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">
-          <p className="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            Magnetic Testing
-          </p>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
-            DXV-130 Vibrating Sample Magnetometry (VSM) System
-          </h1>
-          <p className="text-sm font-semibold tracking-[0.18em] text-zinc-500 uppercase">
-            Vibrating Sample Magnetometer (VSM)
-          </p>
-          <p className="text-base text-zinc-700 leading-relaxed">
-            High-sensitivity VSM system for precise measurement of magnetic moment
-            as a function of applied field.
-          </p>
-        </div>
-      </section>
-
-      {/* PRODUCT IMAGE */}
-      <section className="border-b border-zinc-200 bg-zinc-50/50">
-        <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="relative w-full aspect-[4/3] max-h-[420px] rounded-xl overflow-hidden border border-zinc-200 bg-white">
-            <Image
-              src="/products/vsm/dxv-130-vsm.png"
-              alt="DXV-130 Vibrating Sample Magnetometry System"
-              fill
-              sizes="(min-width: 1024px) 896px, 100vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT OVERVIEW */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
-          <h2 className="text-lg font-semibold text-zinc-900">Product Overview</h2>
-          <p className="text-base text-zinc-700 leading-relaxed">
-            DXV-130 Vibrating Sample Magnetometry (VSM) System is designed for
-            magnetic materials research, quality control and product testing. The
-            instrument measures fundamental magnetic properties such as
-            magnetisation curves, hysteresis loops and demagnetisation curves.
-          </p>
-          <p className="text-base text-zinc-700 leading-relaxed">
-            The system calculates important magnetic parameters including saturation
-            magnetisation, residual magnetisation, coercive force, magnetic energy
-            product and magnetic permeability. It supports measurement of different
-            sample types including powders, granules, flakes and solid materials.
-          </p>
-        </div>
-      </section>
-
-      {/* KEY FEATURES */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
-          <h2 className="text-lg font-semibold text-zinc-900">Key Features</h2>
-          <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed list-disc list-inside">
-            <li>High sensitivity magnetic moment measurement</li>
-            <li>Accurate analysis of magnetisation and hysteresis behaviour</li>
-            <li>Magnetic field strength up to 1.2 Tesla</li>
-            <li>Stable electromagnet system for precise magnetic field control</li>
-            <li>Compatible with powder, pellet and bulk samples</li>
-            <li>Computer controlled measurement and analysis software</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* MAIN SPECIFICATIONS */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
-          <h2 className="text-lg font-semibold text-zinc-900">
-            Main Specifications
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border border-zinc-200 text-sm">
-              <thead className="bg-zinc-50">
-                <tr>
-                  <th className="px-4 py-2 text-left font-semibold text-zinc-900">
-                    Parameter
-                  </th>
-                  <th className="px-4 py-2 text-left font-semibold text-zinc-900">
-                    Specification
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-200">
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">
-                    Magnetic Moment Range
-                  </td>
-                  <td className="px-4 py-2 text-zinc-700">10⁻³ emu – 300 emu</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Sensitivity</td>
-                  <td className="px-4 py-2 text-zinc-700">5 × 10⁻⁵ emu</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Relative Accuracy</td>
-                  <td className="px-4 py-2 text-zinc-700">Better than ±1%</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Repeatability</td>
-                  <td className="px-4 py-2 text-zinc-700">Better than ±1%</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Stability</td>
-                  <td className="px-4 py-2 text-zinc-700">
-                    Better than ±1% after 4 hours continuous operation
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Magnetic Pole Gap</td>
-                  <td className="px-4 py-2 text-zinc-700">40 mm</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">Pole Diameter</td>
-                  <td className="px-4 py-2 text-zinc-700">60 mm</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 text-zinc-700">
-                    Maximum Magnetic Field
-                  </td>
-                  <td className="px-4 py-2 text-zinc-700">1.2 Tesla</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* SYSTEM COMPONENTS */}
-      <section className="border-b border-zinc-200">
+    <ProductPageTemplate
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
+        { label: "Magnetic Testing", href: "/products/magnetic-testing" },
+        {
+          label: "Vibrating Sample Magnetometer",
+          href: "/products/magnetic-testing/vibrating-sample-magnetometer",
+        },
+        { label: "DXV-130" },
+      ]}
+      hero={{
+        categoryLabel: "Magnetic Testing",
+        name: "DXV-130 Vibrating Sample Magnetometry (VSM) System",
+        tagline:
+          "High-sensitivity VSM platform for precise measurement of magnetic moment as a function of applied field.",
+        imageSrc: "/products/vsm/dxv-130-vsm.png",
+        imageAlt: "DXV-130 Vibrating Sample Magnetometry System",
+        primaryCtaHref: "/#contact",
+        primaryCtaLabel: "Contact Sales",
+        secondaryCtaHref: "/#contact",
+        secondaryCtaLabel: "Download Brochure",
+      }}
+      overview={{
+        heading: "Product Overview",
+        paragraphs: [
+          "DXV-130 Vibrating Sample Magnetometry (VSM) System is designed for magnetic materials research, quality control and product testing. The instrument measures fundamental magnetic properties such as magnetisation curves, hysteresis loops and demagnetisation curves.",
+          "The system calculates important magnetic parameters including saturation magnetisation, residual magnetisation, coercive force, magnetic energy product and magnetic permeability. It supports measurement of different sample types including powders, granules, flakes and solid materials.",
+        ],
+      }}
+      features={[
+        {
+          title: "High-sensitivity magnetic moment measurement",
+          description:
+            "Enables precise characterisation of soft and hard magnetic materials across a wide dynamic range.",
+        },
+        {
+          title: "Accurate magnetisation and hysteresis analysis",
+          description:
+            "Captures detailed magnetisation curves, hysteresis loops and demagnetisation behaviour.",
+        },
+        {
+          title: "Magnetic field strength up to 1.2 Tesla",
+          description:
+            "Stable electromagnet design with fixed air gap for reproducible field conditions.",
+        },
+        {
+          title: "Flexible sample handling",
+          description:
+            "Supports powder, pellet, bulk and advanced material formats with configurable sample holders.",
+        },
+        {
+          title: "Integrated control and analysis software",
+          description:
+            "Computer-controlled measurement with automated parameter calculation and data export.",
+        },
+      ]}
+      specifications={[
+        {
+          title: "Main Specifications",
+          rows: [
+            {
+              label: "Magnetic Moment Range",
+              value: "10⁻³ emu – 300 emu",
+            },
+            {
+              label: "Sensitivity",
+              value: "5 × 10⁻⁵ emu",
+            },
+            {
+              label: "Relative Accuracy",
+              value: "Better than ±1%",
+            },
+            {
+              label: "Repeatability",
+              value: "Better than ±1%",
+            },
+            {
+              label: "Stability",
+              value: "Better than ±1% after 4 hours continuous operation",
+            },
+            {
+              label: "Magnetic Pole Gap",
+              value: "40 mm",
+            },
+            {
+              label: "Pole Diameter",
+              value: "60 mm",
+            },
+            {
+              label: "Maximum Magnetic Field",
+              value: "1.2 Tesla",
+            },
+          ],
+        },
+      ]}
+      applications={[
+        "Magnetic materials research and development",
+        "Measurement of hysteresis loops and magnetisation curves",
+        "Characterisation of magnetic nanoparticles and advanced materials",
+        "Industrial magnetic materials testing and quality control",
+        "Academic research laboratories",
+      ]}
+    >
+      {/* System Components */}
+      <section className="border-t border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
           <h2 className="text-lg font-semibold text-zinc-900">
             System Components
@@ -200,8 +183,8 @@ export default function DXV130VSMPage() {
         </div>
       </section>
 
-      {/* INSTRUMENT DESCRIPTION */}
-      <section className="border-b border-zinc-200">
+      {/* Instrument Description */}
+      <section className="border-t border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-16 space-y-10">
           <h2 className="text-lg font-semibold text-zinc-900">
             Instrument Description
@@ -241,8 +224,8 @@ export default function DXV130VSMPage() {
         </div>
       </section>
 
-      {/* MAGNETIC MEASUREMENT UNIT */}
-      <section className="border-b border-zinc-200">
+      {/* Magnetic Measurement Unit */}
+      <section className="border-t border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
           <h2 className="text-lg font-semibold text-zinc-900">
             Magnetic Measurement Unit
@@ -260,8 +243,8 @@ export default function DXV130VSMPage() {
         </div>
       </section>
 
-      {/* MEASUREMENT SOFTWARE */}
-      <section className="border-b border-zinc-200">
+      {/* Measurement Software */}
+      <section className="border-t border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
           <h2 className="text-lg font-semibold text-zinc-900">
             Measurement Software
@@ -285,22 +268,6 @@ export default function DXV130VSMPage() {
           </ul>
         </div>
       </section>
-
-      {/* APPLICATIONS */}
-      <section className="border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 space-y-6">
-          <h2 className="text-lg font-semibold text-zinc-900">Applications</h2>
-          <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed list-disc list-inside">
-            <li>Magnetic materials research and development</li>
-            <li>Measurement of hysteresis loops and magnetisation curves</li>
-            <li>
-              Characterisation of magnetic nanoparticles and advanced materials
-            </li>
-            <li>Industrial magnetic materials testing and quality control</li>
-            <li>Academic research laboratories</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+    </ProductPageTemplate>
   );
 }

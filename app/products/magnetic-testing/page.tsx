@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDomainBySlug } from "@/lib/products-data";
 import ContextBackLink from "@/app/components/ContextBackLink";
+import { CardContainer } from "@/components/ui/CardContainer";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
+import { ProductComparisonTable } from "@/components/products/ProductComparisonTable";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Magnetic Testing Systems | MAGTRANS Systems",
   description:
     "Hall effect, VSM, hard and soft magnetic measurement, cemented carbides, MOKE, field mapping and shielding systems for advanced magnetic characterisation.",
+  alternates: {
+    canonical: "/products/magnetic-testing",
+  },
 };
 
 const SYSTEMS: { name: string; description: string; href: string }[] = [
@@ -79,6 +86,15 @@ export default function MagneticTestingPage() {
     <main className="bg-white">
       <header className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <div className="mb-4">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Products", href: "/products" },
+                { label: domain.title },
+              ]}
+            />
+          </div>
           <p className="text-xs font-semibold tracking-wide uppercase text-emerald-700 mb-3">
             Products
           </p>
@@ -132,25 +148,61 @@ export default function MagneticTestingPage() {
             Products &amp; Systems
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {SYSTEMS.map((system) => (
               <Link key={system.name} href={system.href} className="block h-full">
-                <div className="bg-white border border-zinc-200 border-l-4 border-emerald-600 p-8 h-full flex flex-col justify-between transition-all duration-200 hover:bg-zinc-50">
-                  <div>
-                    <h3 className="text-xl font-semibold text-zinc-900 mb-2">
+                <CardContainer
+                  as="article"
+                  interactive
+                  className="h-full flex flex-col justify-between border-l-4 border-emerald-600"
+                >
+                  <div className="p-6 flex flex-col gap-3">
+                    <h3 className="text-lg md:text-xl font-semibold text-zinc-900">
                       {system.name}
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                       {system.description}
                     </p>
                   </div>
-                  <span className="text-sm font-medium text-emerald-700 mt-4 inline-block">
-                    Explore →
-                  </span>
-                </div>
+                  <div className="px-6 pb-5 pt-1">
+                    <PrimaryButton href={system.href} className="text-sm">
+                      View System
+                    </PrimaryButton>
+                  </div>
+                </CardContainer>
               </Link>
             ))}
           </div>
+
+          <ProductComparisonTable
+            caption="Representative magnetic testing systems overview"
+            rows={[
+              {
+                name: "Hall Effect Measurement Systems",
+                measurementRange: "Carrier concentration, mobility, resistivity",
+                accuracy: "High precision DC and AC Hall measurements",
+                temperatureRange: "System dependent; configurable cryogenic options",
+                applications:
+                  "Semiconductor characterisation, sensor development, material research",
+              },
+              {
+                name: "Vibrating Sample Magnetometer (VSM)",
+                measurementRange: "Magnetic moment from 10⁻³ emu to 300 emu",
+                accuracy: "Better than ±1% (relative)",
+                temperatureRange: "Room temperature with optional low / high temperature stages",
+                applications:
+                  "Magnetic materials R&D, production QA, hysteresis and B–H loop analysis",
+              },
+              {
+                name: "Magnetic Field Mapper",
+                measurementRange: "3D field mapping across test volume",
+                accuracy: "High-resolution vector field measurement",
+                temperatureRange: "Ambient",
+                applications:
+                  "Magnet assembly validation, homogeneity analysis, shielding verification",
+              },
+            ]}
+          />
         </div>
       </section>
     </main>

@@ -3,7 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/animations";
-import { SECTION_PADDING, CONTAINER_CLASS } from "@/lib/constants";
+import { SectionShell } from "@/components/ui/SectionShell";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 interface Stat {
   value: number;
@@ -58,23 +59,20 @@ export default function StatsCounterSection({
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className={`${SECTION_PADDING} bg-zinc-50`}>
-      <div className={CONTAINER_CLASS}>
+    <SectionShell
+      background="muted"
+      aria-label={title || "Key statistics"}
+    >
+      <section ref={ref}>
         {(title || subtitle) && (
           <motion.div
             {...staggerItem}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            {title && (
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-900">
-                {title}
-              </h2>
-            )}
-            {subtitle && (
-              <p className="mt-4 text-base text-zinc-600 leading-relaxed">
-                {subtitle}
-              </p>
-            )}
+            <SectionHeader
+              title={title ?? "Key statistics"}
+              subtitle={subtitle}
+            />
           </motion.div>
         )}
         <motion.div
@@ -100,7 +98,7 @@ export default function StatsCounterSection({
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </section>
+      </section>
+    </SectionShell>
   );
 }

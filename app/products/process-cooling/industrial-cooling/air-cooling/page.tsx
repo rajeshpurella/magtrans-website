@@ -1,35 +1,96 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ContextBackLink from "@/app/components/ContextBackLink";
+import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
 export const metadata: Metadata = {
   title: "Air Cooling | Industrial Cooling | MAGTRANS Systems",
   description:
     "Air-cooled industrial cooling systems for process and equipment heat rejection.",
   alternates: {
-    canonical:
-      "/products/process-cooling/industrial-cooling/air-cooling",
+    canonical: "/products/process-cooling/industrial-cooling/air-cooling",
+  },
+  openGraph: {
+    title: "Air Cooling | Industrial Cooling | MAGTRANS Systems",
+    description:
+      "Air-cooled industrial cooling systems for process and equipment heat rejection.",
+    images: ["/products/air-cooling/vertical.jpg"],
   },
 };
 
 export default function IndustrialAirCoolingPage() {
   return (
-    <main className="bg-white">
-      {/* Hero */}
-      <section className="py-20 border-b border-zinc-200 bg-white">
+    <ProductPageTemplate
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
+        {
+          label: "Process Cooling",
+          href: "/products/process-cooling",
+        },
+        {
+          label: "Industrial Cooling",
+          href: "/products/process-cooling/industrial-cooling",
+        },
+        { label: "Air Cooling" },
+      ]}
+      hero={{
+        categoryLabel: "Industrial Cooling",
+        name: "Air Cooling Systems",
+        tagline:
+          "Industrial-grade air cooling for electrical panels, industrial cabinets and data centres, engineered for stable thermal performance and energy efficiency.",
+        imageSrc: "/products/air-cooling/vertical.jpg",
+        imageAlt: "Industrial air cooling systems",
+        primaryCtaHref: "/#contact",
+        primaryCtaLabel: "Discuss Air Cooling",
+        secondaryCtaHref: "/#contact",
+        secondaryCtaLabel: "Request Brochure",
+      }}
+      overview={{
+        heading: "Air Cooling for Industrial Panels and Data Centres",
+        paragraphs: [
+          "MAGTRANS air cooling solutions are designed for electrical panels, industrial cabinets and data centre environments where reliable heat rejection is critical for uptime.",
+          "Panel-mounted and ductable configurations maintain dust‑free, humidity‑controlled conditions inside cabinets, while inverter‑based systems adapt to varying heat loads and ambient temperatures to improve efficiency.",
+        ],
+        highlights: [
+          "Compact panel air conditioners for control cabinets",
+          "Inverter panel systems with up to 50% energy savings",
+          "Dedicated data centre cooling configurations",
+        ],
+      }}
+      features={[
+        {
+          title: "Compact Panel Air Conditioners",
+          description:
+            "Vertical and ductable units engineered to protect sensitive electrical components in control panels and cabinets.",
+        },
+        {
+          title: "Inverter Panel Cooling",
+          description:
+            "Inverter-driven panel air conditioners that modulate capacity to match dynamic heat loads and ambient conditions.",
+        },
+        {
+          title: "Data Centre Cooling Systems",
+          description:
+            "In-rack and in-row cooling solutions that deliver conditioned air directly to high-density server loads.",
+        },
+      ]}
+      applications={[
+        "Electrical panel and control cabinet cooling",
+        "Industrial automation and drives",
+        "Data centre rack and row-level cooling",
+      ]}
+      images={[
+        "/products/air-cooling/vertical.jpg",
+        "/products/air-cooling/ductable.jpg",
+        "/products/air-cooling/inverter-panel-air-conditioner.jpg",
+        "/products/air-cooling/inrack.png",
+      ]}
+    >
+      {/* Original detailed sections preserved below */}
+      {/* Hero context backlink */}
+      <section className="py-6 border-b border-zinc-200 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-semibold tracking-wide uppercase text-emerald-700">
-            Industrial Cooling
-          </p>
-          <h1 className="mt-2 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
-            Air Cooling
-          </h1>
-          <p className="mt-4 text-base text-zinc-600 max-w-2xl">
-            Industrial-grade air cooling solutions designed for electrical
-            panels, industrial cabinets, and data center applications. Our
-            systems ensure optimal thermal management, energy efficiency and
-            long-term reliability.
-          </p>
           <ContextBackLink />
         </div>
       </section>
@@ -276,7 +337,7 @@ export default function IndustrialAirCoolingPage() {
           </section>
         </div>
       </section>
-    </main>
+    </ProductPageTemplate>
   );
 }
 

@@ -34,6 +34,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [isSearching, setIsSearching] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const runSearch = useCallback((q: string) => {
@@ -44,7 +45,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     }
     setIsSearching(true);
     const items = searchSearchIndex(q);
-    setResults(items.slice(0, 12));
+    const ordered = ["product", "industry", "page"].flatMap((type) =>
+      items.filter((item) => item.type === type),
+    );
+    setResults(ordered.slice(0, 12));
     setSelectedIndex(0);
     setIsSearching(false);
   }, []);
@@ -79,27 +83,56 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [selectedIndex, results.length]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Escape") {
+      e.stopPropagation();
       onClose();
       return;
     }
+
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      if (results.length)
+      if (results.length) {
         setSelectedIndex((i) => Math.min(i + 1, results.length - 1));
+      }
       return;
     }
+
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      if (results.length) setSelectedIndex((i) => Math.max(i - 1, 0));
+      if (results.length) {
+        setSelectedIndex((i) => Math.max(i - 1, 0));
+      }
       return;
     }
+
     if (e.key === "Enter" && results[selectedIndex]) {
       e.preventDefault();
       const item = results[selectedIndex];
       onClose();
       router.push(item.href);
+      return;
+    }
+
+    if (e.key === "Tab" && dialogRef.current) {
+      const focusable = dialogRef.current.querySelectorAll<
+        HTMLButtonElement | HTMLAnchorElement | HTMLInputElement
+      >(
+        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
     }
   };
 
@@ -130,6 +163,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
           transition={{ duration: 0.25, ease }}
           className="max-w-xl mx-auto mt-[15vh] bg-white rounded-2xl shadow-xl border border-zinc-200 overflow-hidden"
           onClick={(e) => e.stopPropagation()}
+          ref={dialogRef}
+          onKeyDown={handleKeyDown}
         >
           <div className="flex items-center gap-3 px-4 py-3 border-b border-zinc-200">
             <Search className="w-5 h-5 text-zinc-400 shrink-0" />
@@ -138,7 +173,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
               placeholder="Search products, industries, pages…"
               className="flex-1 min-w-0 py-2 text-zinc-900 placeholder-zinc-400 focus:outline-none text-base"
               autoComplete="off"
